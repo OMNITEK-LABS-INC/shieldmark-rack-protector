@@ -87,10 +87,18 @@ uint8_t buzzerOverride = 0;   // if 1 ? buzzer forced ON
 uint8_t led1_manual = 0;      // if 1 ? LED1 forced ON
 uint8_t led2_manual = 0;      // if 1 ? LED2 forced ON
 
-/*
- * Redirect stdio's putch() to EUSART1 so printf() goes out over UART.
- * NOTE: * PuTTY should be set to the COM port at 115200 8N1, no flow control.
- */
+
+// -----------------------------------------------------------------------------
+// *** ADDED FOR 3-SECOND STRONG-PRESENCE HOLD ***
+// We simulate timing based on the loop delay (~500ms per cycle).
+// -----------------------------------------------------------------------------
+uint32_t presenceHoldStart = 0;
+uint8_t presenceHoldActive = 0;   // 1 = currently holding the blink state for 3 seconds
+// -----------------------------------------------------------------------------
+
+
+// * NOTE: * PuTTY should be set to the COM port at 115200 8N1, no flow control.
+ 
 void putch(char data)
 {
     while(!EUSART1_is_tx_ready());
@@ -274,36 +282,79 @@ void main(void)
         {
             continue;
         }
+        
+        uint8_t inCloseRange = (Presence > 0x0500 && Presence < 0x7D00);
+        uint8_t inNearRange  = (Presence >= 0x00C0 && Presence <= 0x0500);
 
-        // Otherwise allow presence logic to affect LEDs not manually controlled
-        if ((Presence >= 0x00C0) && (Presence <= 0x0500))
+        // -----------------------------------------------------------
+        // STRONG RANGE (Blink LEDs, enable buzzer)
+        // -----------------------------------------------------------
+        if (inCloseRange)
         {
-            if (!led1_manual) LED1_Enble_SetHigh();
-            if (!led2_manual) LED2_Enble_SetHigh();
+            // *** ADDED: Start the 3-second hold timer only when first entering
+            if (!presenceHoldActive)
+            {
+                presenceHoldActive = 1;
+                presenceHoldStart = msCounter;   // Start delay timer
+            }
 
-            if (!buzzerOverride) LED_Enble_SetLow();
-
-            printf("Object Approaching. Presence: %u\r\n", Presence);
-        }
-        else if (Presence > 0x0500 && Presence < 0x7D00)
-        {
             if (!led1_manual) LED1_Enble_Toggle();
             if (!led2_manual) LED2_Enble_Toggle();
-
             if (!buzzerOverride) LED_Enble_SetHigh();
 
             printf("Object Close! Presence: %u\r\n", Presence);
         }
+
+        // -----------------------------------------------------------
+        // NEAR RANGE (Solid ON)
+        // -----------------------------------------------------------
+        else if (inNearRange)
+        {
+            presenceHoldActive = 0; // Cancel any hold
+
+            if (!led1_manual) LED1_Enble_SetHigh();
+            if (!led2_manual) LED2_Enble_SetHigh();
+            if (!buzzerOverride) LED_Enble_SetLow();
+
+            printf("Object Approaching. Presence: %u\r\n", Presence);
+        }
+
+        // -----------------------------------------------------------
+        // OUT OF RANGE
+        // -----------------------------------------------------------
         else
         {
+            // *** ADDED: Continue blinking for remainder of 3-second hold ***
+            if (presenceHoldActive)
+            {
+                if ((msCounter - presenceHoldStart) < 3000)
+                {
+                    // keep blinking and buzzer on
+                    if (!led1_manual) LED1_Enble_Toggle();
+                    if (!led2_manual) LED2_Enble_Toggle();
+                    if (!buzzerOverride) LED_Enble_SetHigh();
+
+                    // DO NOT turn LEDs off yet ? remain in this section
+                    continue;
+                }
+                else
+                {
+                    // *** ADDED: Hold expired ***
+                    presenceHoldActive = 0;
+                }
+            }
+
+            // *** NORMAL OUT-OF-RANGE BEHAVIOR ***
             if (!led1_manual) LED1_Enble_SetLow();
             if (!led2_manual) LED2_Enble_SetLow();
-
             if (!buzzerOverride) LED_Enble_SetLow();
         }
+
+        // =========================================================================
+        // END OF MODIFIED PRESENCE BLOCK
+        // =========================================================================
     }
 }
-
 /**
  End of File
 */

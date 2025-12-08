@@ -1,0 +1,1668 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F26Q10 ]
+[d frameptr 4065 ]
+"149 C:\Users\Bradley\OneDrive - Omnitek Labs\Documents\GitHub\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/i2c1_master.c
+[e E12852 . `uc
+I2C1_IDLE 0
+I2C1_SEND_ADR_READ 1
+I2C1_SEND_ADR_WRITE 2
+I2C1_TX 3
+I2C1_RX 4
+I2C1_RCEN 5
+I2C1_TX_EMPTY 6
+I2C1_SEND_RESTART_READ 7
+I2C1_SEND_RESTART_WRITE 8
+I2C1_SEND_RESTART 9
+I2C1_SEND_STOP 10
+I2C1_RX_ACK 11
+I2C1_RX_NACK_STOP 12
+I2C1_RX_NACK_RESTART 13
+I2C1_RESET 14
+I2C1_ADDRESS_NACK 15
+]
+"168
+[e E363 . `uc
+I2C1_STOP 1
+I2C1_RESTART_READ 2
+I2C1_RESTART_WRITE 3
+I2C1_CONTINUE 4
+I2C1_RESET_LINK 5
+]
+[e E358 . `uc
+I2C1_NOERR 0
+I2C1_BUSY 1
+I2C1_FAIL 2
+]
+"200
+[e E12870 . `uc
+I2C1_DATA_COMPLETE 0
+I2C1_WRITE_COLLISION 1
+I2C1_ADDR_NACK 2
+I2C1_DATA_NACK 3
+I2C1_TIMEOUT 4
+I2C1_NULL 5
+]
+"67 C:\Users\Bradley\OneDrive - Omnitek Labs\Documents\GitHub\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/i2c1_master_ex.c
+[e E358 . `uc
+I2C1_NOERR 0
+I2C1_BUSY 1
+I2C1_FAIL 2
+]
+"68
+[e E363 . `uc
+I2C1_STOP 1
+I2C1_RESTART_READ 2
+I2C1_RESTART_WRITE 3
+I2C1_CONTINUE 4
+I2C1_RESET_LINK 5
+]
+"107 C:\Users\Bradley\OneDrive - Omnitek Labs\Documents\GitHub\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/adcc.c
+[e E12456 . `uc
+channel_ANB4 12
+channel_VSS 60
+channel_Temp 61
+channel_DAC1 62
+channel_FVR_buf1 63
+]
+"121 C:\Users\Bradley\OneDrive - Omnitek Labs\Documents\GitHub\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\main.c
+[e E12855 . `uc
+channel_ANB4 12
+channel_VSS 60
+channel_Temp 61
+channel_DAC1 62
+channel_FVR_buf1 63
+]
+"4 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\__fpclassifyf.c
+[v ___fpclassifyf __fpclassifyf `(i  1 e 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\almod.c
+[v ___almod __almod `(l  1 e 4 0 ]
+"9 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\aodiv.c
+[v ___aodiv __aodiv `(o  1 e 8 0 ]
+"9 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\aomod.c
+[v ___aomod __aomod `(o  1 e 8 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\atdiv.c
+[v ___atdiv __atdiv `(m  1 e 3 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\atmod.c
+[v ___atmod __atmod `(m  1 e 3 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"193 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\doprnt.c
+[v _pad pad `(v  1 s 1 pad ]
+"587
+[v _efgtoa efgtoa `(v  1 s 1 efgtoa ]
+"1001
+[v _utoa utoa `(v  1 s 1 utoa ]
+"1158
+[v _read_prec_or_width read_prec_or_width `(i  1 s 2 read_prec_or_width ]
+"1177
+[v _vfpfcnvrt vfpfcnvrt `(v  1 s 1 vfpfcnvrt ]
+"1817
+[v _vfprintf vfprintf `(i  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"4 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+"15 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\flneg.c
+[v ___flneg __flneg `(d  1 e 4 0 ]
+"62 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"3 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\floorf.c
+[v _floorf floorf `(f  1 e 4 0 ]
+"43 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+"86 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"1 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\labs.c
+[v _labs labs `(l  1 e 4 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\llmod.c
+[v ___llmod __llmod `(ul  1 e 4 0 ]
+"9 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\lodiv.c
+[v ___lodiv __lodiv `(uo  1 e 8 0 ]
+"9 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\lomod.c
+[v ___lomod __lomod `(uo  1 e 8 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\ltdiv.c
+[v ___ltdiv __ltdiv `(um  1 e 3 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\ltmod.c
+[v ___ltmod __ltmod `(um  1 e 3 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\memcpy.c
+[v _memcpy memcpy `(*.39v  1 e 2 0 ]
+"8 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\nf_fputc.c
+[v _fputc fputc `(i  1 e 2 0 ]
+"8 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\nf_fputs.c
+[v _fputs fputs `(i  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\printf.c
+[v _printf printf `(i  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"3 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\strcpy.c
+[v _strcpy strcpy `(*.39uc  1 e 2 0 ]
+"15 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"15 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\Umul24.c
+[v ___tmul __tmul `(um  1 e 3 0 ]
+"15 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"10 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+"102 C:\Users\Bradley\OneDrive - Omnitek Labs\Documents\GitHub\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\main.c
+[v _putch putch `(v  1 e 1 0 ]
+"109
+[v _Read_BatteryVoltage Read_BatteryVoltage `(f  1 e 4 0 ]
+"133
+[v _main main `(v  1 e 1 0 ]
+"62 C:\Users\Bradley\OneDrive - Omnitek Labs\Documents\GitHub\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/adcc.c
+[v _ADCC_Initialize ADCC_Initialize `(v  1 e 1 0 ]
+"125
+[v _ADCC_GetConversionResult ADCC_GetConversionResult `(us  1 e 2 0 ]
+"131
+[v _ADCC_GetSingleConversion ADCC_GetSingleConversion `(us  1 e 2 0 ]
+"66 C:\Users\Bradley\OneDrive - Omnitek Labs\Documents\GitHub\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/eusart1.c
+[v _EUSART1_Initialize EUSART1_Initialize `(v  1 e 1 0 ]
+"94
+[v _EUSART1_is_tx_ready EUSART1_is_tx_ready `(a  1 e 1 0 ]
+"99
+[v _EUSART1_is_rx_ready EUSART1_is_rx_ready `(a  1 e 1 0 ]
+"113
+[v _EUSART1_Read EUSART1_Read `(uc  1 e 1 0 ]
+"132
+[v _EUSART1_Write EUSART1_Write `(v  1 e 1 0 ]
+"144
+[v _EUSART1_DefaultFramingErrorHandler EUSART1_DefaultFramingErrorHandler `(v  1 e 1 0 ]
+"146
+[v _EUSART1_DefaultOverrunErrorHandler EUSART1_DefaultOverrunErrorHandler `(v  1 e 1 0 ]
+"154
+[v _EUSART1_DefaultErrorHandler EUSART1_DefaultErrorHandler `(v  1 e 1 0 ]
+"157
+[v _EUSART1_SetFramingErrorHandler EUSART1_SetFramingErrorHandler `(v  1 e 1 0 ]
+"161
+[v _EUSART1_SetOverrunErrorHandler EUSART1_SetOverrunErrorHandler `(v  1 e 1 0 ]
+"165
+[v _EUSART1_SetErrorHandler EUSART1_SetErrorHandler `(v  1 e 1 0 ]
+"170 C:\Users\Bradley\OneDrive - Omnitek Labs\Documents\GitHub\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/i2c1_master.c
+[v _I2C1_Initialize I2C1_Initialize `(v  1 e 1 0 ]
+"185
+[v _I2C1_Open I2C1_Open `(E358  1 e 1 0 ]
+"218
+[v _I2C1_Close I2C1_Close `(E358  1 e 1 0 ]
+"233
+[v _I2C1_MasterOperation I2C1_MasterOperation `(E358  1 e 1 0 ]
+"255
+[v _I2C1_MasterRead I2C1_MasterRead `(E358  1 e 1 0 ]
+"260
+[v _I2C1_MasterWrite I2C1_MasterWrite `(E358  1 e 1 0 ]
+"272
+[v _I2C1_SetBuffer I2C1_SetBuffer `(v  1 e 1 0 ]
+"282
+[v _I2C1_SetDataCompleteCallback I2C1_SetDataCompleteCallback `(v  1 e 1 0 ]
+"292
+[v _I2C1_SetAddressNackCallback I2C1_SetAddressNackCallback `(v  1 e 1 0 ]
+"307
+[v _I2C1_SetCallback I2C1_SetCallback `(v  1 s 1 I2C1_SetCallback ]
+"321
+[v _I2C1_Poller I2C1_Poller `(v  1 s 1 I2C1_Poller ]
+"330
+[v _I2C1_MasterFsm I2C1_MasterFsm `T(v  1 s 1 I2C1_MasterFsm ]
+"342
+[v _I2C1_DO_IDLE I2C1_DO_IDLE `(E12852  1 s 1 I2C1_DO_IDLE ]
+"349
+[v _I2C1_DO_SEND_ADR_READ I2C1_DO_SEND_ADR_READ `(E12852  1 s 1 I2C1_DO_SEND_ADR_READ ]
+"356
+[v _I2C1_DO_SEND_ADR_WRITE I2C1_DO_SEND_ADR_WRITE `(E12852  1 s 1 I2C1_DO_SEND_ADR_WRITE ]
+"363
+[v _I2C1_DO_TX I2C1_DO_TX `(E12852  1 s 1 I2C1_DO_TX ]
+"387
+[v _I2C1_DO_RX I2C1_DO_RX `(E12852  1 s 1 I2C1_DO_RX ]
+"411
+[v _I2C1_DO_RCEN I2C1_DO_RCEN `(E12852  1 s 1 I2C1_DO_RCEN ]
+"418
+[v _I2C1_DO_TX_EMPTY I2C1_DO_TX_EMPTY `(E12852  1 s 1 I2C1_DO_TX_EMPTY ]
+"459
+[v _I2C1_DO_SEND_RESTART_READ I2C1_DO_SEND_RESTART_READ `(E12852  1 s 1 I2C1_DO_SEND_RESTART_READ ]
+"465
+[v _I2C1_DO_SEND_RESTART_WRITE I2C1_DO_SEND_RESTART_WRITE `(E12852  1 s 1 I2C1_DO_SEND_RESTART_WRITE ]
+"472
+[v _I2C1_DO_SEND_RESTART I2C1_DO_SEND_RESTART `(E12852  1 s 1 I2C1_DO_SEND_RESTART ]
+"478
+[v _I2C1_DO_SEND_STOP I2C1_DO_SEND_STOP `(E12852  1 s 1 I2C1_DO_SEND_STOP ]
+"484
+[v _I2C1_DO_RX_ACK I2C1_DO_RX_ACK `(E12852  1 s 1 I2C1_DO_RX_ACK ]
+"491
+[v _I2C1_DO_RX_NACK_STOP I2C1_DO_RX_NACK_STOP `(E12852  1 s 1 I2C1_DO_RX_NACK_STOP ]
+"497
+[v _I2C1_DO_RX_NACK_RESTART I2C1_DO_RX_NACK_RESTART `(E12852  1 s 1 I2C1_DO_RX_NACK_RESTART ]
+"503
+[v _I2C1_DO_RESET I2C1_DO_RESET `(E12852  1 s 1 I2C1_DO_RESET ]
+"509
+[v _I2C1_DO_ADDRESS_NACK I2C1_DO_ADDRESS_NACK `(E12852  1 s 1 I2C1_DO_ADDRESS_NACK ]
+"529
+[v _I2C1_CallbackReturnStop I2C1_CallbackReturnStop `(E363  1 e 1 0 ]
+"534
+[v _I2C1_CallbackReturnReset I2C1_CallbackReturnReset `(E363  1 e 1 0 ]
+"552
+[v _I2C1_MasterOpen I2C1_MasterOpen `T(a  1 s 1 I2C1_MasterOpen ]
+"566
+[v _I2C1_MasterClose I2C1_MasterClose `T(v  1 s 1 I2C1_MasterClose ]
+"572
+[v _I2C1_MasterGetRxData I2C1_MasterGetRxData `T(uc  1 s 1 I2C1_MasterGetRxData ]
+"577
+[v _I2C1_MasterSendTxData I2C1_MasterSendTxData `T(v  1 s 1 I2C1_MasterSendTxData ]
+"582
+[v _I2C1_MasterEnableRestart I2C1_MasterEnableRestart `T(v  1 s 1 I2C1_MasterEnableRestart ]
+"587
+[v _I2C1_MasterDisableRestart I2C1_MasterDisableRestart `T(v  1 s 1 I2C1_MasterDisableRestart ]
+"592
+[v _I2C1_MasterStartRx I2C1_MasterStartRx `T(v  1 s 1 I2C1_MasterStartRx ]
+"597
+[v _I2C1_MasterStart I2C1_MasterStart `T(v  1 s 1 I2C1_MasterStart ]
+"602
+[v _I2C1_MasterStop I2C1_MasterStop `T(v  1 s 1 I2C1_MasterStop ]
+"607
+[v _I2C1_MasterIsNack I2C1_MasterIsNack `T(a  1 s 1 I2C1_MasterIsNack ]
+"612
+[v _I2C1_MasterSendAck I2C1_MasterSendAck `T(v  1 s 1 I2C1_MasterSendAck ]
+"618
+[v _I2C1_MasterSendNack I2C1_MasterSendNack `T(v  1 s 1 I2C1_MasterSendNack ]
+"624
+[v _I2C1_MasterClearBusCollision I2C1_MasterClearBusCollision `T(v  1 s 1 I2C1_MasterClearBusCollision ]
+"634
+[v _I2C1_MasterEnableIrq I2C1_MasterEnableIrq `T(v  1 s 1 I2C1_MasterEnableIrq ]
+"644
+[v _I2C1_MasterDisableIrq I2C1_MasterDisableIrq `T(v  1 s 1 I2C1_MasterDisableIrq ]
+"649
+[v _I2C1_MasterClearIrq I2C1_MasterClearIrq `T(v  1 s 1 I2C1_MasterClearIrq ]
+"654
+[v _I2C1_MasterSetIrq I2C1_MasterSetIrq `T(v  1 s 1 I2C1_MasterSetIrq ]
+"659
+[v _I2C1_MasterWaitForEvent I2C1_MasterWaitForEvent `T(v  1 s 1 I2C1_MasterWaitForEvent ]
+"63 C:\Users\Bradley\OneDrive - Omnitek Labs\Documents\GitHub\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/i2c1_master_ex.c
+[v _I2C1_Read1ByteRegister I2C1_Read1ByteRegister `(uc  1 e 1 0 ]
+"91
+[v _I2C1_Write1ByteRegister I2C1_Write1ByteRegister `(v  1 e 1 0 ]
+"142
+[v _rd1RegCompleteHandler rd1RegCompleteHandler `(E363  1 s 1 rd1RegCompleteHandler ]
+"149
+[v _rd2RegCompleteHandler rd2RegCompleteHandler `(E363  1 s 1 rd2RegCompleteHandler ]
+"156
+[v _wr1RegCompleteHandler wr1RegCompleteHandler `(E363  1 s 1 wr1RegCompleteHandler ]
+"163
+[v _wr2RegCompleteHandler wr2RegCompleteHandler `(E363  1 s 1 wr2RegCompleteHandler ]
+"170
+[v _rdBlkRegCompleteHandler rdBlkRegCompleteHandler `(E363  1 s 1 rdBlkRegCompleteHandler ]
+"50 C:\Users\Bradley\OneDrive - Omnitek Labs\Documents\GitHub\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+"60
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+"74
+[v _PMD_Initialize PMD_Initialize `(v  1 e 1 0 ]
+"55 C:\Users\Bradley\OneDrive - Omnitek Labs\Documents\GitHub\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"13660 C:/Users/Bradley/.mchp_packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc/pic18f26q10.h
+[v _RX1PPS RX1PPS `VEuc  1 e 1 @3760 ]
+"14173
+[v _SSPCLKPPS SSPCLKPPS `VEuc  1 e 1 @3762 ]
+"14383
+[v _SSPDATPPS SSPDATPPS `VEuc  1 e 1 @3763 ]
+[s S932 . 1 `uc 1 SSPIE 1 0 :1:0 
+`uc 1 BCLIE 1 0 :1:1 
+`uc 1 SSP2IE 1 0 :1:2 
+`uc 1 BCL2IE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+`uc 1 TX2IE 1 0 :1:6 
+`uc 1 RC2IE 1 0 :1:7 
+]
+"15362
+[s S941 . 1 `uc 1 SSP1IE 1 0 :1:0 
+`uc 1 BCL1IE 1 0 :1:1 
+`uc 1 . 1 0 :2:2 
+`uc 1 TX1IE 1 0 :1:4 
+`uc 1 RC1IE 1 0 :1:5 
+]
+[u S947 . 1 `S932 1 . 1 0 `S941 1 . 1 0 ]
+[v _PIE3bits PIE3bits `VES947  1 e 1 @3776 ]
+[s S139 . 1 `uc 1 SSPIF 1 0 :1:0 
+`uc 1 BCLIF 1 0 :1:1 
+`uc 1 SSP2IF 1 0 :1:2 
+`uc 1 BCL2IF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 TX2IF 1 0 :1:6 
+`uc 1 RC2IF 1 0 :1:7 
+]
+"15779
+[s S148 . 1 `uc 1 SSP1IF 1 0 :1:0 
+`uc 1 BCL1IF 1 0 :1:1 
+`uc 1 . 1 0 :2:2 
+`uc 1 TX1IF 1 0 :1:4 
+`uc 1 RC1IF 1 0 :1:5 
+]
+[u S154 . 1 `S139 1 . 1 0 `S148 1 . 1 0 ]
+[v _PIR3bits PIR3bits `VES154  1 e 1 @3784 ]
+"16627
+[v _OSCCON1 OSCCON1 `VEuc  1 e 1 @3795 ]
+"16767
+[v _OSCCON3 OSCCON3 `VEuc  1 e 1 @3797 ]
+"16919
+[v _OSCEN OSCEN `VEuc  1 e 1 @3799 ]
+"16970
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @3800 ]
+"17028
+[v _OSCFRQ OSCFRQ `VEuc  1 e 1 @3801 ]
+"17199
+[v _PMD0 PMD0 `VEuc  1 e 1 @3804 ]
+"17276
+[v _PMD1 PMD1 `VEuc  1 e 1 @3805 ]
+"17340
+[v _PMD2 PMD2 `VEuc  1 e 1 @3806 ]
+"17385
+[v _PMD3 PMD3 `VEuc  1 e 1 @3807 ]
+"17447
+[v _PMD4 PMD4 `VEuc  1 e 1 @3808 ]
+"17500
+[v _PMD5 PMD5 `VEuc  1 e 1 @3809 ]
+"18381
+[v _RC3PPS RC3PPS `VEuc  1 e 1 @3829 ]
+"18425
+[v _RC4PPS RC4PPS `VEuc  1 e 1 @3830 ]
+"18513
+[v _RC6PPS RC6PPS `VEuc  1 e 1 @3832 ]
+"18787
+[v _INLVLA INLVLA `VEuc  1 e 1 @3848 ]
+"18849
+[v _SLRCONA SLRCONA `VEuc  1 e 1 @3849 ]
+"18911
+[v _ODCONA ODCONA `VEuc  1 e 1 @3850 ]
+"18973
+[v _WPUA WPUA `VEuc  1 e 1 @3851 ]
+"19035
+[v _ANSELA ANSELA `VEuc  1 e 1 @3852 ]
+"19283
+[v _INLVLB INLVLB `VEuc  1 e 1 @3856 ]
+"19345
+[v _SLRCONB SLRCONB `VEuc  1 e 1 @3857 ]
+"19407
+[v _ODCONB ODCONB `VEuc  1 e 1 @3858 ]
+"19469
+[v _WPUB WPUB `VEuc  1 e 1 @3859 ]
+"19531
+[v _ANSELB ANSELB `VEuc  1 e 1 @3860 ]
+"19779
+[v _INLVLC INLVLC `VEuc  1 e 1 @3864 ]
+"19841
+[v _SLRCONC SLRCONC `VEuc  1 e 1 @3865 ]
+"19903
+[v _ODCONC ODCONC `VEuc  1 e 1 @3866 ]
+"19965
+[v _WPUC WPUC `VEuc  1 e 1 @3867 ]
+"20027
+[v _ANSELC ANSELC `VEuc  1 e 1 @3868 ]
+[s S1561 . 1 `uc 1 ANSELC0 1 0 :1:0 
+`uc 1 ANSELC1 1 0 :1:1 
+`uc 1 ANSELC2 1 0 :1:2 
+`uc 1 ANSELC3 1 0 :1:3 
+`uc 1 ANSELC4 1 0 :1:4 
+`uc 1 ANSELC5 1 0 :1:5 
+`uc 1 ANSELC6 1 0 :1:6 
+`uc 1 ANSELC7 1 0 :1:7 
+]
+"20044
+[u S1570 . 1 `S1561 1 . 1 0 ]
+[v _ANSELCbits ANSELCbits `VES1570  1 e 1 @3868 ]
+"20152
+[v _INLVLE INLVLE `VEuc  1 e 1 @3877 ]
+"20173
+[v _WPUE WPUE `VEuc  1 e 1 @3880 ]
+"23408
+[v _ADACT ADACT `VEuc  1 e 1 @3921 ]
+"23460
+[v _ADCLK ADCLK `VEuc  1 e 1 @3922 ]
+"23518
+[v _ADREF ADREF `VEuc  1 e 1 @3923 ]
+"23559
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @3924 ]
+[s S1426 . 1 `uc 1 ADDSEN 1 0 :1:0 
+`uc 1 . 1 0 :4:1 
+`uc 1 ADGPOL 1 0 :1:5 
+`uc 1 ADIPEN 1 0 :1:6 
+`uc 1 ADPPOL 1 0 :1:7 
+]
+"23573
+[u S1432 . 1 `S1426 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES1432  1 e 1 @3924 ]
+"23598
+[v _ADCON2 ADCON2 `VEuc  1 e 1 @3925 ]
+[s S1362 . 1 `uc 1 ADMD 1 0 :3:0 
+`uc 1 ADACLR 1 0 :1:3 
+`uc 1 ADCRS 1 0 :3:4 
+`uc 1 ADPSIS 1 0 :1:7 
+]
+"23620
+[s S1367 . 1 `uc 1 ADMD0 1 0 :1:0 
+`uc 1 ADMD1 1 0 :1:1 
+`uc 1 ADMD2 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 ADCRS0 1 0 :1:4 
+`uc 1 ADCRS1 1 0 :1:5 
+`uc 1 ADCRS2 1 0 :1:6 
+]
+[u S1375 . 1 `S1362 1 . 1 0 `S1367 1 . 1 0 ]
+[v _ADCON2bits ADCON2bits `VES1375  1 e 1 @3925 ]
+"23675
+[v _ADCON3 ADCON3 `VEuc  1 e 1 @3926 ]
+[s S1333 . 1 `uc 1 ADTMD 1 0 :3:0 
+`uc 1 ADSOI 1 0 :1:3 
+`uc 1 ADCALC 1 0 :3:4 
+]
+"23696
+[s S1337 . 1 `uc 1 ADTMD0 1 0 :1:0 
+`uc 1 ADTMD1 1 0 :1:1 
+`uc 1 ADTMD2 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 ADCALC0 1 0 :1:4 
+`uc 1 ADCALC1 1 0 :1:5 
+`uc 1 ADCALC2 1 0 :1:6 
+]
+[u S1345 . 1 `S1333 1 . 1 0 `S1337 1 . 1 0 ]
+[v _ADCON3bits ADCON3bits `VES1345  1 e 1 @3926 ]
+"23746
+[v _ADACQ ADACQ `VEuc  1 e 1 @3927 ]
+"23816
+[v _ADCAP ADCAP `VEuc  1 e 1 @3928 ]
+"23868
+[v _ADPRE ADPRE `VEuc  1 e 1 @3929 ]
+"23938
+[v _ADPCH ADPCH `VEuc  1 e 1 @3930 ]
+"23996
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @3931 ]
+[s S1279 . 1 `uc 1 ADGO 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 ADFM 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 ADCS 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 ADCONT 1 0 :1:6 
+`uc 1 ADON 1 0 :1:7 
+]
+"24031
+[s S1288 . 1 `uc 1 GO 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 ADFM0 1 0 :1:2 
+]
+[s S1292 . 1 `uc 1 DONE 1 0 :1:0 
+]
+[s S1294 . 1 `uc 1 GO_NOT_DONE 1 0 :1:0 
+]
+[s S1296 . 1 `uc 1 GO_nDONE 1 0 :1:0 
+]
+[s S1298 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 ADCAL 1 0 :1:7 
+]
+[u S1301 . 1 `S1279 1 . 1 0 `S1288 1 . 1 0 `S1292 1 . 1 0 `S1294 1 . 1 0 `S1296 1 . 1 0 `S1298 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES1301  1 e 1 @3931 ]
+"24098
+[v _ADPREVL ADPREVL `VEuc  1 e 1 @3932 ]
+"24168
+[v _ADPREVH ADPREVH `VEuc  1 e 1 @3933 ]
+"24245
+[v _ADRESL ADRESL `VEuc  1 e 1 @3934 ]
+"24315
+[v _ADRESH ADRESH `VEuc  1 e 1 @3935 ]
+"24377
+[v _ADSTAT ADSTAT `VEuc  1 e 1 @3936 ]
+[s S1394 . 1 `uc 1 ADSTAT 1 0 :3:0 
+`uc 1 . 1 0 :1:3 
+`uc 1 ADMATH 1 0 :1:4 
+`uc 1 ADLTHR 1 0 :1:5 
+`uc 1 ADUTHR 1 0 :1:6 
+`uc 1 ADAOV 1 0 :1:7 
+]
+"24397
+[s S1401 . 1 `uc 1 ADSTAT0 1 0 :1:0 
+`uc 1 ADSTAT1 1 0 :1:1 
+`uc 1 ADSTAT2 1 0 :1:2 
+]
+[u S1405 . 1 `S1394 1 . 1 0 `S1401 1 . 1 0 ]
+[v _ADSTATbits ADSTATbits `VES1405  1 e 1 @3936 ]
+"24442
+[v _ADRPT ADRPT `VEuc  1 e 1 @3937 ]
+"24512
+[v _ADCNT ADCNT `VEuc  1 e 1 @3938 ]
+"24589
+[v _ADSTPTL ADSTPTL `VEuc  1 e 1 @3939 ]
+"24659
+[v _ADSTPTH ADSTPTH `VEuc  1 e 1 @3940 ]
+"24736
+[v _ADLTHL ADLTHL `VEuc  1 e 1 @3941 ]
+"24806
+[v _ADLTHH ADLTHH `VEuc  1 e 1 @3942 ]
+"24883
+[v _ADUTHL ADUTHL `VEuc  1 e 1 @3943 ]
+"24953
+[v _ADUTHH ADUTHH `VEuc  1 e 1 @3944 ]
+"25030
+[v _ADERRL ADERRL `VEuc  1 e 1 @3945 ]
+"25100
+[v _ADERRH ADERRH `VEuc  1 e 1 @3946 ]
+"25177
+[v _ADACCL ADACCL `VEuc  1 e 1 @3947 ]
+"25247
+[v _ADACCH ADACCH `VEuc  1 e 1 @3948 ]
+"25324
+[v _ADFLTRL ADFLTRL `VEuc  1 e 1 @3949 ]
+"25394
+[v _ADFLTRH ADFLTRH `VEuc  1 e 1 @3950 ]
+"26566
+[v _LATA LATA `VEuc  1 e 1 @3970 ]
+[s S1589 . 1 `uc 1 LATA0 1 0 :1:0 
+`uc 1 LATA1 1 0 :1:1 
+`uc 1 LATA2 1 0 :1:2 
+`uc 1 LATA3 1 0 :1:3 
+`uc 1 LATA4 1 0 :1:4 
+`uc 1 LATA5 1 0 :1:5 
+`uc 1 LATA6 1 0 :1:6 
+`uc 1 LATA7 1 0 :1:7 
+]
+"26583
+[u S1598 . 1 `S1589 1 . 1 0 ]
+[v _LATAbits LATAbits `VES1598  1 e 1 @3970 ]
+"26628
+[v _LATB LATB `VEuc  1 e 1 @3971 ]
+[s S1504 . 1 `uc 1 LATB0 1 0 :1:0 
+`uc 1 LATB1 1 0 :1:1 
+`uc 1 LATB2 1 0 :1:2 
+`uc 1 LATB3 1 0 :1:3 
+`uc 1 LATB4 1 0 :1:4 
+`uc 1 LATB5 1 0 :1:5 
+`uc 1 LATB6 1 0 :1:6 
+`uc 1 LATB7 1 0 :1:7 
+]
+"26645
+[u S1513 . 1 `S1504 1 . 1 0 ]
+[v _LATBbits LATBbits `VES1513  1 e 1 @3971 ]
+"26690
+[v _LATC LATC `VEuc  1 e 1 @3972 ]
+"26752
+[v _TRISA TRISA `VEuc  1 e 1 @3975 ]
+"26874
+[v _TRISB TRISB `VEuc  1 e 1 @3976 ]
+[s S1540 . 1 `uc 1 TRISB0 1 0 :1:0 
+`uc 1 TRISB1 1 0 :1:1 
+`uc 1 TRISB2 1 0 :1:2 
+`uc 1 TRISB3 1 0 :1:3 
+`uc 1 TRISB4 1 0 :1:4 
+`uc 1 TRISB5 1 0 :1:5 
+`uc 1 TRISB6 1 0 :1:6 
+`uc 1 TRISB7 1 0 :1:7 
+]
+"26896
+[u S1549 . 1 `S1540 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES1549  1 e 1 @3976 ]
+"26996
+[v _TRISC TRISC `VEuc  1 e 1 @3977 ]
+"27325
+[v _SSP1BUF SSP1BUF `VEuc  1 e 1 @3985 ]
+"27345
+[v _SSP1ADD SSP1ADD `VEuc  1 e 1 @3986 ]
+"27535
+[v _SSP1STAT SSP1STAT `VEuc  1 e 1 @3988 ]
+[s S671 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_NOT_W 1 0 :1:2 
+]
+"27684
+[s S674 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 D_NOT_A 1 0 :1:5 
+]
+[s S677 . 1 `uc 1 BF 1 0 :1:0 
+`uc 1 UA 1 0 :1:1 
+`uc 1 R_nW 1 0 :1:2 
+`uc 1 S 1 0 :1:3 
+`uc 1 P 1 0 :1:4 
+`uc 1 D_nA 1 0 :1:5 
+`uc 1 CKE 1 0 :1:6 
+`uc 1 SMP 1 0 :1:7 
+]
+[s S686 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_W 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D_A 1 0 :1:5 
+]
+[s S691 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nW 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nA 1 0 :1:5 
+]
+[s S696 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_WRITE 1 0 :1:2 
+]
+[s S699 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 NOT_ADDRESS 1 0 :1:5 
+]
+[s S702 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nWRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nADDRESS 1 0 :1:5 
+]
+[s S707 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 READ_WRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 DATA_ADDRESS 1 0 :1:5 
+]
+[s S712 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 I2C_READ 1 0 :1:2 
+`uc 1 I2C_START 1 0 :1:3 
+`uc 1 I2C_STOP 1 0 :1:4 
+`uc 1 I2C_DAT 1 0 :1:5 
+]
+[s S718 . 1 `uc 1 BF1 1 0 :1:0 
+`uc 1 UA1 1 0 :1:1 
+`uc 1 R 1 0 :1:2 
+`uc 1 START 1 0 :1:3 
+`uc 1 STOP 1 0 :1:4 
+`uc 1 D 1 0 :1:5 
+`uc 1 CKE1 1 0 :1:6 
+`uc 1 SMP1 1 0 :1:7 
+]
+[s S727 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 RW 1 0 :1:2 
+`uc 1 START1 1 0 :1:3 
+`uc 1 STOP1 1 0 :1:4 
+`uc 1 DA 1 0 :1:5 
+]
+[s S733 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 RW1 1 0 :1:2 
+`uc 1 I2C_START1 1 0 :1:3 
+`uc 1 I2C_STOP2 1 0 :1:4 
+`uc 1 DA1 1 0 :1:5 
+]
+[s S739 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 I2C_READ1 1 0 :1:2 
+`uc 1 S2 1 0 :1:3 
+`uc 1 P2 1 0 :1:4 
+`uc 1 DATA_ADDRESS1 1 0 :1:5 
+]
+[s S745 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 READ_WRITE1 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D_A1 1 0 :1:5 
+]
+[s S750 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 D_NOT_A1 1 0 :1:5 
+]
+[s S753 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_W1 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D_nA1 1 0 :1:5 
+]
+[s S758 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_NOT_W1 1 0 :1:2 
+]
+[s S761 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_nW1 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 I2C_DAT1 1 0 :1:5 
+]
+[s S766 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_W2 1 0 :1:2 
+]
+[s S769 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 NOT_A2 1 0 :1:5 
+]
+[s S772 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nW2 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nA2 1 0 :1:5 
+]
+[s S777 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_WRITE1 1 0 :1:2 
+]
+[s S780 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 NOT_ADDRESS1 1 0 :1:5 
+]
+[s S783 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nWRITE1 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nADDRESS1 1 0 :1:5 
+]
+[u S788 . 1 `S671 1 . 1 0 `S674 1 . 1 0 `S677 1 . 1 0 `S686 1 . 1 0 `S691 1 . 1 0 `S696 1 . 1 0 `S699 1 . 1 0 `S702 1 . 1 0 `S707 1 . 1 0 `S712 1 . 1 0 `S718 1 . 1 0 `S727 1 . 1 0 `S733 1 . 1 0 `S739 1 . 1 0 `S745 1 . 1 0 `S750 1 . 1 0 `S753 1 . 1 0 `S758 1 . 1 0 `S761 1 . 1 0 `S766 1 . 1 0 `S769 1 . 1 0 `S772 1 . 1 0 `S777 1 . 1 0 `S780 1 . 1 0 `S783 1 . 1 0 ]
+[v _SSP1STATbits SSP1STATbits `VES788  1 e 1 @3988 ]
+"27989
+[v _SSP1CON1 SSP1CON1 `VEuc  1 e 1 @3989 ]
+[s S391 . 1 `uc 1 SSPM 1 0 :4:0 
+`uc 1 CKP 1 0 :1:4 
+`uc 1 SSPEN 1 0 :1:5 
+`uc 1 SSPOV 1 0 :1:6 
+`uc 1 WCOL 1 0 :1:7 
+]
+"28019
+[s S397 . 1 `uc 1 SSPM0 1 0 :1:0 
+`uc 1 SSPM1 1 0 :1:1 
+`uc 1 SSPM2 1 0 :1:2 
+`uc 1 SSPM3 1 0 :1:3 
+]
+[s S402 . 1 `uc 1 SSPM01 1 0 :1:0 
+`uc 1 SSPM11 1 0 :1:1 
+`uc 1 SSPM21 1 0 :1:2 
+`uc 1 SSPM31 1 0 :1:3 
+`uc 1 CKP1 1 0 :1:4 
+`uc 1 SSPEN1 1 0 :1:5 
+`uc 1 SSPOV1 1 0 :1:6 
+`uc 1 WCOL1 1 0 :1:7 
+]
+[u S411 . 1 `S391 1 . 1 0 `S397 1 . 1 0 `S402 1 . 1 0 ]
+[v _SSP1CON1bits SSP1CON1bits `VES411  1 e 1 @3989 ]
+"28109
+[v _SSP1CON2 SSP1CON2 `VEuc  1 e 1 @3990 ]
+[s S575 . 1 `uc 1 SEN 1 0 :1:0 
+`uc 1 RSEN 1 0 :1:1 
+`uc 1 PEN 1 0 :1:2 
+`uc 1 RCEN 1 0 :1:3 
+`uc 1 ACKEN 1 0 :1:4 
+`uc 1 ACKDT 1 0 :1:5 
+`uc 1 ACKSTAT 1 0 :1:6 
+`uc 1 GCEN 1 0 :1:7 
+]
+"28156
+[s S584 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 ADMSK 1 0 :5:1 
+]
+[s S587 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 ADMSK1 1 0 :1:1 
+`uc 1 ADMSK2 1 0 :1:2 
+`uc 1 ADMSK3 1 0 :1:3 
+`uc 1 ADMSK4 1 0 :1:4 
+`uc 1 ADMSK5 1 0 :1:5 
+]
+[s S594 . 1 `uc 1 SEN1 1 0 :1:0 
+`uc 1 ADMSK11 1 0 :1:1 
+`uc 1 ADMSK21 1 0 :1:2 
+`uc 1 ADMSK31 1 0 :1:3 
+`uc 1 ACKEN1 1 0 :1:4 
+`uc 1 ACKDT1 1 0 :1:5 
+`uc 1 ACKSTAT1 1 0 :1:6 
+`uc 1 GCEN1 1 0 :1:7 
+]
+[s S603 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 RSEN1 1 0 :1:1 
+`uc 1 PEN1 1 0 :1:2 
+`uc 1 RCEN1 1 0 :1:3 
+`uc 1 ADMSK41 1 0 :1:4 
+`uc 1 ADMSK51 1 0 :1:5 
+]
+[u S610 . 1 `S575 1 . 1 0 `S584 1 . 1 0 `S587 1 . 1 0 `S594 1 . 1 0 `S603 1 . 1 0 ]
+[v _SSP1CON2bits SSP1CON2bits `VES610  1 e 1 @3990 ]
+"28358
+[v _RC1REG RC1REG `VEuc  1 e 1 @3992 ]
+"28412
+[v _TX1REG TX1REG `VEuc  1 e 1 @3993 ]
+"28478
+[v _SP1BRGL SP1BRGL `VEuc  1 e 1 @3994 ]
+"28532
+[v _SP1BRGH SP1BRGH `VEuc  1 e 1 @3995 ]
+"28586
+[v _RC1STA RC1STA `VEuc  1 e 1 @3996 ]
+[s S194 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"28612
+[u S203 . 1 `S194 1 . 1 0 ]
+[v _RC1STAbits RC1STAbits `VES203  1 e 1 @3996 ]
+"28766
+[v _TX1STA TX1STA `VEuc  1 e 1 @3997 ]
+[s S173 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"28792
+[u S182 . 1 `S173 1 . 1 0 ]
+[v _TX1STAbits TX1STAbits `VES182  1 e 1 @3997 ]
+"28946
+[v _BAUD1CON BAUD1CON `VEuc  1 e 1 @3998 ]
+"153 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\doprnt.c
+[v _prec prec `i  1 s 2 prec ]
+[v _width width `i  1 s 2 width ]
+"154
+[v _flags flags `uc  1 s 1 flags ]
+"185
+[v _dbuf dbuf `[80]uc  1 s 80 dbuf ]
+"66 C:\Users\Bradley\OneDrive - Omnitek Labs\Documents\GitHub\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\main.c
+[v _RX_I2C_Ready RX_I2C_Ready `uc  1 e 1 0 ]
+"73
+[v _RX_I2C_L1 RX_I2C_L1 `uc  1 e 1 0 ]
+"74
+[v _RX_I2C_L2 RX_I2C_L2 `uc  1 e 1 0 ]
+"81
+[v _RX_I2C_P1 RX_I2C_P1 `uc  1 e 1 0 ]
+[v _RX_I2C_P2 RX_I2C_P2 `uc  1 e 1 0 ]
+"82
+[v _RX_I2C_M1 RX_I2C_M1 `uc  1 e 1 0 ]
+[v _RX_I2C_M2 RX_I2C_M2 `uc  1 e 1 0 ]
+"83
+[v _Presence Presence `us  1 e 2 0 ]
+[v _Motion Motion `us  1 e 2 0 ]
+"86
+[v _buzzerOverride buzzerOverride `uc  1 e 1 0 ]
+"87
+[v _led1_manual led1_manual `uc  1 e 1 0 ]
+"88
+[v _led2_manual led2_manual `uc  1 e 1 0 ]
+"95
+[v _presenceHoldStart presenceHoldStart `ul  1 e 4 0 ]
+"96
+[v _presenceHoldActive presenceHoldActive `uc  1 e 1 0 ]
+[s S93 . 1 `uc 1 perr 1 0 :1:0 
+`uc 1 ferr 1 0 :1:1 
+`uc 1 oerr 1 0 :1:2 
+`uc 1 reserved 1 0 :5:3 
+]
+"52 C:\Users\Bradley\OneDrive - Omnitek Labs\Documents\GitHub\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/eusart1.c
+[u S98 . 1 `S93 1 . 1 0 `uc 1 status 1 0 ]
+[v _eusart1RxLastError eusart1RxLastError `VES98  1 e 1 0 ]
+"58
+[v _EUSART1_FramingErrorHandler EUSART1_FramingErrorHandler `*.37(v  1 e 2 0 ]
+"59
+[v _EUSART1_OverrunErrorHandler EUSART1_OverrunErrorHandler `*.37(v  1 e 2 0 ]
+"60
+[v _EUSART1_ErrorHandler EUSART1_ErrorHandler `*.37(v  1 e 2 0 ]
+"149 C:\Users\Bradley\OneDrive - Omnitek Labs\Documents\GitHub\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/i2c1_master.c
+[v _i2c1_fsmStateTable i2c1_fsmStateTable `C[16]*.37(E12852  1 e 32 0 ]
+[s S365 . 29 `[6]*.37(E363 1 callbackTable 12 0 `[6]*.30v 1 callbackPayload 6 12 `us 1 time_out 2 18 `us 1 time_out_value 2 20 `uc 1 address 1 22 `*.30uc 1 data_ptr 1 23 `ui 1 data_length 2 24 `E12852 1 state 1 26 `E358 1 error 1 27 `uc 1 addressNackCheck 1 28 :1:0 
+`uc 1 busy 1 28 :1:1 
+`uc 1 inUse 1 28 :1:2 
+`uc 1 bufferFree 1 28 :1:3 
+]
+"168
+[v _I2C1_Status I2C1_Status `S365  1 e 29 0 ]
+"133 C:\Users\Bradley\OneDrive - Omnitek Labs\Documents\GitHub\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"232
+[v main@i i `i  1 a 2 88 ]
+"175
+[v main@key key `uc  1 a 1 79 ]
+"167
+[v main@batt batt `f  1 a 4 84 ]
+"287
+[v main@inNearRange inNearRange `uc  1 a 1 81 ]
+"286
+[v main@inCloseRange inCloseRange `uc  1 a 1 80 ]
+"138
+[v main@lastBlinkTime lastBlinkTime `ul  1 a 4 75 ]
+"169
+[v main@msCounter msCounter `ul  1 s 4 msCounter ]
+"357
+} 0
+"5 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\printf.c
+[v _printf printf `(i  1 e 2 0 ]
+{
+"8
+[v printf@ap ap `[1]*.30v  1 a 1 70 ]
+"5
+[v printf@fmt fmt `*.32Cuc  1 p 2 62 ]
+"13
+} 0
+"1817 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\doprnt.c
+[v _vfprintf vfprintf `(i  1 e 2 0 ]
+{
+"1820
+[v vfprintf@cfmt cfmt `*.32uc  1 a 2 60 ]
+[s S2321 _IO_FILE 0 ]
+"1817
+[v vfprintf@fp fp `*.39S2321  1 p 2 55 ]
+[v vfprintf@fmt fmt `*.32Cuc  1 p 2 57 ]
+[v vfprintf@ap ap `*.30*.30v  1 p 1 59 ]
+"1840
+} 0
+"1177
+[v _vfpfcnvrt vfpfcnvrt `(v  1 s 1 vfpfcnvrt ]
+{
+[u S2371 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `d 1 f 4 0 ]
+"1188
+[v vfpfcnvrt@convarg convarg `S2371  1 a 4 48 ]
+"1179
+[v vfpfcnvrt@cp cp `*.32uc  1 a 2 53 ]
+[v vfpfcnvrt@c c `uc  1 a 1 52 ]
+[s S2321 _IO_FILE 0 ]
+"1177
+[v vfpfcnvrt@fp fp `*.39S2321  1 p 2 44 ]
+[v vfpfcnvrt@fmt fmt `*.30*.32uc  1 p 1 46 ]
+[v vfpfcnvrt@ap ap `*.30*.30v  1 p 1 47 ]
+"1814
+} 0
+"1001
+[v _utoa utoa `(v  1 s 1 utoa ]
+{
+"1003
+[v utoa@i i `i  1 a 2 35 ]
+"1005
+[v utoa@p p `i  1 a 2 33 ]
+"1003
+[v utoa@w w `i  1 a 2 31 ]
+[s S2321 _IO_FILE 0 ]
+"1001
+[v utoa@fp fp `*.39S2321  1 p 2 27 ]
+[v utoa@d d `ui  1 p 2 29 ]
+"1047
+} 0
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwmod@counter counter `uc  1 a 1 4 ]
+"7
+[v ___lwmod@dividend dividend `ui  1 p 2 0 ]
+[v ___lwmod@divisor divisor `ui  1 p 2 2 ]
+"25
+} 0
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwdiv@quotient quotient `ui  1 a 2 5 ]
+"11
+[v ___lwdiv@counter counter `uc  1 a 1 4 ]
+"7
+[v ___lwdiv@dividend dividend `ui  1 p 2 0 ]
+[v ___lwdiv@divisor divisor `ui  1 p 2 2 ]
+"30
+} 0
+"1158 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\doprnt.c
+[v _read_prec_or_width read_prec_or_width `(i  1 s 2 read_prec_or_width ]
+{
+"1164
+[v read_prec_or_width@c c `uc  1 a 1 4 ]
+"1159
+[v read_prec_or_width@n n `i  1 a 2 5 ]
+"1158
+[v read_prec_or_width@fmt fmt `*.30*.32Cuc  1 p 1 0 ]
+[v read_prec_or_width@ap ap `*.30[1]*.30v  1 p 1 1 ]
+"1171
+} 0
+"587
+[v _efgtoa efgtoa `(v  1 s 1 efgtoa ]
+{
+[u S2334 flui 4 `d 1 f 4 0 `l 1 u 4 0 ]
+"592
+[v efgtoa@u u `S2334  1 a 4 40 ]
+[v efgtoa@g g `S2334  1 a 4 34 ]
+"591
+[v efgtoa@l l `d  1 a 4 29 ]
+[v efgtoa@h h `d  1 a 4 25 ]
+"592
+[v efgtoa@ou ou `S2334  1 a 4 19 ]
+"590
+[v efgtoa@n n `i  1 a 2 38 ]
+[v efgtoa@i i `i  1 a 2 23 ]
+[v efgtoa@w w `i  1 a 2 17 ]
+[v efgtoa@e e `i  1 a 2 15 ]
+[v efgtoa@m m `i  1 a 2 13 ]
+[v efgtoa@d d `i  1 a 2 11 ]
+[v efgtoa@t t `i  1 a 2 4 ]
+[v efgtoa@p p `i  1 a 2 2 ]
+[v efgtoa@ne ne `i  1 a 2 0 ]
+"589
+[v efgtoa@sign sign `uc  1 a 1 33 ]
+[v efgtoa@nmode nmode `uc  1 a 1 10 ]
+[v efgtoa@mode mode `uc  1 a 1 9 ]
+[v efgtoa@pp pp `uc  1 a 1 8 ]
+[s S2321 _IO_FILE 0 ]
+"587
+[v efgtoa@fp fp `*.39S2321  1 p 2 84 ]
+[v efgtoa@f f `d  1 p 4 86 ]
+[v efgtoa@c c `uc  1 p 1 90 ]
+"868
+} 0
+"3 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\strcpy.c
+[v _strcpy strcpy `(*.39uc  1 e 2 0 ]
+{
+"5
+[v strcpy@d d `*.39uc  1 a 2 4 ]
+"3
+[v strcpy@dest dest `*.39uc  1 p 2 0 ]
+[v strcpy@src src `*.32Cuc  1 p 2 2 ]
+"8
+} 0
+"193 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\doprnt.c
+[v _pad pad `(v  1 s 1 pad ]
+{
+"195
+[v pad@i i `i  1 a 2 25 ]
+[s S2321 _IO_FILE 0 ]
+"193
+[v pad@fp fp `*.39S2321  1 p 2 18 ]
+[v pad@buf buf `*.39uc  1 p 2 20 ]
+[v pad@p p `i  1 p 2 22 ]
+"226
+} 0
+"8 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\nf_fputs.c
+[v _fputs fputs `(i  1 e 2 0 ]
+{
+"11
+[v fputs@i i `i  1 a 2 16 ]
+"10
+[v fputs@c c `uc  1 a 1 15 ]
+"8
+[v fputs@s s `*.39Cuc  1 p 2 11 ]
+[u S2300 . 2 `*.39uc 1 buffer 2 0 `*.39Cuc 1 source 2 0 ]
+[s S2303 _IO_FILE 11 `S2300 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v fputs@fp fp `*.39S2303  1 p 2 13 ]
+"19
+} 0
+"8 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\nf_fputc.c
+[v _fputc fputc `(i  1 e 2 0 ]
+{
+[v fputc@c c `i  1 p 2 2 ]
+[u S2300 . 2 `*.39uc 1 buffer 2 0 `*.39Cuc 1 source 2 0 ]
+[s S2303 _IO_FILE 11 `S2300 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v fputc@fp fp `*.39S2303  1 p 2 4 ]
+"24
+} 0
+"102 C:\Users\Bradley\OneDrive - Omnitek Labs\Documents\GitHub\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\main.c
+[v _putch putch `(v  1 e 1 0 ]
+{
+[v putch@data data `uc  1 p 1 wreg ]
+[v putch@data data `uc  1 p 1 wreg ]
+[v putch@data data `uc  1 p 1 1 ]
+"106
+} 1
+"94 C:\Users\Bradley\OneDrive - Omnitek Labs\Documents\GitHub\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/eusart1.c
+[v _EUSART1_is_tx_ready EUSART1_is_tx_ready `(a  1 e 1 0 ]
+{
+"97
+} 0
+"132
+[v _EUSART1_Write EUSART1_Write `(v  1 e 1 0 ]
+{
+[v EUSART1_Write@txData txData `uc  1 p 1 wreg ]
+[v EUSART1_Write@txData txData `uc  1 p 1 wreg ]
+[v EUSART1_Write@txData txData `uc  1 p 1 0 ]
+"139
+} 1
+"4 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\memcpy.c
+[v _memcpy memcpy `(*.39v  1 e 2 0 ]
+{
+"8
+[v memcpy@s s `*.39Cuc  1 a 2 9 ]
+"7
+[v memcpy@d d `*.39uc  1 a 2 7 ]
+"9
+[v memcpy@tmp tmp `uc  1 a 1 6 ]
+"4
+[v memcpy@d1 d1 `*.39v  1 p 2 0 ]
+[v memcpy@s1 s1 `*.39Cv  1 p 2 2 ]
+[v memcpy@n n `ui  1 p 2 4 ]
+"18
+} 0
+"1 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\labs.c
+[v _labs labs `(l  1 e 4 0 ]
+{
+[v labs@a a `l  1 p 4 0 ]
+"4
+} 0
+"3 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\floorf.c
+[v _floorf floorf `(f  1 e 4 0 ]
+{
+[u S2454 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+"5
+[v floorf@u u `S2454  1 a 4 80 ]
+"7
+[v floorf@m m `ul  1 a 4 74 ]
+"6
+[v floorf@e e `i  1 a 2 78 ]
+"3
+[v floorf@x x `f  1 p 4 64 ]
+"4
+[v floorf@F521 F521 `S2454  1 s 4 F521 ]
+"27
+} 0
+"4 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\__fpclassifyf.c
+[v ___fpclassifyf __fpclassifyf `(i  1 e 2 0 ]
+{
+[u S2454 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+"6
+[v ___fpclassifyf@u u `S2454  1 a 4 10 ]
+"7
+[v ___fpclassifyf@e e `i  1 a 2 8 ]
+"4
+[v ___fpclassifyf@x x `f  1 p 4 0 ]
+"5
+[v ___fpclassifyf@F465 F465 `S2454  1 s 4 F465 ]
+"11
+} 0
+"43 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+{
+"45
+[v ___fltol@exp1 exp1 `uc  1 a 1 9 ]
+[v ___fltol@sign1 sign1 `uc  1 a 1 8 ]
+"43
+[v ___fltol@f1 f1 `d  1 p 4 0 ]
+"70
+} 0
+"245 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\sprcadd.c
+[v ___flsub __flsub `(d  1 e 4 0 ]
+{
+[v ___flsub@b b `d  1 p 4 39 ]
+[v ___flsub@a a `d  1 p 4 43 ]
+"250
+} 0
+"10
+[v ___fladd __fladd `(d  1 e 4 0 ]
+{
+"17
+[v ___fladd@grs grs `uc  1 a 1 15 ]
+"15
+[v ___fladd@bexp bexp `uc  1 a 1 14 ]
+"16
+[v ___fladd@aexp aexp `uc  1 a 1 13 ]
+"13
+[v ___fladd@signs signs `uc  1 a 1 12 ]
+"10
+[v ___fladd@b b `d  1 p 4 0 ]
+[v ___fladd@a a `d  1 p 4 4 ]
+"237
+} 0
+"15 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\flneg.c
+[v ___flneg __flneg `(d  1 e 4 0 ]
+{
+[v ___flneg@f1 f1 `d  1 p 4 0 ]
+"20
+} 0
+"4 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+{
+[v ___flge@ff1 ff1 `d  1 p 4 39 ]
+[v ___flge@ff2 ff2 `d  1 p 4 43 ]
+"19
+} 0
+"4 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+{
+[v ___fleq@ff1 ff1 `d  1 p 4 0 ]
+[v ___fleq@ff2 ff2 `d  1 p 4 4 ]
+"12
+} 0
+"50 C:\Users\Bradley\OneDrive - Omnitek Labs\Documents\GitHub\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"58
+} 0
+"74
+[v _PMD_Initialize PMD_Initialize `(v  1 e 1 0 ]
+{
+"88
+} 0
+"55 C:\Users\Bradley\OneDrive - Omnitek Labs\Documents\GitHub\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"121
+} 0
+"60 C:\Users\Bradley\OneDrive - Omnitek Labs\Documents\GitHub\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+{
+"72
+} 0
+"170 C:\Users\Bradley\OneDrive - Omnitek Labs\Documents\GitHub\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/i2c1_master.c
+[v _I2C1_Initialize I2C1_Initialize `(v  1 e 1 0 ]
+{
+"177
+} 0
+"66 C:\Users\Bradley\OneDrive - Omnitek Labs\Documents\GitHub\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/eusart1.c
+[v _EUSART1_Initialize EUSART1_Initialize `(v  1 e 1 0 ]
+{
+"92
+} 0
+"161
+[v _EUSART1_SetOverrunErrorHandler EUSART1_SetOverrunErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART1_SetOverrunErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
+"163
+} 0
+"157
+[v _EUSART1_SetFramingErrorHandler EUSART1_SetFramingErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART1_SetFramingErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
+"159
+} 0
+"165
+[v _EUSART1_SetErrorHandler EUSART1_SetErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART1_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
+"167
+} 0
+"62 C:\Users\Bradley\OneDrive - Omnitek Labs\Documents\GitHub\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/adcc.c
+[v _ADCC_Initialize ADCC_Initialize `(v  1 e 1 0 ]
+{
+"105
+} 0
+"109 C:\Users\Bradley\OneDrive - Omnitek Labs\Documents\GitHub\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\main.c
+[v _Read_BatteryVoltage Read_BatteryVoltage `(f  1 e 4 0 ]
+{
+"127
+[v Read_BatteryVoltage@vRead vRead `f  1 a 4 72 ]
+"112
+[v Read_BatteryVoltage@vBatt vBatt `f  1 a 4 68 ]
+"111
+[v Read_BatteryVoltage@adcValue adcValue `us  1 a 2 76 ]
+"131
+} 0
+"10 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+{
+[v ___xxtofl@sign sign `uc  1 p 1 wreg ]
+"13
+[v ___xxtofl@arg arg `ul  1 a 4 10 ]
+"12
+[v ___xxtofl@exp exp `uc  1 a 1 9 ]
+"10
+[v ___xxtofl@sign sign `uc  1 p 1 wreg ]
+[v ___xxtofl@val val `l  1 p 4 0 ]
+"15
+[v ___xxtofl@sign sign `uc  1 p 1 8 ]
+"44
+} 1
+"8 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+{
+[s S2161 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+"13
+[s S2166 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S2169 . 4 `l 1 i 4 0 `d 1 f 4 0 `S2161 1 fAsBytes 4 0 `S2166 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S2169  1 a 4 33 ]
+"12
+[v ___flmul@grs grs `ul  1 a 4 28 ]
+[s S2237 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+"14
+[u S2240 . 2 `s 1 i 2 0 `us 1 n 2 0 `S2237 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S2240  1 a 2 37 ]
+"10
+[v ___flmul@bexp bexp `uc  1 a 1 32 ]
+"11
+[v ___flmul@aexp aexp `uc  1 a 1 27 ]
+"9
+[v ___flmul@sign sign `uc  1 a 1 26 ]
+"8
+[v ___flmul@b b `d  1 p 4 14 ]
+[v ___flmul@a a `d  1 p 4 18 ]
+"205
+} 0
+"11 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+{
+"21
+[v ___fldiv@grs grs `ul  1 a 4 58 ]
+"22
+[v ___fldiv@rem rem `ul  1 a 4 51 ]
+"20
+[v ___fldiv@new_exp new_exp `s  1 a 2 56 ]
+"19
+[v ___fldiv@aexp aexp `uc  1 a 1 63 ]
+"18
+[v ___fldiv@bexp bexp `uc  1 a 1 62 ]
+"16
+[v ___fldiv@sign sign `uc  1 a 1 55 ]
+"11
+[v ___fldiv@b b `d  1 p 4 39 ]
+[v ___fldiv@a a `d  1 p 4 43 ]
+"185
+} 0
+"131 C:\Users\Bradley\OneDrive - Omnitek Labs\Documents\GitHub\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/adcc.c
+[v _ADCC_GetSingleConversion ADCC_GetSingleConversion `(us  1 e 2 0 ]
+{
+[v ADCC_GetSingleConversion@channel channel `E12456  1 p 1 wreg ]
+[v ADCC_GetSingleConversion@channel channel `E12456  1 p 1 wreg ]
+"134
+[v ADCC_GetSingleConversion@channel channel `E12456  1 p 1 4 ]
+"154
+} 1
+"91 C:\Users\Bradley\OneDrive - Omnitek Labs\Documents\GitHub\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/i2c1_master_ex.c
+[v _I2C1_Write1ByteRegister I2C1_Write1ByteRegister `(v  1 e 1 0 ]
+{
+[v I2C1_Write1ByteRegister@address address `uc  1 p 1 wreg ]
+[v I2C1_Write1ByteRegister@address address `uc  1 p 1 wreg ]
+[v I2C1_Write1ByteRegister@reg reg `uc  1 p 1 14 ]
+[v I2C1_Write1ByteRegister@data data `uc  1 p 1 15 ]
+[v I2C1_Write1ByteRegister@address address `uc  1 p 1 16 ]
+"99
+} 1
+"63
+[v _I2C1_Read1ByteRegister I2C1_Read1ByteRegister `(uc  1 e 1 0 ]
+{
+[v I2C1_Read1ByteRegister@address address `uc  1 p 1 wreg ]
+"65
+[v I2C1_Read1ByteRegister@returnValue returnValue `uc  1 a 1 16 ]
+"63
+[v I2C1_Read1ByteRegister@address address `uc  1 p 1 wreg ]
+[v I2C1_Read1ByteRegister@reg reg `uc  1 p 1 14 ]
+"65
+[v I2C1_Read1ByteRegister@address address `uc  1 p 1 15 ]
+"75
+} 1
+"292 C:\Users\Bradley\OneDrive - Omnitek Labs\Documents\GitHub\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/i2c1_master.c
+[v _I2C1_SetAddressNackCallback I2C1_SetAddressNackCallback `(v  1 e 1 0 ]
+{
+[v I2C1_SetAddressNackCallback@cb cb `*.37(E363  1 p 2 4 ]
+[v I2C1_SetAddressNackCallback@ptr ptr `*.39v  1 p 2 6 ]
+"295
+} 0
+"185
+[v _I2C1_Open I2C1_Open `(E358  1 e 1 0 ]
+{
+[v I2C1_Open@address address `uc  1 p 1 wreg ]
+"187
+[v I2C1_Open@returnValue returnValue `E358  1 a 1 1 ]
+"185
+[v I2C1_Open@address address `uc  1 p 1 wreg ]
+"187
+[v I2C1_Open@address address `uc  1 p 1 0 ]
+"216
+} 1
+"552
+[v _I2C1_MasterOpen I2C1_MasterOpen `T(a  1 s 1 I2C1_MasterOpen ]
+{
+"564
+} 0
+"260
+[v _I2C1_MasterWrite I2C1_MasterWrite `(E358  1 e 1 0 ]
+{
+"263
+} 0
+"233
+[v _I2C1_MasterOperation I2C1_MasterOperation `(E358  1 e 1 0 ]
+{
+[v I2C1_MasterOperation@read read `a  1 p 1 wreg ]
+"235
+[v I2C1_MasterOperation@returnValue returnValue `E358  1 a 1 13 ]
+"233
+[v I2C1_MasterOperation@read read `a  1 p 1 wreg ]
+"235
+[v I2C1_MasterOperation@read read `a  1 p 1 12 ]
+"253
+} 1
+"321
+[v _I2C1_Poller I2C1_Poller `(v  1 s 1 I2C1_Poller ]
+{
+"328
+} 0
+"659
+[v _I2C1_MasterWaitForEvent I2C1_MasterWaitForEvent `T(v  1 s 1 I2C1_MasterWaitForEvent ]
+{
+"668
+} 0
+"330
+[v _I2C1_MasterFsm I2C1_MasterFsm `T(v  1 s 1 I2C1_MasterFsm ]
+{
+"339
+} 0
+"509
+[v _I2C1_DO_ADDRESS_NACK I2C1_DO_ADDRESS_NACK `(E12852  1 s 1 I2C1_DO_ADDRESS_NACK ]
+{
+"521
+} 0
+"503
+[v _I2C1_DO_RESET I2C1_DO_RESET `(E12852  1 s 1 I2C1_DO_RESET ]
+{
+"508
+} 0
+"497
+[v _I2C1_DO_RX_NACK_RESTART I2C1_DO_RX_NACK_RESTART `(E12852  1 s 1 I2C1_DO_RX_NACK_RESTART ]
+{
+"501
+} 0
+"491
+[v _I2C1_DO_RX_NACK_STOP I2C1_DO_RX_NACK_STOP `(E12852  1 s 1 I2C1_DO_RX_NACK_STOP ]
+{
+"495
+} 0
+"484
+[v _I2C1_DO_RX_ACK I2C1_DO_RX_ACK `(E12852  1 s 1 I2C1_DO_RX_ACK ]
+{
+"488
+} 0
+"478
+[v _I2C1_DO_SEND_STOP I2C1_DO_SEND_STOP `(E12852  1 s 1 I2C1_DO_SEND_STOP ]
+{
+"482
+} 0
+"472
+[v _I2C1_DO_SEND_RESTART I2C1_DO_SEND_RESTART `(E12852  1 s 1 I2C1_DO_SEND_RESTART ]
+{
+"476
+} 0
+"465
+[v _I2C1_DO_SEND_RESTART_WRITE I2C1_DO_SEND_RESTART_WRITE `(E12852  1 s 1 I2C1_DO_SEND_RESTART_WRITE ]
+{
+"469
+} 0
+"459
+[v _I2C1_DO_SEND_RESTART_READ I2C1_DO_SEND_RESTART_READ `(E12852  1 s 1 I2C1_DO_SEND_RESTART_READ ]
+{
+"463
+} 0
+"411
+[v _I2C1_DO_RCEN I2C1_DO_RCEN `(E12852  1 s 1 I2C1_DO_RCEN ]
+{
+"416
+} 0
+"387
+[v _I2C1_DO_RX I2C1_DO_RX `(E12852  1 s 1 I2C1_DO_RX ]
+{
+"409
+} 0
+"363
+[v _I2C1_DO_TX I2C1_DO_TX `(E12852  1 s 1 I2C1_DO_TX ]
+{
+"385
+} 0
+"356
+[v _I2C1_DO_SEND_ADR_WRITE I2C1_DO_SEND_ADR_WRITE `(E12852  1 s 1 I2C1_DO_SEND_ADR_WRITE ]
+{
+"361
+} 0
+"349
+[v _I2C1_DO_SEND_ADR_READ I2C1_DO_SEND_ADR_READ `(E12852  1 s 1 I2C1_DO_SEND_ADR_READ ]
+{
+"354
+} 0
+"342
+[v _I2C1_DO_IDLE I2C1_DO_IDLE `(E12852  1 s 1 I2C1_DO_IDLE ]
+{
+"347
+} 0
+"418
+[v _I2C1_DO_TX_EMPTY I2C1_DO_TX_EMPTY `(E12852  1 s 1 I2C1_DO_TX_EMPTY ]
+{
+"433
+} 0
+"654
+[v _I2C1_MasterSetIrq I2C1_MasterSetIrq `T(v  1 s 1 I2C1_MasterSetIrq ]
+{
+"657
+} 0
+"607
+[v _I2C1_MasterIsNack I2C1_MasterIsNack `T(a  1 s 1 I2C1_MasterIsNack ]
+{
+"610
+} 0
+"577
+[v _I2C1_MasterSendTxData I2C1_MasterSendTxData `T(v  1 s 1 I2C1_MasterSendTxData ]
+{
+[v I2C1_MasterSendTxData@data data `uc  1 p 1 wreg ]
+[v I2C1_MasterSendTxData@data data `uc  1 p 1 wreg ]
+"579
+[v I2C1_MasterSendTxData@data data `uc  1 p 1 0 ]
+"580
+} 1
+"612
+[v _I2C1_MasterSendAck I2C1_MasterSendAck `T(v  1 s 1 I2C1_MasterSendAck ]
+{
+"616
+} 0
+"572
+[v _I2C1_MasterGetRxData I2C1_MasterGetRxData `T(uc  1 s 1 I2C1_MasterGetRxData ]
+{
+"575
+} 0
+"618
+[v _I2C1_MasterSendNack I2C1_MasterSendNack `T(v  1 s 1 I2C1_MasterSendNack ]
+{
+"622
+} 0
+"592
+[v _I2C1_MasterStartRx I2C1_MasterStartRx `T(v  1 s 1 I2C1_MasterStartRx ]
+{
+"595
+} 0
+"170 C:\Users\Bradley\OneDrive - Omnitek Labs\Documents\GitHub\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/i2c1_master_ex.c
+[v _rdBlkRegCompleteHandler rdBlkRegCompleteHandler `(E363  1 s 1 rdBlkRegCompleteHandler ]
+{
+[v rdBlkRegCompleteHandler@ptr ptr `*.30v  1 p 1 7 ]
+"175
+} 0
+"156
+[v _wr1RegCompleteHandler wr1RegCompleteHandler `(E363  1 s 1 wr1RegCompleteHandler ]
+{
+[v wr1RegCompleteHandler@ptr ptr `*.30v  1 p 1 7 ]
+"161
+} 0
+"149
+[v _rd2RegCompleteHandler rd2RegCompleteHandler `(E363  1 s 1 rd2RegCompleteHandler ]
+{
+[v rd2RegCompleteHandler@ptr ptr `*.30v  1 p 1 7 ]
+"154
+} 0
+"142
+[v _rd1RegCompleteHandler rd1RegCompleteHandler `(E363  1 s 1 rd1RegCompleteHandler ]
+{
+[v rd1RegCompleteHandler@ptr ptr `*.30v  1 p 1 7 ]
+"147
+} 0
+"534 C:\Users\Bradley\OneDrive - Omnitek Labs\Documents\GitHub\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/i2c1_master.c
+[v _I2C1_CallbackReturnReset I2C1_CallbackReturnReset `(E363  1 e 1 0 ]
+{
+"537
+} 0
+"529
+[v _I2C1_CallbackReturnStop I2C1_CallbackReturnStop `(E363  1 e 1 0 ]
+{
+"532
+} 0
+"163 C:\Users\Bradley\OneDrive - Omnitek Labs\Documents\GitHub\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/i2c1_master_ex.c
+[v _wr2RegCompleteHandler wr2RegCompleteHandler `(E363  1 s 1 wr2RegCompleteHandler ]
+{
+[v wr2RegCompleteHandler@ptr ptr `*.30v  1 p 1 7 ]
+"168
+} 0
+"282 C:\Users\Bradley\OneDrive - Omnitek Labs\Documents\GitHub\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/i2c1_master.c
+[v _I2C1_SetDataCompleteCallback I2C1_SetDataCompleteCallback `(v  1 e 1 0 ]
+{
+[v I2C1_SetDataCompleteCallback@cb cb `*.37(E363  1 p 2 4 ]
+[v I2C1_SetDataCompleteCallback@ptr ptr `*.30v  1 p 1 6 ]
+"285
+} 0
+"307
+[v _I2C1_SetCallback I2C1_SetCallback `(v  1 s 1 I2C1_SetCallback ]
+{
+[v I2C1_SetCallback@idx idx `E12870  1 p 1 wreg ]
+[v I2C1_SetCallback@idx idx `E12870  1 p 1 wreg ]
+[v I2C1_SetCallback@cb cb `*.37(E363  1 p 2 0 ]
+[v I2C1_SetCallback@ptr ptr `*.30v  1 p 1 2 ]
+"309
+[v I2C1_SetCallback@idx idx `E12870  1 p 1 3 ]
+"319
+} 1
+"272
+[v _I2C1_SetBuffer I2C1_SetBuffer `(v  1 e 1 0 ]
+{
+[v I2C1_SetBuffer@buffer buffer `*.30v  1 p 1 0 ]
+[v I2C1_SetBuffer@bufferSize bufferSize `ui  1 p 2 1 ]
+"280
+} 0
+"602
+[v _I2C1_MasterStop I2C1_MasterStop `T(v  1 s 1 I2C1_MasterStop ]
+{
+"605
+} 0
+"582
+[v _I2C1_MasterEnableRestart I2C1_MasterEnableRestart `T(v  1 s 1 I2C1_MasterEnableRestart ]
+{
+"585
+} 0
+"597
+[v _I2C1_MasterStart I2C1_MasterStart `T(v  1 s 1 I2C1_MasterStart ]
+{
+"600
+} 0
+"218
+[v _I2C1_Close I2C1_Close `(E358  1 e 1 0 ]
+{
+"220
+[v I2C1_Close@returnValue returnValue `E358  1 a 1 0 ]
+"231
+} 0
+"644
+[v _I2C1_MasterDisableIrq I2C1_MasterDisableIrq `T(v  1 s 1 I2C1_MasterDisableIrq ]
+{
+"647
+} 0
+"566
+[v _I2C1_MasterClose I2C1_MasterClose `T(v  1 s 1 I2C1_MasterClose ]
+{
+"570
+} 0
+"649
+[v _I2C1_MasterClearIrq I2C1_MasterClearIrq `T(v  1 s 1 I2C1_MasterClearIrq ]
+{
+"652
+} 0
+"99 C:\Users\Bradley\OneDrive - Omnitek Labs\Documents\GitHub\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/eusart1.c
+[v _EUSART1_is_rx_ready EUSART1_is_rx_ready `(a  1 e 1 0 ]
+{
+"102
+} 0
+"113
+[v _EUSART1_Read EUSART1_Read `(uc  1 e 1 0 ]
+{
+"130
+} 0
+"125 C:\Users\Bradley\OneDrive - Omnitek Labs\Documents\GitHub\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/adcc.c
+[v _ADCC_GetConversionResult ADCC_GetConversionResult `(us  1 e 2 0 ]
+{
+"129
+} 0
