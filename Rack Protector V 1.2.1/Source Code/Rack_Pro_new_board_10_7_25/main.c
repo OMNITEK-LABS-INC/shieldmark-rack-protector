@@ -8,7 +8,7 @@
 ///
 ///     @brief
 ///
-/// V 1.21 Added testing functionality via PUTTY inputs
+/// V 1.2.1 Added testing functionality via PUTTY inputs
 ///
 /// V 1.2 Added battery level voltage detection, added functionality at low voltage levels
 ///
