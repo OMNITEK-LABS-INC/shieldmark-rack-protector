@@ -1,0 +1,233 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"103 ./typedefs.h
+[; ;./typedefs.h: 103: {
+[s S5 `uc 1 `uc 1 `uc -> 32 `i ]
+[n S5 . u8xmtBufferValidFlag u8xmtByteMessageLength u8transmitBufferByte ]
+"112
+[; ;./typedefs.h: 112: {
+[s S6 `uc 1 `uc 1 `uc -> 32 `i ]
+[n S6 . u8rcvBufferValidFlag u8rcvByteMessageLength u8rcvBufferByte ]
+"63 global_variables.c
+[; ;global_variables.c: 63: slRcvdMessageId STATE_messageState;
+[c E115 17 18 19 20 21 .. ]
+[n E115 . ID_GET_PACKET ID_SET_LED_PATTERN ID_SET_CONFIGURATION ID_DISPENSE_XHAND ID_SET_BREAK_SIGNAL  ]
+"43 ./typedefs.h
+[; ;./typedefs.h: 43: {
+[s S1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1 . b1sensorActivated b1PIDCalc b1stopMotor b1handPresent b1activePulseCapture b1pulseCaptured b1cabinetWasOpened b1cabinetIsOpen b1checkVppVoltage b1chargeVppActive b1ST25InitSuccess b1dispenserFailure b1auxActive b1lockoutDispense b1eepromWriteError b1loadedAAVoltageLow ]
+"65
+[; ;./typedefs.h: 65: {
+[s S2 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S2 . b1xmtMessageInProgress b1breakSignalRequired b1breakSignalInProgress b1breakSignalComplete b1uartActive b1messageStarted b1messageInProgress b1rcvMessageInProgress ]
+"78 global_variables.c
+[; ;global_variables.c: 78: stateMachine dispenserState;
+[c E36 0 1 2 3 4 5 6 7 8 9 10 .. ]
+[n E36 . SLEEP_WAIT IR_READS ACTIVATE_VALVE MONITOR_MOTOR MOTOR_STOP MOTOR_SHUTDOWN PUMP_ENABLE PREPARE_FOR_SL_TRANSMIT CHECK_FOR_UART_XMT_WAITING CHECK_FOR_RECEIVED_MESSAGES GET_READY_FOR_SLEEP  ]
+"152 ./typedefs.h
+[; ;./typedefs.h: 152:         {
+[s S11 `uc 1 `uc 1 ]
+[n S11 . u8refillCountLow u8refillCountHigh ]
+"149
+[; ;./typedefs.h: 149:     {
+[u S10 `us 1 `S11 1 ]
+[n S10 . u16refillCount structRefillCountBytes ]
+"162
+[; ;./typedefs.h: 162:         {
+[s S13 `uc 1 `uc 1 ]
+[n S13 . u8cabinetCycleCountLow u8cabinetCycleCountHigh ]
+"159
+[; ;./typedefs.h: 159:     {
+[u S12 `us 1 `S13 1 ]
+[n S12 . u16cabinetCycleCount structCabinetCycleCountBytes ]
+"172
+[; ;./typedefs.h: 172:         {
+[s S15 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S15 . u8dispenseCountLow u8dispenseCountMid u8dispenseCountHigh u8dispenseCountMsb ]
+"169
+[; ;./typedefs.h: 169:     {
+[u S14 `ul 1 `S15 1 ]
+[n S14 . u32dispenseCount structDispenseCycleCountBytes ]
+"147
+[; ;./typedefs.h: 147: {
+[s S9 `S10 1 `S12 1 `S14 1 ]
+[n S9 . unionrefillCount unionCabinetCycleCount unionDispenseCount ]
+"213
+[; ;./typedefs.h: 213: {
+[s S19 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S19 . u8dispenseEventSubtypeHighByte u8dispenseEventSubtypeLowByte u8dispenseEventTypeHighByte u8dispenseEventTypeLowByte u8dispenseEventPayloadLength u8dispenseEventInitAbort ]
+"190
+[; ;./typedefs.h: 190:         {
+[s S18 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S18 . bivoltageBooster b1auxBattery b1eorBattery b1multipleTagError b1refillFormulaMismatch b1refillDistMismatch b1vocFormulaMismatch b1statusReserved ]
+"187
+[; ;./typedefs.h: 187:     {
+[u S17 `uc 1 `S18 1 ]
+[n S17 . u8extendedSystemStatus structExtendedSystemStatusBytes ]
+"185
+[; ;./typedefs.h: 185: {
+[s S16 `S17 1 `uc 1 `uc 1 `uc 1 ]
+[n S16 . unionExtendedSystemStatus u8eorVoltage u8auxVoltage u8systemVoltage ]
+"124
+[; ;./typedefs.h: 124:     {
+[s S8 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S8 . b1cabinetStatus b1refillTagStatus b1vocTagStatus b1userSensorStatus b1auxBatteryStatus b1motorDriveFault b1nfcReaderFault ]
+"120
+[; ;./typedefs.h: 120: {
+[u S7 `uc 1 `S8 1 ]
+[n S7 . u8pumphouseStatusByte STRUCT_pumphouseFlagBits ]
+"31 global_variables.c
+[; ;global_variables.c: 31: uint16_t u16motorWindowCount;
+[v _u16motorWindowCount `us ~T0 @X0 1 e ]
+"32
+[; ;global_variables.c: 32: uint16_t u16encoderCaptureNew;
+[v _u16encoderCaptureNew `us ~T0 @X0 1 e ]
+"33
+[; ;global_variables.c: 33: uint16_t u16encoderCapturePrevious;
+[v _u16encoderCapturePrevious `us ~T0 @X0 1 e ]
+"34
+[; ;global_variables.c: 34: uint16_t u16encoderCaptureIgnore;
+[v _u16encoderCaptureIgnore `us ~T0 @X0 1 e ]
+"35
+[; ;global_variables.c: 35: uint16_t u16pulseCountDifference;
+[v _u16pulseCountDifference `us ~T0 @X0 1 e ]
+"38
+[; ;global_variables.c: 38: uint8_t *smartLinkXmtMessagePointer;
+[v _smartLinkXmtMessagePointer `*uc ~T0 @X0 1 e ]
+"39
+[; ;global_variables.c: 39: uint8_t u8cabinetOpenCount;
+[v _u8cabinetOpenCount `uc ~T0 @X0 1 e ]
+"40
+[; ;global_variables.c: 40: uint8_t u8cabinetClosedCount;
+[v _u8cabinetClosedCount `uc ~T0 @X0 1 e ]
+"41
+[; ;global_variables.c: 41: uint16_t u16vppCheckCounter;
+[v _u16vppCheckCounter `us ~T0 @X0 1 e ]
+"42
+[; ;global_variables.c: 42: uint8_t u8handSensorStartupDelay;
+[v _u8handSensorStartupDelay `uc ~T0 @X0 1 e ]
+"43
+[; ;global_variables.c: 43: uint32_t u32divisionOfPulseWidth;
+[v _u32divisionOfPulseWidth `ul ~T0 @X0 1 e ]
+"44
+[; ;global_variables.c: 44: uint16_t u16motorRunTimeout;
+[v _u16motorRunTimeout `us ~T0 @X0 1 e ]
+"45
+[; ;global_variables.c: 45: uint16_t u16chargeTimeout;
+[v _u16chargeTimeout `us ~T0 @X0 1 e ]
+"46
+[; ;global_variables.c: 46: uint8_t u8installedBottleUUID[7];
+[v _u8installedBottleUUID `uc ~T0 @X0 -> 7 `i e ]
+"47
+[; ;global_variables.c: 47: uint8_t u8refillTagData[32];
+[v _u8refillTagData `uc ~T0 @X0 -> 32 `i e ]
+"48
+[; ;global_variables.c: 48: uint8_t u8vocTagData[32];
+[v _u8vocTagData `uc ~T0 @X0 -> 32 `i e ]
+"50
+[; ;global_variables.c: 50: uint16_t infation_data[100];
+[v _infation_data `us ~T0 @X0 -> 100 `i e ]
+"51
+[; ;global_variables.c: 51: uint8_t inflate_count = 0;
+[v _inflate_count `uc ~T0 @X0 1 e ]
+[i _inflate_count
+-> -> 0 `i `uc
+]
+"53
+[; ;global_variables.c: 53: uint8_t deflate_count = 0;
+[v _deflate_count `uc ~T0 @X0 1 e ]
+[i _deflate_count
+-> -> 0 `i `uc
+]
+"55
+[; ;global_variables.c: 55: slXmtTransmitBuffer STRUCT_slXmtTransmitBuffer[4];
+[v _STRUCT_slXmtTransmitBuffer `S5 ~T0 @X0 -> 4 `i e ]
+"56
+[; ;global_variables.c: 56: slXmtTransmitBuffer *pSTRUCT_slXmtTransmitBuffer;
+[v _pSTRUCT_slXmtTransmitBuffer `*S5 ~T0 @X0 1 e ]
+"57
+[; ;global_variables.c: 57: uint8_t u8transmitBufferIndex;
+[v _u8transmitBufferIndex `uc ~T0 @X0 1 e ]
+"59
+[; ;global_variables.c: 59: slRcvrBuffer STRUCT_slRcvrBuffer[4];
+[v _STRUCT_slRcvrBuffer `S6 ~T0 @X0 -> 4 `i e ]
+"60
+[; ;global_variables.c: 60: slRcvrBuffer *pSTRUCT_slRcvrBuffer;
+[v _pSTRUCT_slRcvrBuffer `*S6 ~T0 @X0 1 e ]
+"61
+[; ;global_variables.c: 61: slRcvrBuffer *pSTRUCT_slRcvrBufferToCheck;
+[v _pSTRUCT_slRcvrBufferToCheck `*S6 ~T0 @X0 1 e ]
+"62
+[; ;global_variables.c: 62: uint8_t u8receiveBufferIndex;
+[v _u8receiveBufferIndex `uc ~T0 @X0 1 e ]
+"63
+[; ;global_variables.c: 63: slRcvdMessageId STATE_messageState;
+[v _STATE_messageState `E115 ~T0 @X0 1 e ]
+"64
+[; ;global_variables.c: 64: uint8_t scaleRX[20];
+[v _scaleRX `uc ~T0 @X0 -> 20 `i e ]
+"65
+[; ;global_variables.c: 65: uint16_t Dispense_Amount;
+[v _Dispense_Amount `us ~T0 @X0 1 e ]
+"66
+[; ;global_variables.c: 66: uint8_t SPIreceiveBYTE;
+[v _SPIreceiveBYTE `uc ~T0 @X0 1 e ]
+"68
+[; ;global_variables.c: 68: uint8_t rx_data;
+[v _rx_data `uc ~T0 @X0 1 e ]
+"69
+[; ;global_variables.c: 69: uint8_t rx_data2;
+[v _rx_data2 `uc ~T0 @X0 1 e ]
+"74
+[; ;global_variables.c: 74: statusFlags STRUCT_statusFlags;
+[v _STRUCT_statusFlags `S1 ~T0 @X0 1 e ]
+"76
+[; ;global_variables.c: 76: uartMsgStatusFlags STRUCT_uartMsgStatusFlags;
+[v _STRUCT_uartMsgStatusFlags `S2 ~T0 @X0 1 e ]
+"78
+[; ;global_variables.c: 78: stateMachine dispenserState;
+[v _dispenserState `E36 ~T0 @X0 1 e ]
+"93
+[; ;global_variables.c: 93: dispenserStatisticsPacket STRUCT_dispenserPacket;
+[v _STRUCT_dispenserPacket `S9 ~T0 @X0 1 e ]
+"94
+[; ;global_variables.c: 94: dispenserEventPacket STRUCT_dispenseEventPacket;
+[v _STRUCT_dispenseEventPacket `S19 ~T0 @X0 1 e ]
+"95
+[; ;global_variables.c: 95: dispenserDiagnosticsPacket STRUCT_diagnosticsPacket;
+[v _STRUCT_diagnosticsPacket `S16 ~T0 @X0 1 e ]
+"96
+[; ;global_variables.c: 96: uint16_t u16slReceiveStartTimer;
+[v _u16slReceiveStartTimer `us ~T0 @X0 1 e ]
+"98
+[; ;global_variables.c: 98: volatile uint8_t u8readRcvBuffer;
+[v _u8readRcvBuffer `Vuc ~T0 @X0 1 e ]
+"100
+[; ;global_variables.c: 100: uint16_t u16adcBuffer[32];
+[v _u16adcBuffer `us ~T0 @X0 -> 32 `i e ]
+"101
+[; ;global_variables.c: 101: uint8_t u8adcBufferIndex;
+[v _u8adcBufferIndex `uc ~T0 @X0 1 e ]
+"103
+[; ;global_variables.c: 103: uint8_t u8intervalsBetweenActivations;
+[v _u8intervalsBetweenActivations `uc ~T0 @X0 1 e ]
+"105
+[; ;global_variables.c: 105: uint16_t u16eorBatteryVoltage;
+[v _u16eorBatteryVoltage `us ~T0 @X0 1 e ]
+"106
+[; ;global_variables.c: 106: uint16_t u16auxBatteryVoltage;
+[v _u16auxBatteryVoltage `us ~T0 @X0 1 e ]
+"107
+[; ;global_variables.c: 107: uint16_t u16vppVoltage;
+[v _u16vppVoltage `us ~T0 @X0 1 e ]
+"109
+[; ;global_variables.c: 109: uint8_t u8dispenseEepromSaveCounter;
+[v _u8dispenseEepromSaveCounter `uc ~T0 @X0 1 e ]
+"110
+[; ;global_variables.c: 110: uint8_t u8xhandDispenseCommand;
+[v _u8xhandDispenseCommand `uc ~T0 @X0 1 e ]
+"112
+[; ;global_variables.c: 112: pumphouseInfo UNION_pumphouseStatusFlags;
+[v _UNION_pumphouseStatusFlags `S7 ~T0 @X0 1 e ]
+"114
+[; ;global_variables.c: 114: uint16_t u16pumpPulses;
+[v _u16pumpPulses `us ~T0 @X0 1 e ]
