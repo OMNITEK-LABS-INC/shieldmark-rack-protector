@@ -1,4 +1,4 @@
-# 1 "mcc_generated_files/eusart1.c"
+# 1 "main.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 285 "<built-in>" 3
@@ -6,10 +6,10 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "mcc_generated_files/eusart1.c" 2
-# 50 "mcc_generated_files/eusart1.c"
-# 1 "mcc_generated_files/eusart1.h" 1
-# 54 "mcc_generated_files/eusart1.h"
+# 1 "main.c" 2
+# 22 "main.c"
+# 1 "./mcc_generated_files/mcc.h" 1
+# 49 "./mcc_generated_files/mcc.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -20714,10 +20714,314 @@ __attribute__((__unsupported__("The READTIMER" "0" "() macro is not available wi
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 2 3
-# 55 "mcc_generated_files/eusart1.h" 2
+# 50 "./mcc_generated_files/mcc.h" 2
+# 1 "./mcc_generated_files/device_config.h" 1
+# 51 "./mcc_generated_files/mcc.h" 2
+# 1 "./mcc_generated_files/pin_manager.h" 1
+# 167 "./mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_Initialize (void);
+# 179 "./mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_IOC(void);
+# 52 "./mcc_generated_files/mcc.h" 2
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdbool.h" 1 3
-# 56 "mcc_generated_files/eusart1.h" 2
-# 75 "mcc_generated_files/eusart1.h"
+# 54 "./mcc_generated_files/mcc.h" 2
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/conio.h" 1 3
+
+
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdio.h" 1 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 1 3
+# 12 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef void * va_list[1];
+
+
+
+
+typedef void * __isoc_va_list[1];
+# 143 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef __int24 ssize_t;
+# 255 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef long long off_t;
+# 409 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef struct _IO_FILE FILE;
+# 25 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdio.h" 2 3
+# 52 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdio.h" 3
+typedef union _G_fpos64_t {
+ char __opaque[16];
+ double __align;
+} fpos_t;
+
+extern FILE *const stdin;
+extern FILE *const stdout;
+extern FILE *const stderr;
+
+
+
+
+
+FILE *fopen(const char *restrict, const char *restrict);
+FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
+int fclose(FILE *);
+
+int remove(const char *);
+int rename(const char *, const char *);
+
+int feof(FILE *);
+int ferror(FILE *);
+int fflush(FILE *);
+void clearerr(FILE *);
+
+int fseek(FILE *, long, int);
+long ftell(FILE *);
+void rewind(FILE *);
+
+int fgetpos(FILE *restrict, fpos_t *restrict);
+int fsetpos(FILE *, const fpos_t *);
+
+size_t fread(void *restrict, size_t, size_t, FILE *restrict);
+size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
+
+int fgetc(FILE *);
+int getc(FILE *);
+int getchar(void);
+
+
+
+
+
+int ungetc(int, FILE *);
+int getch(void);
+
+int fputc(int, FILE *);
+int putc(int, FILE *);
+int putchar(int);
+
+
+
+
+
+void putch(char);
+
+char *fgets(char *restrict, int, FILE *restrict);
+
+char *gets(char *);
+
+
+int fputs(const char *restrict, FILE *restrict);
+int puts(const char *);
+
+__attribute__((__format__(__printf__, 1, 2)))
+int printf(const char *restrict, ...);
+__attribute__((__format__(__printf__, 2, 3)))
+int fprintf(FILE *restrict, const char *restrict, ...);
+__attribute__((__format__(__printf__, 2, 3)))
+int sprintf(char *restrict, const char *restrict, ...);
+__attribute__((__format__(__printf__, 3, 4)))
+int snprintf(char *restrict, size_t, const char *restrict, ...);
+
+__attribute__((__format__(__printf__, 1, 0)))
+int vprintf(const char *restrict, __isoc_va_list);
+int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__printf__, 2, 0)))
+int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__printf__, 3, 0)))
+int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
+
+__attribute__((__format__(__scanf__, 1, 2)))
+int scanf(const char *restrict, ...);
+__attribute__((__format__(__scanf__, 2, 3)))
+int fscanf(FILE *restrict, const char *restrict, ...);
+__attribute__((__format__(__scanf__, 2, 3)))
+int sscanf(const char *restrict, const char *restrict, ...);
+
+__attribute__((__format__(__scanf__, 1, 0)))
+int vscanf(const char *restrict, __isoc_va_list);
+int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__scanf__, 2, 0)))
+int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
+
+void perror(const char *);
+
+int setvbuf(FILE *restrict, char *restrict, int, size_t);
+void setbuf(FILE *restrict, char *restrict);
+
+char *tmpnam(char *);
+FILE *tmpfile(void);
+
+
+
+
+FILE *fmemopen(void *restrict, size_t, const char *restrict);
+FILE *open_memstream(char **, size_t *);
+FILE *fdopen(int, const char *);
+FILE *popen(const char *, const char *);
+int pclose(FILE *);
+int fileno(FILE *);
+int fseeko(FILE *, off_t, int);
+off_t ftello(FILE *);
+int dprintf(int, const char *restrict, ...);
+int vdprintf(int, const char *restrict, __isoc_va_list);
+void flockfile(FILE *);
+int ftrylockfile(FILE *);
+void funlockfile(FILE *);
+int getc_unlocked(FILE *);
+int getchar_unlocked(void);
+int putc_unlocked(int, FILE *);
+int putchar_unlocked(int);
+ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
+ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
+int renameat(int, const char *, int, const char *);
+char *ctermid(char *);
+
+
+
+
+
+
+
+char *tempnam(const char *, const char *);
+# 8 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/conio.h" 2 3
+# 55 "./mcc_generated_files/mcc.h" 2
+# 1 "./mcc_generated_files/i2c1_master.h" 1
+# 58 "./mcc_generated_files/i2c1_master.h"
+typedef enum {
+    I2C1_NOERR,
+    I2C1_BUSY,
+    I2C1_FAIL
+
+
+} i2c1_error_t;
+
+typedef enum
+{
+    I2C1_STOP=1,
+    I2C1_RESTART_READ,
+    I2C1_RESTART_WRITE,
+    I2C1_CONTINUE,
+    I2C1_RESET_LINK
+} i2c1_operations_t;
+
+typedef uint8_t i2c1_address_t;
+typedef i2c1_operations_t (*i2c1_callback_t)(void *funPtr);
+
+
+i2c1_operations_t I2C1_CallbackReturnStop(void *funPtr);
+i2c1_operations_t I2C1_CallbackReturnReset(void *funPtr);
+i2c1_operations_t I2C1_CallbackRestartWrite(void *funPtr);
+i2c1_operations_t I2C1_CallbackRestartRead(void *funPtr);
+
+void I2C1_Write1ByteRegister(i2c1_address_t address, uint8_t reg, uint8_t data);
+
+
+
+
+
+void I2C1_Initialize(void);
+# 102 "./mcc_generated_files/i2c1_master.h"
+i2c1_error_t I2C1_Open(i2c1_address_t address);
+# 112 "./mcc_generated_files/i2c1_master.h"
+i2c1_error_t I2C1_Close(void);
+# 124 "./mcc_generated_files/i2c1_master.h"
+i2c1_error_t I2C1_MasterOperation(_Bool read);
+
+
+
+
+i2c1_error_t I2C1_MasterWrite(void);
+
+
+
+
+i2c1_error_t I2C1_MasterRead(void);
+# 143 "./mcc_generated_files/i2c1_master.h"
+void I2C1_SetTimeout(uint8_t timeOut);
+# 153 "./mcc_generated_files/i2c1_master.h"
+void I2C1_SetBuffer(void *buffer, size_t bufferSize);
+# 165 "./mcc_generated_files/i2c1_master.h"
+void I2C1_SetDataCompleteCallback(i2c1_callback_t cb, void *ptr);
+# 175 "./mcc_generated_files/i2c1_master.h"
+void I2C1_SetWriteCollisionCallback(i2c1_callback_t cb, void *ptr);
+# 185 "./mcc_generated_files/i2c1_master.h"
+void I2C1_SetAddressNackCallback(i2c1_callback_t cb, void *ptr);
+# 195 "./mcc_generated_files/i2c1_master.h"
+void I2C1_SetDataNackCallback(i2c1_callback_t cb, void *ptr);
+# 205 "./mcc_generated_files/i2c1_master.h"
+void I2C1_SetTimeoutCallback(i2c1_callback_t cb, void *ptr);
+# 56 "./mcc_generated_files/mcc.h" 2
+# 1 "./mcc_generated_files/adcc.h" 1
+# 72 "./mcc_generated_files/adcc.h"
+typedef uint16_t adc_result_t;
+# 86 "./mcc_generated_files/adcc.h"
+typedef enum
+{
+    channel_ANB4 = 0xC,
+    channel_VSS = 0x3C,
+    channel_Temp = 0x3D,
+    channel_DAC1 = 0x3E,
+    channel_FVR_buf1 = 0x3F
+} adcc_channel_t;
+# 127 "./mcc_generated_files/adcc.h"
+void ADCC_Initialize(void);
+# 156 "./mcc_generated_files/adcc.h"
+void ADCC_StartConversion(adcc_channel_t channel);
+# 186 "./mcc_generated_files/adcc.h"
+_Bool ADCC_IsConversionDone(void);
+# 218 "./mcc_generated_files/adcc.h"
+adc_result_t ADCC_GetConversionResult(void);
+# 249 "./mcc_generated_files/adcc.h"
+adc_result_t ADCC_GetSingleConversion(adcc_channel_t channel);
+# 274 "./mcc_generated_files/adcc.h"
+void ADCC_StopConversion(void);
+# 301 "./mcc_generated_files/adcc.h"
+void ADCC_SetStopOnInterrupt(void);
+# 326 "./mcc_generated_files/adcc.h"
+void ADCC_DischargeSampleCapacitor(void);
+# 352 "./mcc_generated_files/adcc.h"
+void ADCC_LoadAcquisitionRegister(uint8_t);
+# 378 "./mcc_generated_files/adcc.h"
+void ADCC_SetPrechargeTime(uint8_t);
+# 403 "./mcc_generated_files/adcc.h"
+void ADCC_SetRepeatCount(uint8_t);
+# 431 "./mcc_generated_files/adcc.h"
+uint8_t ADCC_GetCurrentCountofConversions(void);
+# 455 "./mcc_generated_files/adcc.h"
+void ADCC_ClearAccumulator(void);
+# 480 "./mcc_generated_files/adcc.h"
+uint16_t ADCC_GetAccumulatorValue(void);
+# 508 "./mcc_generated_files/adcc.h"
+_Bool ADCC_HasAccumulatorOverflowed(void);
+# 533 "./mcc_generated_files/adcc.h"
+uint16_t ADCC_GetFilterValue(void);
+# 561 "./mcc_generated_files/adcc.h"
+uint16_t ADCC_GetPreviousResult(void);
+# 587 "./mcc_generated_files/adcc.h"
+void ADCC_DefineSetPoint(uint16_t);
+# 613 "./mcc_generated_files/adcc.h"
+void ADCC_SetUpperThreshold(uint16_t);
+# 639 "./mcc_generated_files/adcc.h"
+void ADCC_SetLowerThreshold(uint16_t);
+# 666 "./mcc_generated_files/adcc.h"
+uint16_t ADCC_GetErrorCalculation(void);
+# 693 "./mcc_generated_files/adcc.h"
+void ADCC_EnableDoubleSampling(void);
+# 717 "./mcc_generated_files/adcc.h"
+void ADCC_EnableContinuousConversion(void);
+# 741 "./mcc_generated_files/adcc.h"
+void ADCC_DisableContinuousConversion(void);
+# 769 "./mcc_generated_files/adcc.h"
+_Bool ADCC_HasErrorCrossedUpperThreshold(void);
+# 797 "./mcc_generated_files/adcc.h"
+_Bool ADCC_HasErrorCrossedLowerThreshold(void);
+# 824 "./mcc_generated_files/adcc.h"
+uint8_t ADCC_GetConversionStageStatus(void);
+# 57 "./mcc_generated_files/mcc.h" 2
+# 1 "./mcc_generated_files/eusart1.h" 1
+# 75 "./mcc_generated_files/eusart1.h"
 typedef union {
     struct {
         unsigned perr : 1;
@@ -20727,141 +21031,323 @@ typedef union {
     };
     uint8_t status;
 }eusart1_status_t;
-# 110 "mcc_generated_files/eusart1.h"
+# 110 "./mcc_generated_files/eusart1.h"
 void EUSART1_Initialize(void);
-# 158 "mcc_generated_files/eusart1.h"
+# 158 "./mcc_generated_files/eusart1.h"
 _Bool EUSART1_is_tx_ready(void);
-# 206 "mcc_generated_files/eusart1.h"
+# 206 "./mcc_generated_files/eusart1.h"
 _Bool EUSART1_is_rx_ready(void);
-# 253 "mcc_generated_files/eusart1.h"
+# 253 "./mcc_generated_files/eusart1.h"
 _Bool EUSART1_is_tx_done(void);
-# 301 "mcc_generated_files/eusart1.h"
+# 301 "./mcc_generated_files/eusart1.h"
 eusart1_status_t EUSART1_get_last_status(void);
-# 321 "mcc_generated_files/eusart1.h"
+# 321 "./mcc_generated_files/eusart1.h"
 uint8_t EUSART1_Read(void);
-# 341 "mcc_generated_files/eusart1.h"
+# 341 "./mcc_generated_files/eusart1.h"
 void EUSART1_Write(uint8_t txData);
-# 361 "mcc_generated_files/eusart1.h"
+# 361 "./mcc_generated_files/eusart1.h"
 void EUSART1_SetFramingErrorHandler(void (* interruptHandler)(void));
-# 379 "mcc_generated_files/eusart1.h"
+# 379 "./mcc_generated_files/eusart1.h"
 void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void));
-# 397 "mcc_generated_files/eusart1.h"
+# 397 "./mcc_generated_files/eusart1.h"
 void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
-# 51 "mcc_generated_files/eusart1.c" 2
+# 58 "./mcc_generated_files/mcc.h" 2
+# 72 "./mcc_generated_files/mcc.h"
+void SYSTEM_Initialize(void);
+# 85 "./mcc_generated_files/mcc.h"
+void OSCILLATOR_Initialize(void);
+# 98 "./mcc_generated_files/mcc.h"
+void PMD_Initialize(void);
+# 23 "main.c" 2
 
-volatile eusart1_status_t eusart1RxLastError;
+# 1 "./mcc_generated_files/i2c1_master_ex.h" 1
+# 55 "./mcc_generated_files/i2c1_master_ex.h"
+uint8_t I2C1_Read1ByteRegister(i2c1_address_t address, uint8_t reg);
+uint16_t I2C1_Read2ByteRegister(i2c1_address_t address, uint8_t reg);
+void I2C1_Write1ByteRegister(i2c1_address_t address, uint8_t reg, uint8_t data);
+void I2C1_Write2ByteRegister(i2c1_address_t address, uint8_t reg, uint16_t data);
+void I2C1_WriteNBytes(i2c1_address_t address, uint8_t *data, size_t len);
+void I2C1_ReadNBytes(i2c1_address_t address, uint8_t *data, size_t len);
+void I2C1_ReadDataBlock(i2c1_address_t address, uint8_t reg, uint8_t *data, size_t len);
+# 25 "main.c" 2
+# 65 "main.c"
+uint8_t RXvalue;
+uint8_t RX_I2C_Ready;
+uint8_t RX_I2C_P1;
+uint8_t RX_I2C_P2;
+uint8_t RX_I2C_A1;
+uint8_t RX_I2C_A2;
+uint8_t RX_I2C_M1;
+uint8_t RX_I2C_M2;
+uint8_t RX_I2C_L1;
+uint8_t RX_I2C_L2;
+uint8_t RX_I2C_FS;
+uint16_t Presence;
+uint16_t Motion;
+uint32_t FilterPresence;
+
+
+uint8_t RX_I2C_P1, RX_I2C_P2;
+uint8_t RX_I2C_M1, RX_I2C_M2;
+uint16_t Presence, Motion;
+
+
+uint8_t buzzerOverride = 0;
+uint8_t led1_manual = 0;
+uint8_t led2_manual = 0;
 
 
 
 
 
-void (*EUSART1_FramingErrorHandler)(void);
-void (*EUSART1_OverrunErrorHandler)(void);
-void (*EUSART1_ErrorHandler)(void);
+typedef enum {
+    PRESENCE_IDLE = 0,
+    PRESENCE_NEAR,
+    PRESENCE_STRONG,
+    PRESENCE_HOLD
+} presence_state_t;
 
-void EUSART1_DefaultFramingErrorHandler(void);
-void EUSART1_DefaultOverrunErrorHandler(void);
-void EUSART1_DefaultErrorHandler(void);
+static presence_state_t pState = PRESENCE_IDLE;
+static uint32_t presenceHoldStart = 0;
 
-void EUSART1_Initialize(void)
+
+
+
+void putch(char data)
 {
-
-
-
-    BAUD1CON = 0x08;
-
-
-    RC1STA = 0x90;
-
-
-    TX1STA = 0x24;
-
-
-    SP1BRGL = 0x08;
-
-
-    SP1BRGH = 0x00;
-
-
-    EUSART1_SetFramingErrorHandler(EUSART1_DefaultFramingErrorHandler);
-    EUSART1_SetOverrunErrorHandler(EUSART1_DefaultOverrunErrorHandler);
-    EUSART1_SetErrorHandler(EUSART1_DefaultErrorHandler);
-
-    eusart1RxLastError.status = 0;
-
+    while(!EUSART1_is_tx_ready());
+    EUSART1_Write((uint8_t)data);
 }
 
-_Bool EUSART1_is_tx_ready(void)
+
+float Read_BatteryVoltage(void)
 {
-    return (_Bool)(PIR3bits.TX1IF && TX1STAbits.TXEN);
+    uint16_t adcValue;
+    float vBatt;
+
+
+
+
+
+    do { LATBbits.LATB3 = 1; } while(0);
+    _delay((unsigned long)((5)*(1000000/4000.0)));
+
+    ADPCH = channel_ANB4;
+
+
+    adcValue = ADCC_GetSingleConversion(channel_ANB4);
+
+
+    float vRead = ((float)adcValue * 3.3f) / 1024.0f;
+    vBatt = vRead * 2.98f;
+
+    return vBatt;
 }
 
-_Bool EUSART1_is_rx_ready(void)
-{
-    return (_Bool)(PIR3bits.RC1IF);
-}
-
-_Bool EUSART1_is_tx_done(void)
-{
-    return TX1STAbits.TRMT;
-}
-
-eusart1_status_t EUSART1_get_last_status(void){
-    return eusart1RxLastError;
-}
-
-uint8_t EUSART1_Read(void)
+void main(void)
 {
 
+    SYSTEM_Initialize();
+
+    uint32_t lastBlinkTime = 0;
+
+    do { TRISBbits.TRISB3 = 0; } while(0);
+    do { ANSELCbits.ANSELC6 = 0; } while(0);
+    do { ANSELCbits.ANSELC7 = 0; } while(0);
+
+
+    printf("Firmware Version 1.2\r\n");
+
+    _delay((unsigned long)((500)*(1000000/4000.0)));
+    I2C1_Write1ByteRegister(0x5a, 0x10, 0x02);
+    _delay((unsigned long)((20)*(1000000/4000.0)));
+    RX_I2C_L1 = I2C1_Read1ByteRegister(0x5a, 0x0C);
+    RX_I2C_L2 = I2C1_Read1ByteRegister(0x5a, 0x0D);
+
+    _delay((unsigned long)((20)*(1000000/4000.0)));
+    I2C1_Write1ByteRegister(0x5a, 0x20, 0x10);
+    _delay((unsigned long)((20)*(1000000/4000.0)));
+    I2C1_Write1ByteRegister(0x5a, 0x0C, 0x14);
+
+    I2C1_Write1ByteRegister(0x5a, 0x20, 0x18);
+
+    do { LATAbits.LATA0 = 0; } while(0);
 
 
 
-    eusart1RxLastError.status = 0;
-
-    if(1 == RC1STAbits.OERR)
+    while (1)
     {
 
+        float batt = Read_BatteryVoltage();
 
-        RC1STAbits.CREN = 0;
-        RC1STAbits.CREN = 1;
+        static uint32_t msCounter = 0;
+
+        msCounter += 500;
+
+        if (EUSART1_is_rx_ready())
+        {
+            char key = EUSART1_Read();
+
+            switch (key)
+            {
+                case 'h':
+                    printf("\r\nRACK PROTECTOR FW V1.21 help menu - keybinds \r\n"
+                            "'v' Prints battery voltage level \r\n"
+                            "'b' Turns buzzer on \r\n"
+                            "'i' Turns LED Bank 1 on \r\n"
+                            "'o' Turns LED Bank 2 on \r\n"
+                            "'p' Turns LED Bank 1, 2, and the buzzer off \r\n");
+                    break;
+
+                case 'v':
+                    printf("ADC raw: %u  Batt: %.2f V\r\n", (unsigned)ADCC_GetConversionResult(), batt);
+                    break;
+
+                case 'b':
+                    buzzerOverride = 1;
+                    do { LATAbits.LATA1 = 1; } while(0);
+                    printf("Buzzer Enabled\r\n");
+                    break;
+
+                case 'i':
+                    led1_manual = 1;
+                    do { LATBbits.LATB0 = 1; } while(0);
+                    printf("LED BANK 1 ON\r\n");
+                    break;
+
+                case 'o':
+                    led2_manual = 1;
+                    do { LATBbits.LATB1 = 1; } while(0);
+                    printf("LED BANK 2 ON\r\n");
+                    break;
+
+                case 'p':
+                    buzzerOverride = 0;
+                    led1_manual = 0;
+                    led2_manual = 0;
+                    do { LATAbits.LATA1 = 0; } while(0);
+                    do { LATBbits.LATB0 = 0; } while(0);
+                    do { LATBbits.LATB1 = 0; } while(0);
+                    printf("All off\r\n");
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+
+
+        if (batt < 7.25f)
+        {
+            if (msCounter - lastBlinkTime >= 90000)
+            {
+
+                for (int i = 0; i < 15; i++)
+                {
+                    do { LATBbits.LATB0 = 1; } while(0);
+                    do { LATBbits.LATB1 = 1; } while(0);
+                    _delay((unsigned long)((150)*(1000000/4000.0)));
+
+                    do { LATBbits.LATB0 = 0; } while(0);
+                    do { LATBbits.LATB1 = 0; } while(0);
+                    _delay((unsigned long)((150)*(1000000/4000.0)));
+                }
+
+                lastBlinkTime = msCounter;
+            }
+        }
+
+
+
+        RX_I2C_Ready = I2C1_Read1ByteRegister(0x5a, 0x23);
+
+        _delay((unsigned long)((500)*(1000000/4000.0)));
+        RX_I2C_P1 = I2C1_Read1ByteRegister(0x5a, 0x3A);
+        RX_I2C_P2 = I2C1_Read1ByteRegister(0x5a, 0x3B);
+
+        _delay((unsigned long)((50)*(1000000/4000.0)));
+        RX_I2C_M1 = I2C1_Read1ByteRegister(0x5a, 0x3C);
+        RX_I2C_M2 = I2C1_Read1ByteRegister(0x5a, 0x3D);
+
+
+        Presence = (uint16_t)((uint16_t)RX_I2C_P1 | ((uint16_t)RX_I2C_P2 << 8));
+        Motion = (uint16_t)((uint16_t)RX_I2C_M1 | ((uint16_t)RX_I2C_M2 << 8));
+# 276 "main.c"
+        if (buzzerOverride)
+        {
+            do { LATAbits.LATA1 = 1; } while(0);
+        }
+
+
+        if (led1_manual) do { LATBbits.LATB0 = 1; } while(0);
+        if (led2_manual) do { LATBbits.LATB1 = 1; } while(0);
+
+
+        if (led1_manual && led2_manual)
+        {
+            continue;
+        }
+
+        uint8_t inNearRange = (Presence >= 0x00C0 && Presence <= 0x0500);
+        uint8_t inStrongRange = (Presence > 0x0500 && Presence < 0x7D00);
+
+        switch (pState)
+        {
+
+            case PRESENCE_IDLE:
+                if (!led1_manual) do { LATBbits.LATB0 = 0; } while(0);
+                if (!led2_manual) do { LATBbits.LATB1 = 0; } while(0);
+                if (!buzzerOverride) do { LATAbits.LATA1 = 0; } while(0);
+
+                if (inNearRange)
+                    pState = PRESENCE_NEAR;
+                else if (inStrongRange)
+                    pState = PRESENCE_STRONG;
+                break;
+
+
+            case PRESENCE_NEAR:
+                if (!led1_manual) do { LATBbits.LATB0 = 1; } while(0);
+                if (!led2_manual) do { LATBbits.LATB1 = 1; } while(0);
+                if (!buzzerOverride) do { LATAbits.LATA1 = 0; } while(0);
+
+                if (inStrongRange)
+                    pState = PRESENCE_STRONG;
+                else if (!inNearRange)
+                    pState = PRESENCE_IDLE;
+                break;
+
+
+            case PRESENCE_STRONG:
+                if (!led1_manual) do { LATBbits.LATB0 = ~LATBbits.LATB0; } while(0);
+                if (!led2_manual) do { LATBbits.LATB1 = ~LATBbits.LATB1; } while(0);
+                if (!buzzerOverride) do { LATAbits.LATA1 = 1; } while(0);
+
+                if (!inStrongRange)
+                {
+                    presenceHoldStart = msCounter;
+                    pState = PRESENCE_HOLD;
+                }
+                break;
+
+
+            case PRESENCE_HOLD:
+
+                if (!led1_manual) do { LATBbits.LATB0 = ~LATBbits.LATB0; } while(0);
+                if (!led2_manual) do { LATBbits.LATB1 = ~LATBbits.LATB1; } while(0);
+                if (!buzzerOverride) do { LATAbits.LATA1 = 1; } while(0);
+
+
+                if ((msCounter - presenceHoldStart) >= 7000)
+                {
+                    pState = PRESENCE_IDLE;
+                }
+                break;
+        }
+
+
+
+
     }
-
-    return RC1REG;
-}
-
-void EUSART1_Write(uint8_t txData)
-{
-    while(0 == PIR3bits.TX1IF)
-    {
-    }
-
-    TX1REG = txData;
-}
-
-
-
-
-void EUSART1_DefaultFramingErrorHandler(void){}
-
-void EUSART1_DefaultOverrunErrorHandler(void){
-
-
-    RC1STAbits.CREN = 0;
-    RC1STAbits.CREN = 1;
-
-}
-
-void EUSART1_DefaultErrorHandler(void){
-}
-
-void EUSART1_SetFramingErrorHandler(void (* interruptHandler)(void)){
-    EUSART1_FramingErrorHandler = interruptHandler;
-}
-
-void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void)){
-    EUSART1_OverrunErrorHandler = interruptHandler;
-}
-
-void EUSART1_SetErrorHandler(void (* interruptHandler)(void)){
-    EUSART1_ErrorHandler = interruptHandler;
 }

@@ -89,13 +89,18 @@ uint8_t led2_manual = 0;      // if 1 ? LED2 forced ON
 
 
 // -----------------------------------------------------------------------------
-// *** ADDED FOR 3-SECOND STRONG-PRESENCE HOLD ***
-// We simulate timing based on the loop delay (~500ms per cycle).
+// *** ADDED: Presence state machine variables ***
 // -----------------------------------------------------------------------------
-uint32_t presenceHoldStart = 0;
-uint8_t presenceHoldActive = 0;   // 1 = currently holding the blink state for 3 seconds
-// -----------------------------------------------------------------------------
+typedef enum {
+    PRESENCE_IDLE = 0,
+    PRESENCE_NEAR,
+    PRESENCE_STRONG,
+    PRESENCE_HOLD
+} presence_state_t;
 
+static presence_state_t pState = PRESENCE_IDLE;
+static uint32_t presenceHoldStart = 0;   // used for 3-second strong-presence delay hold
+// -----------------------------------------------------------------------------
 
 // * NOTE: * PuTTY should be set to the COM port at 115200 8N1, no flow control.
  
@@ -283,76 +288,66 @@ void main(void)
             continue;
         }
         
-        uint8_t inCloseRange = (Presence > 0x0500 && Presence < 0x7D00);
-        uint8_t inNearRange  = (Presence >= 0x00C0 && Presence <= 0x0500);
+        uint8_t inNearRange   = (Presence >= 0x00C0 && Presence <= 0x0500);
+        uint8_t inStrongRange = (Presence > 0x0500 && Presence < 0x7D00);
 
-        // -----------------------------------------------------------
-        // STRONG RANGE (Blink LEDs, enable buzzer)
-        // -----------------------------------------------------------
-        if (inCloseRange)
+        switch (pState)
         {
-            // *** ADDED: Start the 3-second hold timer only when first entering
-            if (!presenceHoldActive)
-            {
-                presenceHoldActive = 1;
-                presenceHoldStart = msCounter;   // Start delay timer
-            }
+            // -------------------------------------------------------
+            case PRESENCE_IDLE:
+                if (!led1_manual) LED1_Enble_SetLow();
+                if (!led2_manual) LED2_Enble_SetLow();
+                if (!buzzerOverride) LED_Enble_SetLow();
 
-            if (!led1_manual) LED1_Enble_Toggle();
-            if (!led2_manual) LED2_Enble_Toggle();
-            if (!buzzerOverride) LED_Enble_SetHigh();
+                if (inNearRange)
+                    pState = PRESENCE_NEAR;
+                else if (inStrongRange)
+                    pState = PRESENCE_STRONG;
+                break;
 
-            printf("Object Close! Presence: %u\r\n", Presence);
-        }
+            // -------------------------------------------------------
+            case PRESENCE_NEAR:
+                if (!led1_manual) LED1_Enble_SetHigh();
+                if (!led2_manual) LED2_Enble_SetHigh();
+                if (!buzzerOverride) LED_Enble_SetLow();
 
-        // -----------------------------------------------------------
-        // NEAR RANGE (Solid ON)
-        // -----------------------------------------------------------
-        else if (inNearRange)
-        {
-            presenceHoldActive = 0; // Cancel any hold
+                if (inStrongRange)
+                    pState = PRESENCE_STRONG;
+                else if (!inNearRange)
+                    pState = PRESENCE_IDLE;
+                break;
 
-            if (!led1_manual) LED1_Enble_SetHigh();
-            if (!led2_manual) LED2_Enble_SetHigh();
-            if (!buzzerOverride) LED_Enble_SetLow();
+            // -------------------------------------------------------
+            case PRESENCE_STRONG:
+                if (!led1_manual) LED1_Enble_Toggle();
+                if (!led2_manual) LED2_Enble_Toggle();
+                if (!buzzerOverride) LED_Enble_SetHigh();
 
-            printf("Object Approaching. Presence: %u\r\n", Presence);
-        }
-
-        // -----------------------------------------------------------
-        // OUT OF RANGE
-        // -----------------------------------------------------------
-        else
-        {
-            // *** ADDED: Continue blinking for remainder of 3-second hold ***
-            if (presenceHoldActive)
-            {
-                if ((msCounter - presenceHoldStart) < 3000)
+                if (!inStrongRange)
                 {
-                    // keep blinking and buzzer on
-                    if (!led1_manual) LED1_Enble_Toggle();
-                    if (!led2_manual) LED2_Enble_Toggle();
-                    if (!buzzerOverride) LED_Enble_SetHigh();
-
-                    // DO NOT turn LEDs off yet ? remain in this section
-                    continue;
+                    presenceHoldStart = msCounter;   // start 3-second timer
+                    pState = PRESENCE_HOLD;
                 }
-                else
+                break;
+
+            // -------------------------------------------------------
+            case PRESENCE_HOLD:
+                // continue blinking exactly like STRONG
+                if (!led1_manual) LED1_Enble_Toggle();
+                if (!led2_manual) LED2_Enble_Toggle();
+                if (!buzzerOverride) LED_Enble_SetHigh();
+
+                // keep blinking until 3 seconds expire
+                if ((msCounter - presenceHoldStart) >= 7000)
                 {
-                    // *** ADDED: Hold expired ***
-                    presenceHoldActive = 0;
+                    pState = PRESENCE_IDLE;
                 }
-            }
-
-            // *** NORMAL OUT-OF-RANGE BEHAVIOR ***
-            if (!led1_manual) LED1_Enble_SetLow();
-            if (!led2_manual) LED2_Enble_SetLow();
-            if (!buzzerOverride) LED_Enble_SetLow();
+                break;
         }
 
-        // =========================================================================
-        // END OF MODIFIED PRESENCE BLOCK
-        // =========================================================================
+        // ======================================================================
+        // END PRESENCE STATE MACHINE
+        // ======================================================================
     }
 }
 /**

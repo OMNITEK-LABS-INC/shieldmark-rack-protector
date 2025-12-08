@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 18F26Q10 ]
 [d frameptr 4065 ]
-"149 S:\Rack Protector Bradley\Rack Protector V 1.21\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/i2c1_master.c
+"149 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/i2c1_master.c
 [e E12852 . `uc
 I2C1_IDLE 0
 I2C1_SEND_ADR_READ 1
@@ -44,7 +44,7 @@ I2C1_DATA_NACK 3
 I2C1_TIMEOUT 4
 I2C1_NULL 5
 ]
-"67 S:\Rack Protector Bradley\Rack Protector V 1.21\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/i2c1_master_ex.c
+"67 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/i2c1_master_ex.c
 [e E358 . `uc
 I2C1_NOERR 0
 I2C1_BUSY 1
@@ -58,7 +58,7 @@ I2C1_RESTART_WRITE 3
 I2C1_CONTINUE 4
 I2C1_RESET_LINK 5
 ]
-"107 S:\Rack Protector Bradley\Rack Protector V 1.21\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/adcc.c
+"107 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/adcc.c
 [e E12456 . `uc
 channel_ANB4 12
 channel_VSS 60
@@ -66,7 +66,14 @@ channel_Temp 61
 channel_DAC1 62
 channel_FVR_buf1 63
 ]
-"113 S:\Rack Protector Bradley\Rack Protector V 1.21\Source Code\Rack_Pro_new_board_10_7_25\main.c
+"101 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\main.c
+[e E12979 . `uc
+PRESENCE_IDLE 0
+PRESENCE_NEAR 1
+PRESENCE_STRONG 2
+PRESENCE_HOLD 3
+]
+"126
 [e E12855 . `uc
 channel_ANB4 12
 channel_VSS 60
@@ -138,19 +145,19 @@ channel_FVR_buf1 63
 [v ___omul __omul `(uo  1 e 8 0 ]
 "10 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
-"94 S:\Rack Protector Bradley\Rack Protector V 1.21\Source Code\Rack_Pro_new_board_10_7_25\main.c
+"107 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\main.c
 [v _putch putch `(v  1 e 1 0 ]
-"101
+"114
 [v _Read_BatteryVoltage Read_BatteryVoltage `(f  1 e 4 0 ]
-"125
+"138
 [v _main main `(v  1 e 1 0 ]
-"62 S:\Rack Protector Bradley\Rack Protector V 1.21\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/adcc.c
+"62 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/adcc.c
 [v _ADCC_Initialize ADCC_Initialize `(v  1 e 1 0 ]
 "125
 [v _ADCC_GetConversionResult ADCC_GetConversionResult `(us  1 e 2 0 ]
 "131
 [v _ADCC_GetSingleConversion ADCC_GetSingleConversion `(us  1 e 2 0 ]
-"66 S:\Rack Protector Bradley\Rack Protector V 1.21\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/eusart1.c
+"66 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/eusart1.c
 [v _EUSART1_Initialize EUSART1_Initialize `(v  1 e 1 0 ]
 "94
 [v _EUSART1_is_tx_ready EUSART1_is_tx_ready `(a  1 e 1 0 ]
@@ -172,7 +179,7 @@ channel_FVR_buf1 63
 [v _EUSART1_SetOverrunErrorHandler EUSART1_SetOverrunErrorHandler `(v  1 e 1 0 ]
 "165
 [v _EUSART1_SetErrorHandler EUSART1_SetErrorHandler `(v  1 e 1 0 ]
-"170 S:\Rack Protector Bradley\Rack Protector V 1.21\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/i2c1_master.c
+"170 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/i2c1_master.c
 [v _I2C1_Initialize I2C1_Initialize `(v  1 e 1 0 ]
 "185
 [v _I2C1_Open I2C1_Open `(E358  1 e 1 0 ]
@@ -268,7 +275,7 @@ channel_FVR_buf1 63
 [v _I2C1_MasterSetIrq I2C1_MasterSetIrq `T(v  1 s 1 I2C1_MasterSetIrq ]
 "659
 [v _I2C1_MasterWaitForEvent I2C1_MasterWaitForEvent `T(v  1 s 1 I2C1_MasterWaitForEvent ]
-"63 S:\Rack Protector Bradley\Rack Protector V 1.21\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/i2c1_master_ex.c
+"63 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/i2c1_master_ex.c
 [v _I2C1_Read1ByteRegister I2C1_Read1ByteRegister `(uc  1 e 1 0 ]
 "91
 [v _I2C1_Write1ByteRegister I2C1_Write1ByteRegister `(v  1 e 1 0 ]
@@ -282,13 +289,13 @@ channel_FVR_buf1 63
 [v _wr2RegCompleteHandler wr2RegCompleteHandler `(E363  1 s 1 wr2RegCompleteHandler ]
 "170
 [v _rdBlkRegCompleteHandler rdBlkRegCompleteHandler `(E363  1 s 1 rdBlkRegCompleteHandler ]
-"50 S:\Rack Protector Bradley\Rack Protector V 1.21\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/mcc.c
+"50 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 "60
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 "74
 [v _PMD_Initialize PMD_Initialize `(v  1 e 1 0 ]
-"55 S:\Rack Protector Bradley\Rack Protector V 1.21\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/pin_manager.c
+"55 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 "13660 C:/Users/OMNITEK/.mchp_packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc/pic18f26q10.h
 [v _RX1PPS RX1PPS `VEuc  1 e 1 @3760 ]
@@ -390,7 +397,7 @@ channel_FVR_buf1 63
 [v _WPUC WPUC `VEuc  1 e 1 @3867 ]
 "20027
 [v _ANSELC ANSELC `VEuc  1 e 1 @3868 ]
-[s S1561 . 1 `uc 1 ANSELC0 1 0 :1:0 
+[s S1566 . 1 `uc 1 ANSELC0 1 0 :1:0 
 `uc 1 ANSELC1 1 0 :1:1 
 `uc 1 ANSELC2 1 0 :1:2 
 `uc 1 ANSELC3 1 0 :1:3 
@@ -400,8 +407,8 @@ channel_FVR_buf1 63
 `uc 1 ANSELC7 1 0 :1:7 
 ]
 "20044
-[u S1570 . 1 `S1561 1 . 1 0 ]
-[v _ANSELCbits ANSELCbits `VES1570  1 e 1 @3868 ]
+[u S1575 . 1 `S1566 1 . 1 0 ]
+[v _ANSELCbits ANSELCbits `VES1575  1 e 1 @3868 ]
 "20152
 [v _INLVLE INLVLE `VEuc  1 e 1 @3877 ]
 "20173
@@ -547,7 +554,7 @@ channel_FVR_buf1 63
 [v _ADFLTRH ADFLTRH `VEuc  1 e 1 @3950 ]
 "26566
 [v _LATA LATA `VEuc  1 e 1 @3970 ]
-[s S1589 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S1594 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -557,11 +564,11 @@ channel_FVR_buf1 63
 `uc 1 LATA7 1 0 :1:7 
 ]
 "26583
-[u S1598 . 1 `S1589 1 . 1 0 ]
-[v _LATAbits LATAbits `VES1598  1 e 1 @3970 ]
+[u S1603 . 1 `S1594 1 . 1 0 ]
+[v _LATAbits LATAbits `VES1603  1 e 1 @3970 ]
 "26628
 [v _LATB LATB `VEuc  1 e 1 @3971 ]
-[s S1504 . 1 `uc 1 LATB0 1 0 :1:0 
+[s S1509 . 1 `uc 1 LATB0 1 0 :1:0 
 `uc 1 LATB1 1 0 :1:1 
 `uc 1 LATB2 1 0 :1:2 
 `uc 1 LATB3 1 0 :1:3 
@@ -571,15 +578,15 @@ channel_FVR_buf1 63
 `uc 1 LATB7 1 0 :1:7 
 ]
 "26645
-[u S1513 . 1 `S1504 1 . 1 0 ]
-[v _LATBbits LATBbits `VES1513  1 e 1 @3971 ]
+[u S1518 . 1 `S1509 1 . 1 0 ]
+[v _LATBbits LATBbits `VES1518  1 e 1 @3971 ]
 "26690
 [v _LATC LATC `VEuc  1 e 1 @3972 ]
 "26752
 [v _TRISA TRISA `VEuc  1 e 1 @3975 ]
 "26874
 [v _TRISB TRISB `VEuc  1 e 1 @3976 ]
-[s S1540 . 1 `uc 1 TRISB0 1 0 :1:0 
+[s S1545 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
 `uc 1 TRISB2 1 0 :1:2 
 `uc 1 TRISB3 1 0 :1:3 
@@ -589,8 +596,8 @@ channel_FVR_buf1 63
 `uc 1 TRISB7 1 0 :1:7 
 ]
 "26896
-[u S1549 . 1 `S1540 1 . 1 0 ]
-[v _TRISBbits TRISBbits `VES1549  1 e 1 @3976 ]
+[u S1554 . 1 `S1545 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES1554  1 e 1 @3976 ]
 "26996
 [v _TRISC TRISC `VEuc  1 e 1 @3977 ]
 "27325
@@ -829,7 +836,7 @@ channel_FVR_buf1 63
 [v _flags flags `uc  1 s 1 flags ]
 "185
 [v _dbuf dbuf `[80]uc  1 s 80 dbuf ]
-"66 S:\Rack Protector Bradley\Rack Protector V 1.21\Source Code\Rack_Pro_new_board_10_7_25\main.c
+"66 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\main.c
 [v _RX_I2C_Ready RX_I2C_Ready `uc  1 e 1 0 ]
 "73
 [v _RX_I2C_L1 RX_I2C_L1 `uc  1 e 1 0 ]
@@ -850,12 +857,16 @@ channel_FVR_buf1 63
 [v _led1_manual led1_manual `uc  1 e 1 0 ]
 "88
 [v _led2_manual led2_manual `uc  1 e 1 0 ]
+"101
+[v _pState pState `E12979  1 s 1 pState ]
+"102
+[v _presenceHoldStart presenceHoldStart `ul  1 s 4 presenceHoldStart ]
 [s S93 . 1 `uc 1 perr 1 0 :1:0 
 `uc 1 ferr 1 0 :1:1 
 `uc 1 oerr 1 0 :1:2 
 `uc 1 reserved 1 0 :5:3 
 ]
-"52 S:\Rack Protector Bradley\Rack Protector V 1.21\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/eusart1.c
+"52 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/eusart1.c
 [u S98 . 1 `S93 1 . 1 0 `uc 1 status 1 0 ]
 [v _eusart1RxLastError eusart1RxLastError `VES98  1 e 1 0 ]
 "58
@@ -864,7 +875,7 @@ channel_FVR_buf1 63
 [v _EUSART1_OverrunErrorHandler EUSART1_OverrunErrorHandler `*.37(v  1 e 2 0 ]
 "60
 [v _EUSART1_ErrorHandler EUSART1_ErrorHandler `*.37(v  1 e 2 0 ]
-"149 S:\Rack Protector Bradley\Rack Protector V 1.21\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/i2c1_master.c
+"149 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/i2c1_master.c
 [v _i2c1_fsmStateTable i2c1_fsmStateTable `C[16]*.37(E12852  1 e 32 0 ]
 [s S365 . 29 `[6]*.37(E363 1 callbackTable 12 0 `[6]*.30v 1 callbackPayload 6 12 `us 1 time_out 2 18 `us 1 time_out_value 2 20 `uc 1 address 1 22 `*.30uc 1 data_ptr 1 23 `ui 1 data_length 2 24 `E12852 1 state 1 26 `E358 1 error 1 27 `uc 1 addressNackCheck 1 28 :1:0 
 `uc 1 busy 1 28 :1:1 
@@ -873,20 +884,24 @@ channel_FVR_buf1 63
 ]
 "168
 [v _I2C1_Status I2C1_Status `S365  1 e 29 0 ]
-"125 S:\Rack Protector Bradley\Rack Protector V 1.21\Source Code\Rack_Pro_new_board_10_7_25\main.c
+"138 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"224
-[v main@i i `i  1 a 2 9 ]
-"167
-[v main@key key `uc  1 a 1 4 ]
-"159
-[v main@batt batt `f  1 a 4 5 ]
-"130
-[v main@lastBlinkTime lastBlinkTime `ul  1 a 4 0 ]
-"161
+"237
+[v main@i i `i  1 a 2 87 ]
+"180
+[v main@key key `uc  1 a 1 79 ]
+"172
+[v main@batt batt `f  1 a 4 82 ]
+"292
+[v main@inStrongRange inStrongRange `uc  1 a 1 89 ]
+"291
+[v main@inNearRange inNearRange `uc  1 a 1 86 ]
+"143
+[v main@lastBlinkTime lastBlinkTime `ul  1 a 4 75 ]
+"174
 [v main@msCounter msCounter `ul  1 s 4 msCounter ]
-"305
+"352
 } 0
 "5 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\printf.c
 [v _printf printf `(i  1 e 2 0 ]
@@ -902,9 +917,9 @@ channel_FVR_buf1 63
 {
 "1820
 [v vfprintf@cfmt cfmt `*.32uc  1 a 2 60 ]
-[s S2165 _IO_FILE 0 ]
+[s S2174 _IO_FILE 0 ]
 "1817
-[v vfprintf@fp fp `*.39S2165  1 p 2 55 ]
+[v vfprintf@fp fp `*.39S2174  1 p 2 55 ]
 [v vfprintf@fmt fmt `*.32Cuc  1 p 2 57 ]
 [v vfprintf@ap ap `*.30*.30v  1 p 1 59 ]
 "1840
@@ -912,15 +927,15 @@ channel_FVR_buf1 63
 "1177
 [v _vfpfcnvrt vfpfcnvrt `(v  1 s 1 vfpfcnvrt ]
 {
-[u S2215 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `d 1 f 4 0 ]
+[u S2224 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `d 1 f 4 0 ]
 "1188
-[v vfpfcnvrt@convarg convarg `S2215  1 a 4 48 ]
+[v vfpfcnvrt@convarg convarg `S2224  1 a 4 48 ]
 "1179
 [v vfpfcnvrt@cp cp `*.32uc  1 a 2 53 ]
 [v vfpfcnvrt@c c `uc  1 a 1 52 ]
-[s S2165 _IO_FILE 0 ]
+[s S2174 _IO_FILE 0 ]
 "1177
-[v vfpfcnvrt@fp fp `*.39S2165  1 p 2 44 ]
+[v vfpfcnvrt@fp fp `*.39S2174  1 p 2 44 ]
 [v vfpfcnvrt@fmt fmt `*.30*.32uc  1 p 1 46 ]
 [v vfpfcnvrt@ap ap `*.30*.30v  1 p 1 47 ]
 "1814
@@ -934,9 +949,9 @@ channel_FVR_buf1 63
 [v utoa@p p `i  1 a 2 33 ]
 "1003
 [v utoa@w w `i  1 a 2 31 ]
-[s S2165 _IO_FILE 0 ]
+[s S2174 _IO_FILE 0 ]
 "1001
-[v utoa@fp fp `*.39S2165  1 p 2 27 ]
+[v utoa@fp fp `*.39S2174  1 p 2 27 ]
 [v utoa@d d `ui  1 p 2 29 ]
 "1047
 } 0
@@ -977,15 +992,15 @@ channel_FVR_buf1 63
 "587
 [v _efgtoa efgtoa `(v  1 s 1 efgtoa ]
 {
-[u S2178 flui 4 `d 1 f 4 0 `l 1 u 4 0 ]
+[u S2187 flui 4 `d 1 f 4 0 `l 1 u 4 0 ]
 "592
-[v efgtoa@u u `S2178  1 a 4 40 ]
-[v efgtoa@g g `S2178  1 a 4 34 ]
+[v efgtoa@u u `S2187  1 a 4 40 ]
+[v efgtoa@g g `S2187  1 a 4 34 ]
 "591
 [v efgtoa@l l `d  1 a 4 29 ]
 [v efgtoa@h h `d  1 a 4 25 ]
 "592
-[v efgtoa@ou ou `S2178  1 a 4 19 ]
+[v efgtoa@ou ou `S2187  1 a 4 19 ]
 "590
 [v efgtoa@n n `i  1 a 2 38 ]
 [v efgtoa@i i `i  1 a 2 23 ]
@@ -1001,9 +1016,9 @@ channel_FVR_buf1 63
 [v efgtoa@nmode nmode `uc  1 a 1 10 ]
 [v efgtoa@mode mode `uc  1 a 1 9 ]
 [v efgtoa@pp pp `uc  1 a 1 8 ]
-[s S2165 _IO_FILE 0 ]
+[s S2174 _IO_FILE 0 ]
 "587
-[v efgtoa@fp fp `*.39S2165  1 p 2 84 ]
+[v efgtoa@fp fp `*.39S2174  1 p 2 84 ]
 [v efgtoa@f f `d  1 p 4 86 ]
 [v efgtoa@c c `uc  1 p 1 90 ]
 "868
@@ -1023,9 +1038,9 @@ channel_FVR_buf1 63
 {
 "195
 [v pad@i i `i  1 a 2 25 ]
-[s S2165 _IO_FILE 0 ]
+[s S2174 _IO_FILE 0 ]
 "193
-[v pad@fp fp `*.39S2165  1 p 2 18 ]
+[v pad@fp fp `*.39S2174  1 p 2 18 ]
 [v pad@buf buf `*.39uc  1 p 2 20 ]
 [v pad@p p `i  1 p 2 22 ]
 "226
@@ -1039,29 +1054,29 @@ channel_FVR_buf1 63
 [v fputs@c c `uc  1 a 1 15 ]
 "8
 [v fputs@s s `*.39Cuc  1 p 2 11 ]
-[u S2144 . 2 `*.39uc 1 buffer 2 0 `*.39Cuc 1 source 2 0 ]
-[s S2147 _IO_FILE 11 `S2144 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v fputs@fp fp `*.39S2147  1 p 2 13 ]
+[u S2153 . 2 `*.39uc 1 buffer 2 0 `*.39Cuc 1 source 2 0 ]
+[s S2156 _IO_FILE 11 `S2153 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v fputs@fp fp `*.39S2156  1 p 2 13 ]
 "19
 } 0
 "8 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 2 ]
-[u S2144 . 2 `*.39uc 1 buffer 2 0 `*.39Cuc 1 source 2 0 ]
-[s S2147 _IO_FILE 11 `S2144 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v fputc@fp fp `*.39S2147  1 p 2 4 ]
+[u S2153 . 2 `*.39uc 1 buffer 2 0 `*.39Cuc 1 source 2 0 ]
+[s S2156 _IO_FILE 11 `S2153 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v fputc@fp fp `*.39S2156  1 p 2 4 ]
 "24
 } 0
-"94 S:\Rack Protector Bradley\Rack Protector V 1.21\Source Code\Rack_Pro_new_board_10_7_25\main.c
+"107 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\main.c
 [v _putch putch `(v  1 e 1 0 ]
 {
 [v putch@data data `uc  1 p 1 wreg ]
 [v putch@data data `uc  1 p 1 wreg ]
 [v putch@data data `uc  1 p 1 1 ]
-"98
+"111
 } 0
-"94 S:\Rack Protector Bradley\Rack Protector V 1.21\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/eusart1.c
+"94 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/eusart1.c
 [v _EUSART1_is_tx_ready EUSART1_is_tx_ready `(a  1 e 1 0 ]
 {
 "97
@@ -1098,9 +1113,9 @@ channel_FVR_buf1 63
 "3 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\floorf.c
 [v _floorf floorf `(f  1 e 4 0 ]
 {
-[u S2298 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S2307 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "5
-[v floorf@u u `S2298  1 a 4 80 ]
+[v floorf@u u `S2307  1 a 4 80 ]
 "7
 [v floorf@m m `ul  1 a 4 74 ]
 "6
@@ -1108,21 +1123,21 @@ channel_FVR_buf1 63
 "3
 [v floorf@x x `f  1 p 4 64 ]
 "4
-[v floorf@F521 F521 `S2298  1 s 4 F521 ]
+[v floorf@F521 F521 `S2307  1 s 4 F521 ]
 "27
 } 0
 "4 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\__fpclassifyf.c
 [v ___fpclassifyf __fpclassifyf `(i  1 e 2 0 ]
 {
-[u S2298 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S2307 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "6
-[v ___fpclassifyf@u u `S2298  1 a 4 10 ]
+[v ___fpclassifyf@u u `S2307  1 a 4 10 ]
 "7
 [v ___fpclassifyf@e e `i  1 a 2 8 ]
 "4
 [v ___fpclassifyf@x x `f  1 p 4 0 ]
 "5
-[v ___fpclassifyf@F465 F465 `S2298  1 s 4 F465 ]
+[v ___fpclassifyf@F465 F465 `S2307  1 s 4 F465 ]
 "11
 } 0
 "43 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\fltol.c
@@ -1178,7 +1193,7 @@ channel_FVR_buf1 63
 [v ___fleq@ff2 ff2 `d  1 p 4 4 ]
 "12
 } 0
-"50 S:\Rack Protector Bradley\Rack Protector V 1.21\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/mcc.c
+"50 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
 "58
@@ -1188,22 +1203,22 @@ channel_FVR_buf1 63
 {
 "88
 } 0
-"55 S:\Rack Protector Bradley\Rack Protector V 1.21\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/pin_manager.c
+"55 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 {
 "121
 } 0
-"60 S:\Rack Protector Bradley\Rack Protector V 1.21\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/mcc.c
+"60 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/mcc.c
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 {
 "72
 } 0
-"170 S:\Rack Protector Bradley\Rack Protector V 1.21\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/i2c1_master.c
+"170 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/i2c1_master.c
 [v _I2C1_Initialize I2C1_Initialize `(v  1 e 1 0 ]
 {
 "177
 } 0
-"66 S:\Rack Protector Bradley\Rack Protector V 1.21\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/eusart1.c
+"66 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/eusart1.c
 [v _EUSART1_Initialize EUSART1_Initialize `(v  1 e 1 0 ]
 {
 "92
@@ -1226,21 +1241,21 @@ channel_FVR_buf1 63
 [v EUSART1_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
 "167
 } 0
-"62 S:\Rack Protector Bradley\Rack Protector V 1.21\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/adcc.c
+"62 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/adcc.c
 [v _ADCC_Initialize ADCC_Initialize `(v  1 e 1 0 ]
 {
 "105
 } 0
-"101 S:\Rack Protector Bradley\Rack Protector V 1.21\Source Code\Rack_Pro_new_board_10_7_25\main.c
+"114 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\main.c
 [v _Read_BatteryVoltage Read_BatteryVoltage `(f  1 e 4 0 ]
 {
-"119
+"132
 [v Read_BatteryVoltage@vRead vRead `f  1 a 4 72 ]
-"104
+"117
 [v Read_BatteryVoltage@vBatt vBatt `f  1 a 4 68 ]
-"103
+"116
 [v Read_BatteryVoltage@adcValue adcValue `us  1 a 2 76 ]
-"123
+"136
 } 0
 "10 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
@@ -1260,17 +1275,17 @@ channel_FVR_buf1 63
 "8 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S2005 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S2014 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S2010 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
-[u S2013 . 4 `l 1 i 4 0 `d 1 f 4 0 `S2005 1 fAsBytes 4 0 `S2010 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S2013  1 a 4 33 ]
+[s S2019 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S2022 . 4 `l 1 i 4 0 `d 1 f 4 0 `S2014 1 fAsBytes 4 0 `S2019 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S2022  1 a 4 33 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 28 ]
-[s S2081 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S2090 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S2084 . 2 `s 1 i 2 0 `us 1 n 2 0 `S2081 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S2084  1 a 2 37 ]
+[u S2093 . 2 `s 1 i 2 0 `us 1 n 2 0 `S2090 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S2093  1 a 2 37 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 32 ]
 "11
@@ -1302,7 +1317,7 @@ channel_FVR_buf1 63
 [v ___fldiv@a a `d  1 p 4 43 ]
 "185
 } 0
-"131 S:\Rack Protector Bradley\Rack Protector V 1.21\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/adcc.c
+"131 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/adcc.c
 [v _ADCC_GetSingleConversion ADCC_GetSingleConversion `(us  1 e 2 0 ]
 {
 [v ADCC_GetSingleConversion@channel channel `E12456  1 p 1 wreg ]
@@ -1311,7 +1326,7 @@ channel_FVR_buf1 63
 [v ADCC_GetSingleConversion@channel channel `E12456  1 p 1 4 ]
 "154
 } 0
-"91 S:\Rack Protector Bradley\Rack Protector V 1.21\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/i2c1_master_ex.c
+"91 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/i2c1_master_ex.c
 [v _I2C1_Write1ByteRegister I2C1_Write1ByteRegister `(v  1 e 1 0 ]
 {
 [v I2C1_Write1ByteRegister@address address `uc  1 p 1 wreg ]
@@ -1334,7 +1349,7 @@ channel_FVR_buf1 63
 [v I2C1_Read1ByteRegister@address address `uc  1 p 1 9 ]
 "75
 } 0
-"292 S:\Rack Protector Bradley\Rack Protector V 1.21\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/i2c1_master.c
+"292 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/i2c1_master.c
 [v _I2C1_SetAddressNackCallback I2C1_SetAddressNackCallback `(v  1 e 1 0 ]
 {
 [v I2C1_SetAddressNackCallback@cb cb `*.37(E363  1 p 2 4 ]
@@ -1509,7 +1524,7 @@ channel_FVR_buf1 63
 {
 "595
 } 0
-"170 S:\Rack Protector Bradley\Rack Protector V 1.21\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/i2c1_master_ex.c
+"170 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/i2c1_master_ex.c
 [v _rdBlkRegCompleteHandler rdBlkRegCompleteHandler `(E363  1 s 1 rdBlkRegCompleteHandler ]
 {
 [v rdBlkRegCompleteHandler@ptr ptr `*.30v  1 p 1 7 ]
@@ -1533,7 +1548,7 @@ channel_FVR_buf1 63
 [v rd1RegCompleteHandler@ptr ptr `*.30v  1 p 1 7 ]
 "147
 } 0
-"534 S:\Rack Protector Bradley\Rack Protector V 1.21\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/i2c1_master.c
+"534 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/i2c1_master.c
 [v _I2C1_CallbackReturnReset I2C1_CallbackReturnReset `(E363  1 e 1 0 ]
 {
 "537
@@ -1543,13 +1558,13 @@ channel_FVR_buf1 63
 {
 "532
 } 0
-"163 S:\Rack Protector Bradley\Rack Protector V 1.21\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/i2c1_master_ex.c
+"163 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/i2c1_master_ex.c
 [v _wr2RegCompleteHandler wr2RegCompleteHandler `(E363  1 s 1 wr2RegCompleteHandler ]
 {
 [v wr2RegCompleteHandler@ptr ptr `*.30v  1 p 1 7 ]
 "168
 } 0
-"282 S:\Rack Protector Bradley\Rack Protector V 1.21\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/i2c1_master.c
+"282 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/i2c1_master.c
 [v _I2C1_SetDataCompleteCallback I2C1_SetDataCompleteCallback `(v  1 e 1 0 ]
 {
 [v I2C1_SetDataCompleteCallback@cb cb `*.37(E363  1 p 2 4 ]
@@ -1611,7 +1626,7 @@ channel_FVR_buf1 63
 {
 "652
 } 0
-"99 S:\Rack Protector Bradley\Rack Protector V 1.21\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/eusart1.c
+"99 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/eusart1.c
 [v _EUSART1_is_rx_ready EUSART1_is_rx_ready `(a  1 e 1 0 ]
 {
 "102
@@ -1621,7 +1636,7 @@ channel_FVR_buf1 63
 {
 "130
 } 0
-"125 S:\Rack Protector Bradley\Rack Protector V 1.21\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/adcc.c
+"125 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/adcc.c
 [v _ADCC_GetConversionResult ADCC_GetConversionResult `(us  1 e 2 0 ]
 {
 "129
