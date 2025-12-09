@@ -8,7 +8,7 @@
 ///
 ///     @brief
 ///
-/// V 1.2.1 Added testing functionality via PUTTY inputs
+/// V 1.2.1 Added testing functionality via PUTTY inputs, added delay to strong presence
 ///
 /// V 1.2 Added battery level voltage detection, added functionality at low voltage levels
 ///
@@ -88,9 +88,8 @@ uint8_t led1_manual = 0;      // if 1 ? LED1 forced ON
 uint8_t led2_manual = 0;      // if 1 ? LED2 forced ON
 
 
-// -----------------------------------------------------------------------------
-// *** ADDED: Presence state machine variables ***
-// -----------------------------------------------------------------------------
+// =======================================================================
+// Presence State Variables 
 typedef enum {
     PRESENCE_IDLE = 0,
     PRESENCE_NEAR,
@@ -100,7 +99,7 @@ typedef enum {
 
 static presence_state_t pState = PRESENCE_IDLE;
 static uint32_t presenceHoldStart = 0;   // used for 3-second strong-presence delay hold
-// -----------------------------------------------------------------------------
+// ========================================================================================
 
 // * NOTE: * PuTTY should be set to the COM port at 115200 8N1, no flow control.
  
@@ -115,13 +114,10 @@ float Read_BatteryVoltage(void)
 {
     uint16_t adcValue;
     float vBatt;
-
-    // Ensure enable pin is an output
-    
     
     // Enable the battery sense circuit
     ANA_V_EN_SetHigh();
-    __delay_ms(5);      // allow Q7/Q8 to stabilize
+    __delay_ms(5);
     
     ADPCH = channel_ANB4;
 
@@ -137,7 +133,7 @@ float Read_BatteryVoltage(void)
 
 void main(void)
 {
-    // Initialize the device (sets up EUSART1 among others)
+    // Initialize the device (sets up EUSART1 among other peripherals)
     SYSTEM_Initialize();
     
     uint32_t lastBlinkTime = 0;   // Timer for 30-sec blink interval
@@ -147,7 +143,7 @@ void main(void)
     RC7_SetDigitalMode();
     
     // Print a startup banner to the serial terminal
-    printf("Firmware Version 1.2\r\n");
+    printf("Firmware Version 1.2.1\r\n");
     
     __delay_ms(500); // let part boot up
     I2C1_Write1ByteRegister(I2C_Slave_Address, I2C_TRIM_Reg, I2C_TRIM_Data);
@@ -183,36 +179,36 @@ void main(void)
             {
                 case 'h':   // print a menu with the keybinds listed 
                     printf("\r\nRACK PROTECTOR FW V1.21 help menu - keybinds \r\n"
-                            "'v' Prints battery voltage level \r\n"
-                            "'b' Turns buzzer on \r\n"
-                            "'i' Turns LED Bank 1 on \r\n"
-                            "'o' Turns LED Bank 2 on \r\n"
-                            "'p' Turns LED Bank 1, 2, and the buzzer off \r\n");
+                            "v - Prints battery voltage level \r\n"
+                            "b - Turns buzzer on \r\n"
+                            "i - Turns LED Bank 1 on \r\n"
+                            "o - Turns LED Bank 2 on \r\n"
+                            "p - Turns LED Bank 1, 2, and the buzzer off \r\n");
                     break;
                     
                 case 'v':   // Print Voltage Measurement
                     printf("ADC raw: %u  Batt: %.2f V\r\n", (unsigned)ADCC_GetConversionResult(), batt);
                     break;
 
-                case 'b':   // ENABLE buzzer manually
+                case 'b':   // ENABLE BUZZER ON MANUALLY
                     buzzerOverride = 1;
                     LED_Enble_SetHigh();
                     printf("Buzzer Enabled\r\n");
                     break;
 
-                case 'i':   // manual LED1 ON
+                case 'i':   // ENABLE LED1 ON MANUALLY
                     led1_manual = 1;
                     LED1_Enble_SetHigh();
                     printf("LED BANK 1 ON\r\n");
                     break;
 
-                case 'o':   // manual LED2 ON
+                case 'o':   // ENABLE LED2 ON MANUALLY
                     led2_manual = 1;
                     LED2_Enble_SetHigh();
                     printf("LED BANK 2 ON\r\n");
                     break;
                     
-                case 'p':   // manual LED1 LED2 buzzer off
+                case 'p':   // LED BANKS 1, 2, and BUZZER OFF MANUALLY
                     buzzerOverride = 0;
                     led1_manual = 0;
                     led2_manual = 0;
@@ -227,7 +223,7 @@ void main(void)
             }
         }
         
-         // ---------------- LOW BATTERY RAPID BLINK EVERY ~30 SECONDS ----------------
+         // ---------------- LOW BATTERY RAPID BLINKING, EVERY ~30 SECONDS ----------------
         
         if (batt < 7.25f)
         {
@@ -265,13 +261,6 @@ void main(void)
         Presence = (uint16_t)((uint16_t)RX_I2C_P1 | ((uint16_t)RX_I2C_P2 << 8));
         Motion   = (uint16_t)((uint16_t)RX_I2C_M1 | ((uint16_t)RX_I2C_M2 << 8));
 
-        //if (Presence >= 0x2000){
-        //    Presence = 0;
-        //}
-        //if (Motion >= 0x4000){
-        //    Motion = 0;
-        //}
-
         // Handle buzzer override first
         if (buzzerOverride)
         {
@@ -288,12 +277,14 @@ void main(void)
             continue;
         }
         
+        // Sets variables for Presence Logic
         uint8_t inNearRange   = (Presence >= 0x00C0 && Presence <= 0x0500);
         uint8_t inStrongRange = (Presence > 0x0500 && Presence < 0x7D00);
 
         switch (pState)
         {
-            // -------------------------------------------------------
+            // ======================================================
+            // State with Lowest Presence Range
             case PRESENCE_IDLE:
                 if (!led1_manual) LED1_Enble_SetLow();
                 if (!led2_manual) LED2_Enble_SetLow();
@@ -305,7 +296,8 @@ void main(void)
                     pState = PRESENCE_STRONG;
                 break;
 
-            // -------------------------------------------------------
+            // =======================================================
+            // State with Medium Presence Range
             case PRESENCE_NEAR:
                 if (!led1_manual) LED1_Enble_SetHigh();
                 if (!led2_manual) LED2_Enble_SetHigh();
@@ -317,7 +309,8 @@ void main(void)
                     pState = PRESENCE_IDLE;
                 break;
 
-            // -------------------------------------------------------
+            // =======================================================
+            // State with Strong Presence Range
             case PRESENCE_STRONG:
                 if (!led1_manual) LED1_Enble_Toggle();
                 if (!led2_manual) LED2_Enble_Toggle();
@@ -330,7 +323,8 @@ void main(void)
                 }
                 break;
 
-            // -------------------------------------------------------
+            // ================================================================
+            // State where Strong Presence is held for 3 seconds after being within Range
             case PRESENCE_HOLD:
                 // continue blinking exactly like STRONG
                 if (!led1_manual) LED1_Enble_Toggle();
@@ -341,13 +335,12 @@ void main(void)
                 if ((msCounter - presenceHoldStart) >= 7000)
                 {
                     pState = PRESENCE_IDLE;
-                }
+                }  
                 break;
         }
 
         // ======================================================================
-        // END PRESENCE STATE MACHINE
-        // ======================================================================
+        // END PRESENCE STATE
     }
 }
 /**
