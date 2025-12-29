@@ -142,6 +142,16 @@ void main(void)
     RC6_SetDigitalMode();
     RC7_SetDigitalMode();
     
+    // Startup buzzer when board turns on
+    for (uint8_t i = 0; i < 5; i++)
+    {
+        LED_Enble_SetHigh();    // Buzzer ON
+        __delay_ms(100);
+
+        LED_Enble_SetLow();       // Buzzer OFF
+        __delay_ms(100);
+    }
+    
     // Print a startup banner to the serial terminal
     printf("Firmware Version 1.2.1\r\n");
     
