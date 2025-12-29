@@ -232,12 +232,14 @@ void main(void)
                 // Blink LEDs 15 times
                 for (int i = 0; i < 15; i++)
                 {
-                    LED1_Enble_SetHigh();
-                    LED2_Enble_SetHigh();
-                    __delay_ms(150);
-
-                    LED1_Enble_SetLow();
-                    LED2_Enble_SetLow();
+                    LED_Enble_SetHigh();
+                    // Was previously set to blink LEDs, now sets off buzzer
+//                    LED1_Enble_SetHigh();
+//                    LED2_Enble_SetHigh();
+//                    __delay_ms(150);
+//
+//                    LED1_Enble_SetLow();
+//                    LED2_Enble_SetLow();
                     __delay_ms(150);
                 }
 
@@ -314,7 +316,7 @@ void main(void)
             case PRESENCE_STRONG:
                 if (!led1_manual) LED1_Enble_Toggle();
                 if (!led2_manual) LED2_Enble_Toggle();
-                if (!buzzerOverride) LED_Enble_SetHigh();
+                if (!buzzerOverride) LED_Enble_SetLow();
 
                 if (!inStrongRange)
                 {
@@ -329,7 +331,7 @@ void main(void)
                 // continue blinking exactly like STRONG
                 if (!led1_manual) LED1_Enble_Toggle();
                 if (!led2_manual) LED2_Enble_Toggle();
-                if (!buzzerOverride) LED_Enble_SetHigh();
+                if (!buzzerOverride) LED_Enble_SetLow();
 
                 // keep blinking until 3 seconds expire
                 if ((msCounter - presenceHoldStart) >= 7000)
