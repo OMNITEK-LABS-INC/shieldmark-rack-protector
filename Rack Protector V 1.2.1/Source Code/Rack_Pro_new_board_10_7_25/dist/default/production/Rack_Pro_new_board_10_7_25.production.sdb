@@ -66,14 +66,14 @@ channel_Temp 61
 channel_DAC1 62
 channel_FVR_buf1 63
 ]
-"101 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\main.c
+"100 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\main.c
 [e E12979 . `uc
 PRESENCE_IDLE 0
 PRESENCE_NEAR 1
 PRESENCE_STRONG 2
 PRESENCE_HOLD 3
 ]
-"126
+"122
 [e E12855 . `uc
 channel_ANB4 12
 channel_VSS 60
@@ -145,11 +145,11 @@ channel_FVR_buf1 63
 [v ___omul __omul `(uo  1 e 8 0 ]
 "10 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
-"107 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\main.c
+"106 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\main.c
 [v _putch putch `(v  1 e 1 0 ]
-"114
+"113
 [v _Read_BatteryVoltage Read_BatteryVoltage `(f  1 e 4 0 ]
-"138
+"134
 [v _main main `(v  1 e 1 0 ]
 "62 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/adcc.c
 [v _ADCC_Initialize ADCC_Initialize `(v  1 e 1 0 ]
@@ -554,7 +554,7 @@ channel_FVR_buf1 63
 [v _ADFLTRH ADFLTRH `VEuc  1 e 1 @3950 ]
 "26566
 [v _LATA LATA `VEuc  1 e 1 @3970 ]
-[s S1594 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S1587 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -564,8 +564,8 @@ channel_FVR_buf1 63
 `uc 1 LATA7 1 0 :1:7 
 ]
 "26583
-[u S1603 . 1 `S1594 1 . 1 0 ]
-[v _LATAbits LATAbits `VES1603  1 e 1 @3970 ]
+[u S1596 . 1 `S1587 1 . 1 0 ]
+[v _LATAbits LATAbits `VES1596  1 e 1 @3970 ]
 "26628
 [v _LATB LATB `VEuc  1 e 1 @3971 ]
 [s S1509 . 1 `uc 1 LATB0 1 0 :1:0 
@@ -857,9 +857,9 @@ channel_FVR_buf1 63
 [v _led1_manual led1_manual `uc  1 e 1 0 ]
 "88
 [v _led2_manual led2_manual `uc  1 e 1 0 ]
-"101
+"100
 [v _pState pState `E12979  1 s 1 pState ]
-"102
+"101
 [v _presenceHoldStart presenceHoldStart `ul  1 s 4 presenceHoldStart ]
 [s S93 . 1 `uc 1 perr 1 0 :1:0 
 `uc 1 ferr 1 0 :1:1 
@@ -884,24 +884,26 @@ channel_FVR_buf1 63
 ]
 "168
 [v _I2C1_Status I2C1_Status `S365  1 e 29 0 ]
-"138 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\main.c
+"134 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"237
-[v main@i i `i  1 a 2 87 ]
+"243
+[v main@i_1708 i `i  1 a 2 12 ]
+"186
+[v main@key key `uc  1 a 1 4 ]
+"178
+[v main@batt batt `f  1 a 4 7 ]
+"294
+[v main@inStrongRange inStrongRange `uc  1 a 1 15 ]
+"293
+[v main@inNearRange inNearRange `uc  1 a 1 11 ]
+"146
+[v main@i i `uc  1 a 1 14 ]
+"139
+[v main@lastBlinkTime lastBlinkTime `ul  1 a 4 0 ]
 "180
-[v main@key key `uc  1 a 1 79 ]
-"172
-[v main@batt batt `f  1 a 4 82 ]
-"292
-[v main@inStrongRange inStrongRange `uc  1 a 1 89 ]
-"291
-[v main@inNearRange inNearRange `uc  1 a 1 86 ]
-"143
-[v main@lastBlinkTime lastBlinkTime `ul  1 a 4 75 ]
-"174
 [v main@msCounter msCounter `ul  1 s 4 msCounter ]
-"352
+"357
 } 0
 "5 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\printf.c
 [v _printf printf `(i  1 e 2 0 ]
@@ -917,9 +919,9 @@ channel_FVR_buf1 63
 {
 "1820
 [v vfprintf@cfmt cfmt `*.32uc  1 a 2 60 ]
-[s S2174 _IO_FILE 0 ]
+[s S2175 _IO_FILE 0 ]
 "1817
-[v vfprintf@fp fp `*.39S2174  1 p 2 55 ]
+[v vfprintf@fp fp `*.39S2175  1 p 2 55 ]
 [v vfprintf@fmt fmt `*.32Cuc  1 p 2 57 ]
 [v vfprintf@ap ap `*.30*.30v  1 p 1 59 ]
 "1840
@@ -927,15 +929,15 @@ channel_FVR_buf1 63
 "1177
 [v _vfpfcnvrt vfpfcnvrt `(v  1 s 1 vfpfcnvrt ]
 {
-[u S2224 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `d 1 f 4 0 ]
+[u S2225 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `d 1 f 4 0 ]
 "1188
-[v vfpfcnvrt@convarg convarg `S2224  1 a 4 48 ]
+[v vfpfcnvrt@convarg convarg `S2225  1 a 4 48 ]
 "1179
 [v vfpfcnvrt@cp cp `*.32uc  1 a 2 53 ]
 [v vfpfcnvrt@c c `uc  1 a 1 52 ]
-[s S2174 _IO_FILE 0 ]
+[s S2175 _IO_FILE 0 ]
 "1177
-[v vfpfcnvrt@fp fp `*.39S2174  1 p 2 44 ]
+[v vfpfcnvrt@fp fp `*.39S2175  1 p 2 44 ]
 [v vfpfcnvrt@fmt fmt `*.30*.32uc  1 p 1 46 ]
 [v vfpfcnvrt@ap ap `*.30*.30v  1 p 1 47 ]
 "1814
@@ -949,9 +951,9 @@ channel_FVR_buf1 63
 [v utoa@p p `i  1 a 2 33 ]
 "1003
 [v utoa@w w `i  1 a 2 31 ]
-[s S2174 _IO_FILE 0 ]
+[s S2175 _IO_FILE 0 ]
 "1001
-[v utoa@fp fp `*.39S2174  1 p 2 27 ]
+[v utoa@fp fp `*.39S2175  1 p 2 27 ]
 [v utoa@d d `ui  1 p 2 29 ]
 "1047
 } 0
@@ -992,15 +994,15 @@ channel_FVR_buf1 63
 "587
 [v _efgtoa efgtoa `(v  1 s 1 efgtoa ]
 {
-[u S2187 flui 4 `d 1 f 4 0 `l 1 u 4 0 ]
+[u S2188 flui 4 `d 1 f 4 0 `l 1 u 4 0 ]
 "592
-[v efgtoa@u u `S2187  1 a 4 40 ]
-[v efgtoa@g g `S2187  1 a 4 34 ]
+[v efgtoa@u u `S2188  1 a 4 40 ]
+[v efgtoa@g g `S2188  1 a 4 34 ]
 "591
 [v efgtoa@l l `d  1 a 4 29 ]
 [v efgtoa@h h `d  1 a 4 25 ]
 "592
-[v efgtoa@ou ou `S2187  1 a 4 19 ]
+[v efgtoa@ou ou `S2188  1 a 4 19 ]
 "590
 [v efgtoa@n n `i  1 a 2 38 ]
 [v efgtoa@i i `i  1 a 2 23 ]
@@ -1016,9 +1018,9 @@ channel_FVR_buf1 63
 [v efgtoa@nmode nmode `uc  1 a 1 10 ]
 [v efgtoa@mode mode `uc  1 a 1 9 ]
 [v efgtoa@pp pp `uc  1 a 1 8 ]
-[s S2174 _IO_FILE 0 ]
+[s S2175 _IO_FILE 0 ]
 "587
-[v efgtoa@fp fp `*.39S2174  1 p 2 84 ]
+[v efgtoa@fp fp `*.39S2175  1 p 2 84 ]
 [v efgtoa@f f `d  1 p 4 86 ]
 [v efgtoa@c c `uc  1 p 1 90 ]
 "868
@@ -1038,9 +1040,9 @@ channel_FVR_buf1 63
 {
 "195
 [v pad@i i `i  1 a 2 25 ]
-[s S2174 _IO_FILE 0 ]
+[s S2175 _IO_FILE 0 ]
 "193
-[v pad@fp fp `*.39S2174  1 p 2 18 ]
+[v pad@fp fp `*.39S2175  1 p 2 18 ]
 [v pad@buf buf `*.39uc  1 p 2 20 ]
 [v pad@p p `i  1 p 2 22 ]
 "226
@@ -1054,27 +1056,27 @@ channel_FVR_buf1 63
 [v fputs@c c `uc  1 a 1 15 ]
 "8
 [v fputs@s s `*.39Cuc  1 p 2 11 ]
-[u S2153 . 2 `*.39uc 1 buffer 2 0 `*.39Cuc 1 source 2 0 ]
-[s S2156 _IO_FILE 11 `S2153 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v fputs@fp fp `*.39S2156  1 p 2 13 ]
+[u S2154 . 2 `*.39uc 1 buffer 2 0 `*.39Cuc 1 source 2 0 ]
+[s S2157 _IO_FILE 11 `S2154 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v fputs@fp fp `*.39S2157  1 p 2 13 ]
 "19
 } 0
 "8 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 2 ]
-[u S2153 . 2 `*.39uc 1 buffer 2 0 `*.39Cuc 1 source 2 0 ]
-[s S2156 _IO_FILE 11 `S2153 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v fputc@fp fp `*.39S2156  1 p 2 4 ]
+[u S2154 . 2 `*.39uc 1 buffer 2 0 `*.39Cuc 1 source 2 0 ]
+[s S2157 _IO_FILE 11 `S2154 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v fputc@fp fp `*.39S2157  1 p 2 4 ]
 "24
 } 0
-"107 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\main.c
+"106 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\main.c
 [v _putch putch `(v  1 e 1 0 ]
 {
 [v putch@data data `uc  1 p 1 wreg ]
 [v putch@data data `uc  1 p 1 wreg ]
 [v putch@data data `uc  1 p 1 1 ]
-"111
+"110
 } 0
 "94 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\mcc_generated_files/eusart1.c
 [v _EUSART1_is_tx_ready EUSART1_is_tx_ready `(a  1 e 1 0 ]
@@ -1113,9 +1115,9 @@ channel_FVR_buf1 63
 "3 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\floorf.c
 [v _floorf floorf `(f  1 e 4 0 ]
 {
-[u S2307 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S2308 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "5
-[v floorf@u u `S2307  1 a 4 80 ]
+[v floorf@u u `S2308  1 a 4 80 ]
 "7
 [v floorf@m m `ul  1 a 4 74 ]
 "6
@@ -1123,21 +1125,21 @@ channel_FVR_buf1 63
 "3
 [v floorf@x x `f  1 p 4 64 ]
 "4
-[v floorf@F521 F521 `S2307  1 s 4 F521 ]
+[v floorf@F521 F521 `S2308  1 s 4 F521 ]
 "27
 } 0
 "4 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\__fpclassifyf.c
 [v ___fpclassifyf __fpclassifyf `(i  1 e 2 0 ]
 {
-[u S2307 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S2308 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "6
-[v ___fpclassifyf@u u `S2307  1 a 4 10 ]
+[v ___fpclassifyf@u u `S2308  1 a 4 10 ]
 "7
 [v ___fpclassifyf@e e `i  1 a 2 8 ]
 "4
 [v ___fpclassifyf@x x `f  1 p 4 0 ]
 "5
-[v ___fpclassifyf@F465 F465 `S2307  1 s 4 F465 ]
+[v ___fpclassifyf@F465 F465 `S2308  1 s 4 F465 ]
 "11
 } 0
 "43 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\fltol.c
@@ -1246,16 +1248,16 @@ channel_FVR_buf1 63
 {
 "105
 } 0
-"114 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\main.c
+"113 S:\Rack Protector Bradley\shieldmark-rack-protector\Rack Protector V 1.2.1\Source Code\Rack_Pro_new_board_10_7_25\main.c
 [v _Read_BatteryVoltage Read_BatteryVoltage `(f  1 e 4 0 ]
 {
-"132
+"128
 [v Read_BatteryVoltage@vRead vRead `f  1 a 4 72 ]
-"117
-[v Read_BatteryVoltage@vBatt vBatt `f  1 a 4 68 ]
 "116
+[v Read_BatteryVoltage@vBatt vBatt `f  1 a 4 68 ]
+"115
 [v Read_BatteryVoltage@adcValue adcValue `us  1 a 2 76 ]
-"136
+"132
 } 0
 "10 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
@@ -1275,17 +1277,17 @@ channel_FVR_buf1 63
 "8 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S2014 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S2015 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S2019 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
-[u S2022 . 4 `l 1 i 4 0 `d 1 f 4 0 `S2014 1 fAsBytes 4 0 `S2019 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S2022  1 a 4 33 ]
+[s S2020 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S2023 . 4 `l 1 i 4 0 `d 1 f 4 0 `S2015 1 fAsBytes 4 0 `S2020 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S2023  1 a 4 33 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 28 ]
-[s S2090 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S2091 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S2093 . 2 `s 1 i 2 0 `us 1 n 2 0 `S2090 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S2093  1 a 2 37 ]
+[u S2094 . 2 `s 1 i 2 0 `us 1 n 2 0 `S2091 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S2094  1 a 2 37 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 32 ]
 "11

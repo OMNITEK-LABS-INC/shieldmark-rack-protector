@@ -21099,7 +21099,6 @@ uint8_t led2_manual = 0;
 
 
 
-
 typedef enum {
     PRESENCE_IDLE = 0,
     PRESENCE_NEAR,
@@ -21124,9 +21123,6 @@ float Read_BatteryVoltage(void)
 {
     uint16_t adcValue;
     float vBatt;
-
-
-
 
 
     do { LATBbits.LATB3 = 1; } while(0);
@@ -21156,7 +21152,17 @@ void main(void)
     do { ANSELCbits.ANSELC7 = 0; } while(0);
 
 
-    printf("Firmware Version 1.2\r\n");
+    for (uint8_t i = 0; i < 5; i++)
+    {
+        do { LATAbits.LATA1 = 1; } while(0);
+        _delay((unsigned long)((100)*(1000000/4000.0)));
+
+        do { LATAbits.LATA1 = 0; } while(0);
+        _delay((unsigned long)((100)*(1000000/4000.0)));
+    }
+
+
+    printf("Firmware Version 1.2.1\r\n");
 
     _delay((unsigned long)((500)*(1000000/4000.0)));
     I2C1_Write1ByteRegister(0x5a, 0x10, 0x02);
@@ -21192,11 +21198,11 @@ void main(void)
             {
                 case 'h':
                     printf("\r\nRACK PROTECTOR FW V1.21 help menu - keybinds \r\n"
-                            "'v' Prints battery voltage level \r\n"
-                            "'b' Turns buzzer on \r\n"
-                            "'i' Turns LED Bank 1 on \r\n"
-                            "'o' Turns LED Bank 2 on \r\n"
-                            "'p' Turns LED Bank 1, 2, and the buzzer off \r\n");
+                            "v - Prints battery voltage level \r\n"
+                            "b - Turns buzzer on \r\n"
+                            "i - Turns LED Bank 1 on \r\n"
+                            "o - Turns LED Bank 2 on \r\n"
+                            "p - Turns LED Bank 1, 2, and the buzzer off \r\n");
                     break;
 
                 case 'v':
@@ -21245,12 +21251,14 @@ void main(void)
 
                 for (int i = 0; i < 15; i++)
                 {
-                    do { LATBbits.LATB0 = 1; } while(0);
-                    do { LATBbits.LATB1 = 1; } while(0);
-                    _delay((unsigned long)((150)*(1000000/4000.0)));
+                    do { LATAbits.LATA1 = 1; } while(0);
 
-                    do { LATBbits.LATB0 = 0; } while(0);
-                    do { LATBbits.LATB1 = 0; } while(0);
+
+
+
+
+
+
                     _delay((unsigned long)((150)*(1000000/4000.0)));
                 }
 
@@ -21273,7 +21281,8 @@ void main(void)
 
         Presence = (uint16_t)((uint16_t)RX_I2C_P1 | ((uint16_t)RX_I2C_P2 << 8));
         Motion = (uint16_t)((uint16_t)RX_I2C_M1 | ((uint16_t)RX_I2C_M2 << 8));
-# 276 "main.c"
+
+
         if (buzzerOverride)
         {
             do { LATAbits.LATA1 = 1; } while(0);
@@ -21289,11 +21298,13 @@ void main(void)
             continue;
         }
 
+
         uint8_t inNearRange = (Presence >= 0x00C0 && Presence <= 0x0500);
         uint8_t inStrongRange = (Presence > 0x0500 && Presence < 0x7D00);
 
         switch (pState)
         {
+
 
             case PRESENCE_IDLE:
                 if (!led1_manual) do { LATBbits.LATB0 = 0; } while(0);
@@ -21305,6 +21316,7 @@ void main(void)
                 else if (inStrongRange)
                     pState = PRESENCE_STRONG;
                 break;
+
 
 
             case PRESENCE_NEAR:
@@ -21319,10 +21331,11 @@ void main(void)
                 break;
 
 
+
             case PRESENCE_STRONG:
                 if (!led1_manual) do { LATBbits.LATB0 = ~LATBbits.LATB0; } while(0);
                 if (!led2_manual) do { LATBbits.LATB1 = ~LATBbits.LATB1; } while(0);
-                if (!buzzerOverride) do { LATAbits.LATA1 = 1; } while(0);
+                if (!buzzerOverride) do { LATAbits.LATA1 = 0; } while(0);
 
                 if (!inStrongRange)
                 {
@@ -21332,11 +21345,12 @@ void main(void)
                 break;
 
 
+
             case PRESENCE_HOLD:
 
                 if (!led1_manual) do { LATBbits.LATB0 = ~LATBbits.LATB0; } while(0);
                 if (!led2_manual) do { LATBbits.LATB1 = ~LATBbits.LATB1; } while(0);
-                if (!buzzerOverride) do { LATAbits.LATA1 = 1; } while(0);
+                if (!buzzerOverride) do { LATAbits.LATA1 = 0; } while(0);
 
 
                 if ((msCounter - presenceHoldStart) >= 7000)
@@ -21345,7 +21359,6 @@ void main(void)
                 }
                 break;
         }
-
 
 
 
