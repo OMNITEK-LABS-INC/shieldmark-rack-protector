@@ -103,9 +103,10 @@ static presence_state_t pState = PRESENCE_IDLE;
 static uint32_t presenceHoldStart = 0;   // used for 3-second strong-presence delay hold
 // ========================================================================================
 // NEW: Near-presence qualification timer (false-positive protection)
-#define PRESENCE_NEAR_QUAL_TIME_MS   500   // 0.5 second debounce
-static uint32_t presenceNearStart = 0;
-static uint8_t  presenceNearQualified = 0;
+#define PRESENCE_NEAR_QUAL_MS  500
+
+static uint32_t nearStartTime = 0;
+static uint8_t  nearQualified = 0;
 
 // ========================================================================
 // * NOTE: * PuTTY should be set to the COM port at 115200 8N1, no flow control.
@@ -281,7 +282,7 @@ void main(void)
         Motion   = (uint16_t)((uint16_t)RX_I2C_M1 | ((uint16_t)RX_I2C_M2 << 8));
 
         // Handle buzzer override first
-        if (buzzerOverride)
+        if (!buzzerOverride)
         {
             LED_Enble_SetHigh();    // force buzzer ON
         }
@@ -290,11 +291,6 @@ void main(void)
         if (led1_manual) LED1_Enble_SetHigh();
         if (led2_manual) LED2_Enble_SetHigh();
 
-        // If BOTH LEDs are manual, skip presence logic entirely
-        if (led1_manual && led2_manual)
-        {
-            continue;
-        }
         
         // Sets variables for Presence Logic
         uint8_t inNearRange   = (Presence >= 0x00C0 && Presence <= 0x0500);
@@ -311,25 +307,30 @@ void main(void)
 
                 if (inNearRange)
                 {
-                    // Start qualification timer on first detection
-                    if (!presenceNearQualified)
+                    if (!nearQualified)
                     {
-                        if (presenceNearStart == 0)
+                        if (nearStartTime == 0)
                         {
-                            presenceNearStart = msCount;
+                            nearStartTime = msCounter;
                         }
-                        else if ((msCount - presenceNearStart) >= PRESENCE_NEAR_QUAL_TIME_MS)
+                        else if ((msCounter - nearStartTime) >= PRESENCE_NEAR_QUAL_MS)
                         {
-                            presenceNearQualified = 1;
+                            nearQualified = 1;
                             pState = PRESENCE_NEAR;
                         }
                     }
                 }
                 else
                 {
-                    // Reset if signal drops out
-                    presenceNearStart = 0;
-                    presenceNearQualified = 0;
+                    nearStartTime = 0;
+                    nearQualified = 0;
+                }
+
+                if (inStrongRange)
+                {
+                    nearStartTime = 0;
+                    nearQualified = 0;
+                    pState = PRESENCE_STRONG;
                 }
                 break;
 
@@ -338,18 +339,18 @@ void main(void)
             case PRESENCE_NEAR:
                 if (!led1_manual) LED1_Enble_SetHigh();
                 if (!led2_manual) LED2_Enble_SetHigh();
-                if (!buzzerOverride) LED_Enble_SetHigh();
+                if (!buzzerOverride) LED_Enble_SetLow();
 
                 if (inStrongRange)
                 {
-                    presenceNearStart = 0;
-                    presenceNearQualified = 0;
+                    nearStartTime = 0;
+                    nearQualified = 0;
                     pState = PRESENCE_STRONG;
                 }
                 else if (!inNearRange)
                 {
-                    presenceNearStart = 0;
-                    presenceNearQualified = 0;
+                    nearStartTime = 0;
+                    nearQualified = 0;
                     pState = PRESENCE_IDLE;
                 }
                 break;

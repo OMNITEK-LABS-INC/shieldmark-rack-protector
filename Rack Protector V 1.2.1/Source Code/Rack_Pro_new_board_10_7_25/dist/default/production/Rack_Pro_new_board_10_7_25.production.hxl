@@ -1,7 +1,7 @@
 ### HEXMate logfile and output summary ###
 
 ### Command-line arguments ###
- C:\Users\OMNITEK\AppData\Local\Temp\xcAsjws.0\driver_tmp_3.o
+ C:\Users\OMNITEK\AppData\Local\Temp\xcAs9qs.0\driver_tmp_3.o
  -Odist/default/production\Rack_Pro_new_board_10_7_25.production.hex
  -logfile=dist/default/production\Rack_Pro_new_board_10_7_25.production.hxl
  -addressing=1
@@ -9,24 +9,29 @@
 
 ### Memory Usage ###
  Input file ranges:
-  0h - 3h		(C:\Users\OMNITEK\AppData\Local\Temp\xcAsjws.0\driver_tmp_3.o)
-  C820h - FFFAh		(C:\Users\OMNITEK\AppData\Local\Temp\xcAsjws.0\driver_tmp_3.o)
-  FFFCh - FFFFh		(C:\Users\OMNITEK\AppData\Local\Temp\xcAsjws.0\driver_tmp_3.o)
-  300000h - 30000Bh		(C:\Users\OMNITEK\AppData\Local\Temp\xcAsjws.0\driver_tmp_3.o)
+  0h - 3h		(C:\Users\OMNITEK\AppData\Local\Temp\xcAs9qs.0\driver_tmp_3.o)
+  C7D6h - FFFAh		(C:\Users\OMNITEK\AppData\Local\Temp\xcAs9qs.0\driver_tmp_3.o)
+  FFFCh - FFFFh		(C:\Users\OMNITEK\AppData\Local\Temp\xcAs9qs.0\driver_tmp_3.o)
+  300000h - 30000Bh		(C:\Users\OMNITEK\AppData\Local\Temp\xcAs9qs.0\driver_tmp_3.o)
  Unused ranges:
-  4h - C81Fh
+  4h - C7D5h
   FFFBh - FFFBh
   10000h - 2FFFFFh
 
 ### Hex Memory Map ###
  Legend:
   -- = Unused memory
-  H1 = Input file             (C:\Users\OMNITEK\AppData\Local\Temp\xcAsjws.0\driver_tmp_3.o)
+  H1 = Input file             (C:\Users\OMNITEK\AppData\Local\Temp\xcAs9qs.0\driver_tmp_3.o)
 ----------------------------------------------------------
          | 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 ----------------------------------------------------------
 00000000 | H1 H1 H1 H1 -- -- -- -- -- -- -- -- -- -- -- --
 ----------------------------------------------------------
+0000C7D0 | -- -- -- -- -- -- H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+0000C7E0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+0000C7F0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+0000C800 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+0000C810 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 0000C820 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 0000C830 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 0000C840 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1

@@ -7,7 +7,7 @@
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
-# 22 "main.c"
+# 24 "main.c"
 # 1 "./mcc_generated_files/mcc.h" 1
 # 49 "./mcc_generated_files/mcc.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 1 3
@@ -21058,7 +21058,7 @@ void SYSTEM_Initialize(void);
 void OSCILLATOR_Initialize(void);
 # 98 "./mcc_generated_files/mcc.h"
 void PMD_Initialize(void);
-# 23 "main.c" 2
+# 25 "main.c" 2
 
 # 1 "./mcc_generated_files/i2c1_master_ex.h" 1
 # 55 "./mcc_generated_files/i2c1_master_ex.h"
@@ -21069,8 +21069,8 @@ void I2C1_Write2ByteRegister(i2c1_address_t address, uint8_t reg, uint16_t data)
 void I2C1_WriteNBytes(i2c1_address_t address, uint8_t *data, size_t len);
 void I2C1_ReadNBytes(i2c1_address_t address, uint8_t *data, size_t len);
 void I2C1_ReadDataBlock(i2c1_address_t address, uint8_t reg, uint8_t *data, size_t len);
-# 25 "main.c" 2
-# 65 "main.c"
+# 27 "main.c" 2
+# 67 "main.c"
 uint8_t RXvalue;
 uint8_t RX_I2C_Ready;
 uint8_t RX_I2C_P1;
@@ -21108,6 +21108,12 @@ typedef enum {
 
 static presence_state_t pState = PRESENCE_IDLE;
 static uint32_t presenceHoldStart = 0;
+
+
+
+
+static uint32_t nearStartTime = 0;
+static uint8_t nearQualified = 0;
 
 
 
@@ -21283,7 +21289,7 @@ void main(void)
         Motion = (uint16_t)((uint16_t)RX_I2C_M1 | ((uint16_t)RX_I2C_M2 << 8));
 
 
-        if (buzzerOverride)
+        if (!buzzerOverride)
         {
             do { LATAbits.LATA1 = 1; } while(0);
         }
@@ -21292,11 +21298,6 @@ void main(void)
         if (led1_manual) do { LATBbits.LATB0 = 1; } while(0);
         if (led2_manual) do { LATBbits.LATB1 = 1; } while(0);
 
-
-        if (led1_manual && led2_manual)
-        {
-            continue;
-        }
 
 
         uint8_t inNearRange = (Presence >= 0x00C0 && Presence <= 0x0500);
@@ -21312,9 +21313,32 @@ void main(void)
                 if (!buzzerOverride) do { LATAbits.LATA1 = 0; } while(0);
 
                 if (inNearRange)
-                    pState = PRESENCE_NEAR;
-                else if (inStrongRange)
+                {
+                    if (!nearQualified)
+                    {
+                        if (nearStartTime == 0)
+                        {
+                            nearStartTime = msCounter;
+                        }
+                        else if ((msCounter - nearStartTime) >= 500)
+                        {
+                            nearQualified = 1;
+                            pState = PRESENCE_NEAR;
+                        }
+                    }
+                }
+                else
+                {
+                    nearStartTime = 0;
+                    nearQualified = 0;
+                }
+
+                if (inStrongRange)
+                {
+                    nearStartTime = 0;
+                    nearQualified = 0;
                     pState = PRESENCE_STRONG;
+                }
                 break;
 
 
@@ -21322,12 +21346,20 @@ void main(void)
             case PRESENCE_NEAR:
                 if (!led1_manual) do { LATBbits.LATB0 = 1; } while(0);
                 if (!led2_manual) do { LATBbits.LATB1 = 1; } while(0);
-                if (!buzzerOverride) do { LATAbits.LATA1 = 1; } while(0);
+                if (!buzzerOverride) do { LATAbits.LATA1 = 0; } while(0);
 
                 if (inStrongRange)
+                {
+                    nearStartTime = 0;
+                    nearQualified = 0;
                     pState = PRESENCE_STRONG;
+                }
                 else if (!inNearRange)
+                {
+                    nearStartTime = 0;
+                    nearQualified = 0;
                     pState = PRESENCE_IDLE;
+                }
                 break;
 
 
