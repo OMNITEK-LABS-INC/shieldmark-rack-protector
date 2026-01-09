@@ -8,6 +8,8 @@
 ///
 ///     @brief
 ///
+/// V 1.2.2 Fixed Sensor detection to remove false positives when no object is present
+///
 /// V 1.2.1 Added testing functionality via PUTTY inputs, added delay to strong presence
 ///
 /// V 1.2 Added battery level voltage detection, added functionality at low voltage levels
@@ -100,7 +102,12 @@ typedef enum {
 static presence_state_t pState = PRESENCE_IDLE;
 static uint32_t presenceHoldStart = 0;   // used for 3-second strong-presence delay hold
 // ========================================================================================
+// NEW: Near-presence qualification timer (false-positive protection)
+#define PRESENCE_NEAR_QUAL_TIME_MS   500   // 0.5 second debounce
+static uint32_t presenceNearStart = 0;
+static uint8_t  presenceNearQualified = 0;
 
+// ========================================================================
 // * NOTE: * PuTTY should be set to the COM port at 115200 8N1, no flow control.
  
 void putch(char data)
@@ -300,12 +307,30 @@ void main(void)
             case PRESENCE_IDLE:
                 if (!led1_manual) LED1_Enble_SetLow();
                 if (!led2_manual) LED2_Enble_SetLow();
-                if (!buzzerOverride) LED_Enble_SetLow();
+                if (!buzzerOverride) LED_Enble_SetHigh();
 
                 if (inNearRange)
-                    pState = PRESENCE_NEAR;
-                else if (inStrongRange)
-                    pState = PRESENCE_STRONG;
+                {
+                    // Start qualification timer on first detection
+                    if (!presenceNearQualified)
+                    {
+                        if (presenceNearStart == 0)
+                        {
+                            presenceNearStart = msCount;
+                        }
+                        else if ((msCount - presenceNearStart) >= PRESENCE_NEAR_QUAL_TIME_MS)
+                        {
+                            presenceNearQualified = 1;
+                            pState = PRESENCE_NEAR;
+                        }
+                    }
+                }
+                else
+                {
+                    // Reset if signal drops out
+                    presenceNearStart = 0;
+                    presenceNearQualified = 0;
+                }
                 break;
 
             // =======================================================
@@ -316,9 +341,17 @@ void main(void)
                 if (!buzzerOverride) LED_Enble_SetLow();
 
                 if (inStrongRange)
+                {
+                    presenceNearStart = 0;
+                    presenceNearQualified = 0;
                     pState = PRESENCE_STRONG;
+                }
                 else if (!inNearRange)
+                {
+                    presenceNearStart = 0;
+                    presenceNearQualified = 0;
                     pState = PRESENCE_IDLE;
+                }
                 break;
 
             // =======================================================
