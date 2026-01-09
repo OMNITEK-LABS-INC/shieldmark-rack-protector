@@ -7,7 +7,7 @@
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
-# 24 "main.c"
+# 16 "main.c"
 # 1 "./mcc_generated_files/mcc.h" 1
 # 49 "./mcc_generated_files/mcc.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 1 3
@@ -21058,7 +21058,7 @@ void SYSTEM_Initialize(void);
 void OSCILLATOR_Initialize(void);
 # 98 "./mcc_generated_files/mcc.h"
 void PMD_Initialize(void);
-# 25 "main.c" 2
+# 17 "main.c" 2
 
 # 1 "./mcc_generated_files/i2c1_master_ex.h" 1
 # 55 "./mcc_generated_files/i2c1_master_ex.h"
@@ -21069,34 +21069,19 @@ void I2C1_Write2ByteRegister(i2c1_address_t address, uint8_t reg, uint16_t data)
 void I2C1_WriteNBytes(i2c1_address_t address, uint8_t *data, size_t len);
 void I2C1_ReadNBytes(i2c1_address_t address, uint8_t *data, size_t len);
 void I2C1_ReadDataBlock(i2c1_address_t address, uint8_t reg, uint8_t *data, size_t len);
-# 27 "main.c" 2
-# 67 "main.c"
-uint8_t RXvalue;
-uint8_t RX_I2C_Ready;
-uint8_t RX_I2C_P1;
-uint8_t RX_I2C_P2;
-uint8_t RX_I2C_A1;
-uint8_t RX_I2C_A2;
-uint8_t RX_I2C_M1;
-uint8_t RX_I2C_M2;
-uint8_t RX_I2C_L1;
-uint8_t RX_I2C_L2;
-uint8_t RX_I2C_FS;
-uint16_t Presence;
-uint16_t Motion;
-uint32_t FilterPresence;
+# 19 "main.c" 2
+# 38 "main.c"
+static uint8_t RX_I2C_Ready;
+static uint8_t RX_I2C_P1, RX_I2C_P2;
+static uint8_t RX_I2C_M1, RX_I2C_M2;
+static uint8_t RX_I2C_L1, RX_I2C_L2;
+static uint16_t Presence;
+static uint16_t Motion;
 
 
-uint8_t RX_I2C_P1, RX_I2C_P2;
-uint8_t RX_I2C_M1, RX_I2C_M2;
-uint16_t Presence, Motion;
-
-
-uint8_t buzzerOverride = 0;
-uint8_t led1_manual = 0;
-uint8_t led2_manual = 0;
-
-
+static uint8_t buzzerOverride = 0;
+static uint8_t led1_manual = 0;
+static uint8_t led2_manual = 0;
 
 
 typedef enum {
@@ -21107,15 +21092,16 @@ typedef enum {
 } presence_state_t;
 
 static presence_state_t pState = PRESENCE_IDLE;
+
+
 static uint32_t presenceHoldStart = 0;
 
 
 
 
-static uint32_t nearStartTime = 0;
-static uint8_t nearQualified = 0;
 
 
+static uint8_t nearCount = 0;
 
 
 void putch(char data)
@@ -21125,122 +21111,145 @@ void putch(char data)
 }
 
 
-float Read_BatteryVoltage(void)
+static float Read_BatteryVoltage(void)
 {
     uint16_t adcValue;
-    float vBatt;
 
 
     do { LATBbits.LATB3 = 1; } while(0);
     _delay((unsigned long)((5)*(1000000/4000.0)));
 
     ADPCH = channel_ANB4;
-
-
     adcValue = ADCC_GetSingleConversion(channel_ANB4);
 
 
     float vRead = ((float)adcValue * 3.3f) / 1024.0f;
-    vBatt = vRead * 2.98f;
+    float vBatt = vRead * 2.98f;
+
+
+    do { LATBbits.LATB3 = 0; } while(0);
 
     return vBatt;
 }
 
-void main(void)
+
+
+static void ApplyOutputs(uint8_t led1_on, uint8_t led2_on, uint8_t buzzer_on)
 {
 
+    if (led1_manual) {
+        do { LATBbits.LATB0 = 1; } while(0);
+    } else {
+        if (led1_on) do { LATBbits.LATB0 = 1; } while(0);
+        else do { LATBbits.LATB0 = 0; } while(0);
+    }
+
+    if (led2_manual) {
+        do { LATBbits.LATB1 = 1; } while(0);
+    } else {
+        if (led2_on) do { LATBbits.LATB1 = 1; } while(0);
+        else do { LATBbits.LATB1 = 0; } while(0);
+    }
+
+    if (buzzerOverride) {
+        do { LATAbits.LATA1 = 1; } while(0);
+    } else {
+        if (buzzer_on) do { LATAbits.LATA1 = 1; } while(0);
+        else do { LATAbits.LATA1 = 0; } while(0);
+    }
+}
+
+
+void main(void)
+{
     SYSTEM_Initialize();
 
-    uint32_t lastBlinkTime = 0;
 
     do { TRISBbits.TRISB3 = 0; } while(0);
     do { ANSELCbits.ANSELC6 = 0; } while(0);
     do { ANSELCbits.ANSELC7 = 0; } while(0);
 
 
+    do { LATAbits.LATA0 = 0; } while(0);
+
+
     for (uint8_t i = 0; i < 5; i++)
     {
         do { LATAbits.LATA1 = 1; } while(0);
         _delay((unsigned long)((100)*(1000000/4000.0)));
-
         do { LATAbits.LATA1 = 0; } while(0);
         _delay((unsigned long)((100)*(1000000/4000.0)));
     }
 
+    printf("Firmware Version 1.2.2\r\n");
 
-    printf("Firmware Version 1.2.1\r\n");
 
     _delay((unsigned long)((500)*(1000000/4000.0)));
     I2C1_Write1ByteRegister(0x5a, 0x10, 0x02);
     _delay((unsigned long)((20)*(1000000/4000.0)));
     RX_I2C_L1 = I2C1_Read1ByteRegister(0x5a, 0x0C);
     RX_I2C_L2 = I2C1_Read1ByteRegister(0x5a, 0x0D);
-
     _delay((unsigned long)((20)*(1000000/4000.0)));
     I2C1_Write1ByteRegister(0x5a, 0x20, 0x10);
     _delay((unsigned long)((20)*(1000000/4000.0)));
     I2C1_Write1ByteRegister(0x5a, 0x0C, 0x14);
-
     I2C1_Write1ByteRegister(0x5a, 0x20, 0x18);
 
-    do { LATAbits.LATA0 = 0; } while(0);
-
-
+    uint32_t msCounter = 0;
+    uint32_t lastLowBattAlert = 0;
 
     while (1)
     {
 
-        float batt = Read_BatteryVoltage();
 
-        static uint32_t msCounter = 0;
 
-        msCounter += 500;
+        msCounter += 550;
+
 
         if (EUSART1_is_rx_ready())
         {
             char key = EUSART1_Read();
-
             switch (key)
             {
                 case 'h':
-                    printf("\r\nRACK PROTECTOR FW V1.21 help menu - keybinds \r\n"
-                            "v - Prints battery voltage level \r\n"
-                            "b - Turns buzzer on \r\n"
-                            "i - Turns LED Bank 1 on \r\n"
-                            "o - Turns LED Bank 2 on \r\n"
-                            "p - Turns LED Bank 1, 2, and the buzzer off \r\n");
+                    printf("\r\nRACK PROTECTOR FW help menu\r\n"
+                           "v - Print battery voltage\r\n"
+                           "b - Buzzer ON (manual)\r\n"
+                           "i - LED Bank 1 ON (manual)\r\n"
+                           "o - LED Bank 2 ON (manual)\r\n"
+                           "p - All OFF (return to auto)\r\n");
                     break;
 
                 case 'v':
-                    printf("ADC raw: %u  Batt: %.2f V\r\n", (unsigned)ADCC_GetConversionResult(), batt);
+                {
+                    float batt = Read_BatteryVoltage();
+                    printf("Batt: %.2f V\r\n", batt);
                     break;
+                }
 
                 case 'b':
                     buzzerOverride = 1;
-                    do { LATAbits.LATA1 = 1; } while(0);
-                    printf("Buzzer Enabled\r\n");
+                    printf("Buzzer manual ON\r\n");
                     break;
 
                 case 'i':
                     led1_manual = 1;
-                    do { LATBbits.LATB0 = 1; } while(0);
-                    printf("LED BANK 1 ON\r\n");
+                    printf("LED BANK 1 manual ON\r\n");
                     break;
 
                 case 'o':
                     led2_manual = 1;
-                    do { LATBbits.LATB1 = 1; } while(0);
-                    printf("LED BANK 2 ON\r\n");
+                    printf("LED BANK 2 manual ON\r\n");
                     break;
 
                 case 'p':
                     buzzerOverride = 0;
                     led1_manual = 0;
                     led2_manual = 0;
-                    do { LATAbits.LATA1 = 0; } while(0);
-                    do { LATBbits.LATB0 = 0; } while(0);
-                    do { LATBbits.LATB1 = 0; } while(0);
-                    printf("All off\r\n");
+                    printf("All outputs back to AUTO (OFF until presence)\r\n");
+
+                    nearCount = 0;
+                    pState = PRESENCE_IDLE;
                     break;
 
                 default:
@@ -21250,28 +21259,22 @@ void main(void)
 
 
 
+        float batt = Read_BatteryVoltage();
         if (batt < 7.25f)
         {
-            if (msCounter - lastBlinkTime >= 90000)
+            if ((msCounter - lastLowBattAlert) >= 90000)
             {
 
-                for (int i = 0; i < 15; i++)
+                for (uint8_t i = 0; i < 15; i++)
                 {
-                    do { LATAbits.LATA1 = 1; } while(0);
-
-
-
-
-
-
-
+                    if (!buzzerOverride) do { LATAbits.LATA1 = 1; } while(0);
+                    _delay((unsigned long)((150)*(1000000/4000.0)));
+                    if (!buzzerOverride) do { LATAbits.LATA1 = 0; } while(0);
                     _delay((unsigned long)((150)*(1000000/4000.0)));
                 }
-
-                lastBlinkTime = msCounter;
+                lastLowBattAlert = msCounter;
             }
         }
-
 
 
         RX_I2C_Ready = I2C1_Read1ByteRegister(0x5a, 0x23);
@@ -21284,90 +21287,72 @@ void main(void)
         RX_I2C_M1 = I2C1_Read1ByteRegister(0x5a, 0x3C);
         RX_I2C_M2 = I2C1_Read1ByteRegister(0x5a, 0x3D);
 
-
         Presence = (uint16_t)((uint16_t)RX_I2C_P1 | ((uint16_t)RX_I2C_P2 << 8));
         Motion = (uint16_t)((uint16_t)RX_I2C_M1 | ((uint16_t)RX_I2C_M2 << 8));
-
-
-        if (!buzzerOverride)
-        {
-            do { LATAbits.LATA1 = 1; } while(0);
-        }
-
-
-        if (led1_manual) do { LATBbits.LATB0 = 1; } while(0);
-        if (led2_manual) do { LATBbits.LATB1 = 1; } while(0);
-
 
 
         uint8_t inNearRange = (Presence >= 0x00C0 && Presence <= 0x0500);
         uint8_t inStrongRange = (Presence > 0x0500 && Presence < 0x7D00);
 
+
+        uint8_t led1_on = 0;
+        uint8_t led2_on = 0;
+        uint8_t buz_on = 0;
+
         switch (pState)
         {
-
-
             case PRESENCE_IDLE:
-                if (!led1_manual) do { LATBbits.LATB0 = 0; } while(0);
-                if (!led2_manual) do { LATBbits.LATB1 = 0; } while(0);
-                if (!buzzerOverride) do { LATAbits.LATA1 = 0; } while(0);
 
-                if (inNearRange)
+                led1_on = 0;
+                led2_on = 0;
+                buz_on = 0;
+
+                if (inStrongRange)
                 {
-                    if (!nearQualified)
+                    nearCount = 0;
+                    pState = PRESENCE_STRONG;
+                }
+                else if (inNearRange)
+                {
+
+                    if (++nearCount >= 1)
                     {
-                        if (nearStartTime == 0)
-                        {
-                            nearStartTime = msCounter;
-                        }
-                        else if ((msCounter - nearStartTime) >= 500)
-                        {
-                            nearQualified = 1;
-                            pState = PRESENCE_NEAR;
-                        }
+                        nearCount = 0;
+                        pState = PRESENCE_NEAR;
                     }
                 }
                 else
                 {
-                    nearStartTime = 0;
-                    nearQualified = 0;
-                }
-
-                if (inStrongRange)
-                {
-                    nearStartTime = 0;
-                    nearQualified = 0;
-                    pState = PRESENCE_STRONG;
+                    nearCount = 0;
                 }
                 break;
 
-
-
             case PRESENCE_NEAR:
-                if (!led1_manual) do { LATBbits.LATB0 = 1; } while(0);
-                if (!led2_manual) do { LATBbits.LATB1 = 1; } while(0);
-                if (!buzzerOverride) do { LATAbits.LATA1 = 0; } while(0);
+
+                led1_on = 1;
+                led2_on = 1;
+                buz_on = 1;
 
                 if (inStrongRange)
                 {
-                    nearStartTime = 0;
-                    nearQualified = 0;
                     pState = PRESENCE_STRONG;
                 }
                 else if (!inNearRange)
                 {
-                    nearStartTime = 0;
-                    nearQualified = 0;
                     pState = PRESENCE_IDLE;
                 }
                 break;
 
-
-
             case PRESENCE_STRONG:
-                if (!led1_manual) do { LATBbits.LATB0 = ~LATBbits.LATB0; } while(0);
-                if (!led2_manual) do { LATBbits.LATB1 = ~LATBbits.LATB1; } while(0);
-                if (!buzzerOverride) do { LATAbits.LATA1 = 1; } while(0);
+
+
+
+
+                do { LATBbits.LATB0 = ~LATBbits.LATB0; } while(0);
+                do { LATBbits.LATB1 = ~LATBbits.LATB1; } while(0);
+                led1_on = led1_manual ? 1 : 2;
+                led2_on = led2_manual ? 1 : 2;
+                buz_on = 1;
 
                 if (!inStrongRange)
                 {
@@ -21376,14 +21361,13 @@ void main(void)
                 }
                 break;
 
-
-
             case PRESENCE_HOLD:
 
-                if (!led1_manual) do { LATBbits.LATB0 = ~LATBbits.LATB0; } while(0);
-                if (!led2_manual) do { LATBbits.LATB1 = ~LATBbits.LATB1; } while(0);
-                if (!buzzerOverride) do { LATAbits.LATA1 = 1; } while(0);
-
+                do { LATBbits.LATB0 = ~LATBbits.LATB0; } while(0);
+                do { LATBbits.LATB1 = ~LATBbits.LATB1; } while(0);
+                led1_on = led1_manual ? 1 : 2;
+                led2_on = led2_manual ? 1 : 2;
+                buz_on = 1;
 
                 if ((msCounter - presenceHoldStart) >= 7000)
                 {
@@ -21394,5 +21378,21 @@ void main(void)
 
 
 
+
+        if (pState == PRESENCE_STRONG || pState == PRESENCE_HOLD)
+        {
+
+            if (buzzerOverride) do { LATAbits.LATA1 = 1; } while(0);
+            else if (buz_on) do { LATAbits.LATA1 = 1; } while(0);
+            else do { LATAbits.LATA1 = 0; } while(0);
+
+            if (led1_manual) do { LATBbits.LATB0 = 1; } while(0);
+            if (led2_manual) do { LATBbits.LATB1 = 1; } while(0);
+        }
+        else
+        {
+
+            ApplyOutputs(led1_on, led2_on, buz_on);
+        }
     }
 }

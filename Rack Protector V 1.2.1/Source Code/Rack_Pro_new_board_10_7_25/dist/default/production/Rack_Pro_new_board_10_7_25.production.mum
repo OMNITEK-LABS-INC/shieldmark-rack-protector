@@ -1,6 +1,6 @@
 
 18F26Q10 Memory Summary:
-    Program space        used  382Eh ( 14382) of 10000h bytes   ( 21.9%)
+    Program space        used  3642h ( 13890) of 10000h bytes   ( 21.2%)
     Data space           used   15Fh (   351) of   D1Fh bytes   ( 10.4%)
     Configuration bits   used     6h (     6) of     6h words   (100.0%)
     EEPROM space         used     0h (     0) of   400h bytes   (  0.0%)
