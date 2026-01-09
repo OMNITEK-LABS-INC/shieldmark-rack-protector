@@ -307,7 +307,7 @@ void main(void)
             case PRESENCE_IDLE:
                 if (!led1_manual) LED1_Enble_SetLow();
                 if (!led2_manual) LED2_Enble_SetLow();
-                if (!buzzerOverride) LED_Enble_SetHigh();
+                if (!buzzerOverride) LED_Enble_SetLow();
 
                 if (inNearRange)
                 {
@@ -359,7 +359,7 @@ void main(void)
             case PRESENCE_STRONG:
                 if (!led1_manual) LED1_Enble_Toggle();
                 if (!led2_manual) LED2_Enble_Toggle();
-                if (!buzzerOverride) LED_Enble_SetLow();
+                if (!buzzerOverride) LED_Enble_SetHigh();
 
                 if (!inStrongRange)
                 {
@@ -374,7 +374,7 @@ void main(void)
                 // continue blinking exactly like STRONG
                 if (!led1_manual) LED1_Enble_Toggle();
                 if (!led2_manual) LED2_Enble_Toggle();
-                if (!buzzerOverride) LED_Enble_SetLow();
+                if (!buzzerOverride) LED_Enble_SetHigh();
 
                 // keep blinking until 3 seconds expire
                 if ((msCounter - presenceHoldStart) >= 7000)
