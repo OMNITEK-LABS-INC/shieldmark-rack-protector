@@ -8,6 +8,8 @@
 ///
 ///     @brief
 ///
+/// V 1.2.2 Updated presence detection to only set off buzzer 0.5 seconds if presence is detected
+///
 /// V 1.2.1 Added testing functionality via PUTTY inputs, added delay to strong presence
 ///
 /// V 1.2 Added battery level voltage detection, added functionality at low voltage levels
@@ -313,7 +315,7 @@ void main(void)
             case PRESENCE_NEAR:
                 if (!led1_manual) LED1_Enble_SetHigh();
                 if (!led2_manual) LED2_Enble_SetHigh();
-                if (!buzzerOverride) LED_Enble_SetLow();
+                if (!buzzerOverride) LED_Enble_SetHigh();
 
                 if (inStrongRange)
                     pState = PRESENCE_STRONG;
@@ -326,7 +328,7 @@ void main(void)
             case PRESENCE_STRONG:
                 if (!led1_manual) LED1_Enble_Toggle();
                 if (!led2_manual) LED2_Enble_Toggle();
-                if (!buzzerOverride) LED_Enble_SetLow();
+                if (!buzzerOverride) LED_Enble_SetHigh();
 
                 if (!inStrongRange)
                 {
@@ -341,7 +343,7 @@ void main(void)
                 // continue blinking exactly like STRONG
                 if (!led1_manual) LED1_Enble_Toggle();
                 if (!led2_manual) LED2_Enble_Toggle();
-                if (!buzzerOverride) LED_Enble_SetLow();
+                if (!buzzerOverride) LED_Enble_SetHigh();
 
                 // keep blinking until 3 seconds expire
                 if ((msCounter - presenceHoldStart) >= 7000)
